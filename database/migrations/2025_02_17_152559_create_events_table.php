@@ -22,7 +22,7 @@ return new class extends Migration
             $table->integer('duration');
             $table->integer('price');
             $table->string('poster')->nullable();
-            $table->foreignId('id_creator')->constrained('creators')->onDelete('cascade');
+            $table->foreignId('id_creator')->constrained('event_creators')->onDelete('cascade');
             $table->foreignId('id_event_status')->constrained('event_statuses')->onDelete('cascade');
             $table->timestamps();
         });
