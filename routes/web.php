@@ -23,13 +23,13 @@ Route::get('/events/{id}', function ($id) {
 Route::get('/exhibitions', function () {
     return view('exhibitions'); 
 })->name('exhibitions');
-Route::get('/exhibition/{id}', function ($id) {
+Route::get('/exhibitions/{id}', function ($id) {
     return view('exhibition', ['id' => $id]); 
-})->name('exhibition');;
+})->name('exhibition');
 
 // About us
-Route::get('/about-us', function () {
-    return view('about-us'); 
+Route::get('/aboutUs', function () {
+    return view('aboutUs'); 
 })->name('aboutUs');
 
 // Contacts
@@ -58,6 +58,6 @@ Route::get('/logout', function () {
 })->name('logout');
 
 // Admin Panel
-Route::get('/admin-panel', function () {
+Route::get('/adminPanel', function () {
     return view('Admin.adminPanel'); 
 })->name('adminPanel');
