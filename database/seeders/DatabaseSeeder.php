@@ -24,5 +24,7 @@ class DatabaseSeeder extends Seeder
         $this->call(EventTypesSeeder::class);
         $this->call(RoomsSeeder::class);
         $this->call(EventStatusSeeder::class);
+        $this->call(EventCreatorsSeeder::class);
+        $this->call(EventsSeeder::class);
     }
 }
