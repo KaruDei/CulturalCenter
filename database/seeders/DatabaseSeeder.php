@@ -29,5 +29,6 @@ class DatabaseSeeder extends Seeder
         $this->call(EventsSeeder::class);
         $this->call(ActorRolesSeeder::class);
         $this->call(ActorsSeeder::class);
+        $this->call(EventActorsSeeder::class);
     }
 }

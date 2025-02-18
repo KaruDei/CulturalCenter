@@ -6,7 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Actors extends Model
 {
-    public function actorRoles () {
+    public function actorRoles() {
         return $this->belongsTo(ActorRoles::class);
+    }
+
+    public function eventActors() {
+        return $this->hasMany(EventActors::class);
     }
 }
