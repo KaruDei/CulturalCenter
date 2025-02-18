@@ -1,6 +1,6 @@
 <x-layout>
-    <div class="p-12 mt-10 mb-10 bg-floral-white rounded-xl shadow-2xl border border-amber-100">
-    <div class="bg-floral-white rounded-xl shadow-2xl p-12 max-w-4xl border border-amber-100"> <!-- Рамка "под золото" -->
+    <div class="flex flex-col items-center justify-center min-h-screen">
+        <div class="info-aboutus bg-floral-white rounded-xl shadow-2xl p-12 max-w-4xl border border-amber-100 "> 
         <h1 class="text-4xl font-bold text-teal-800 mb-8 border-b-2 border-amber-200 pb-2">Позвольте нам связаться с вами</h1>
 
         <section class="mb-10">

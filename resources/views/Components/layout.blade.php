@@ -13,31 +13,45 @@
 <body class="h-full bg-linen text-gray-800">
     <div class="flex flex-col h-full">
 
-        <header class="bg-old-lace shadow-md py-6 border-b-2 border-amber-200"> <!-- Рамка "под золото" -->
+        <header class="bg-white shadow-md py-6 border-b-2 border-amber-200 fixed w-full z-10"> <!-- Замените на непрозрачный цвет -->
             <div class="container mx-auto flex items-center justify-between">
                 <a href="{{Route('home')}}" class="text-3xl font-bold text-teal-800 hover:text-amber-500 transition duration-300"> <!-- Золото при наведении -->
                     Cultural Center
                 </a>
                 <nav>
                     <ul class="flex space-x-8">
-                        <li><a href="{{Route('home')}}" class="text-teal-700 hover:text-amber-500 transition duration-300">Главная</a></li> <!-- Золото при наведении -->
+                        <li><a href="{{Route('home')}}" class="text-teal-700 hover:text-amber-500 transition duration-300">Главная</a></li>
+
                         <li><a href="{{Route('events')}}" class="text-teal-700 hover:text-amber-500 transition duration-300">Мероприятия</a></li>
+
                         <li><a href="{{Route('exhibitions')}}" class="text-teal-700 hover:text-amber-500 transition duration-300">Выставки</a></li>
+
                         <li><a href="{{Route('aboutUs')}}" class="text-teal-700 hover:text-amber-500 transition duration-300">О нас</a></li>
+                        
                         <li><a href="{{Route('contacts')}}" class="text-teal-700 hover:text-amber-500 transition duration-300">Контакты</a></li>
-                        <li><a href="{{Route('profile')}}" class="text-teal-700 hover:text-amber-500 transition duration-300">Профиль</a></li>
-                        <li><a href="{{Route('authorization')}}" class="text-teal-700 hover:text-amber-500 transition duration-300">Авторизация</a></li>
-                        <li><a href="{{Route('registration')}}" class="text-teal-700 hover:text-amber-500 transition duration-300">Регистрация</a></li>
-                        <li><a href="{{Route('logout')}}" class="text-teal-700 hover:text-amber-500 transition duration-300">Выход</a></li>
+
+                        @guest
+                           
+                            <li><a href="{{Route('authorization')}}" class="text-teal-700 hover:text-amber-500 transition duration-300">Авторизация</a></li>
+
+                            <li><a href="{{Route('registration')}}" class="text-teal-700 hover:text-amber-500 transition duration-300">Регистрация</a></li>
+                           
+                        @endguest
+
+                        @auth
+                            <li><a href="{{Route('profile')}}" class="text-teal-700 hover:text-amber-500 transition duration-300">Профиль</a></li>
+                            
+                            <li><a href="{{Route('logout')}}" class="text-teal-700 hover:text-amber-500 transition duration-300">Выход</a></li>
+                        @endauth
+                       
+                        
                     </ul>
                 </nav>
             </div>
         </header>
-
-        <main class="flex flex-auto justify-center items-center py-12">
-            
+        
+        <main class=" flex-auto">
                 {{ $slot }}
-           
         </main>
 
         <footer class="bg-old-lace text-teal-700 py-4 text-center border-t border-amber-200"> <!-- Рамка "под золото" -->

@@ -1,5 +1,6 @@
 <x-layout>
-    <div class="p-12 mt-10 mb-10 bg-floral-white rounded-xl shadow-2xl border border-amber-100 max-w-md mx-auto">
+    <div class="flex flex-col items-center justify-center min-h-screen">
+        <div class="info-aboutus bg-floral-white rounded-xl shadow-2xl p-12 max-w-4xl border border-amber-100 "> 
         <h1 class="text-4xl font-bold text-teal-800 mb-8 border-b-2 border-amber-200 pb-2 text-center">Авторизация</h1>
 
         <form action="{{ Route('authorization') }}" method="post" class="space-y-6">
@@ -7,14 +8,14 @@
             <div>
                 <label for="email" class="block text-gray-700 text-lg font-medium mb-2">Ваш почтовый адрес:</label>
                 <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-old-lace" placeholder="Введите ваш email">
-                @error('email')
+                @error('failAuth')
                     <p class="text-red-500 text-sm mt-3">{{$message}}</p>
                 @enderror
             </div>
             <div>
                 <label for="password" class="block text-gray-700 text-lg font-medium mb-2">Пароль:</label>
                 <input type="password" id="password" name="password" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-old-lace" placeholder="Введите ваш пароль">
-                @error('password')
+                @error('failAuth')
                     <p class="text-red-500 text-sm mt-3">{{$message}}</p>
                 @enderror
             </div>
