@@ -7,19 +7,23 @@ use Illuminate\Database\Eloquent\Model;
 class Events extends Model
 {
     // Add links
-    public function rooms () {
+    public function rooms() {
         return $this->belongsTo(Rooms::class);
     }
 
-    public function eventStatus () {
+    public function eventStatus() {
         return $this->belongsTo(EventStatus::class);
     }
 
-    public function eventTypes () {
+    public function eventTypes() {
         return $this->belongsTo(EventTypes::class);
     }
 
-    public function creators () {
+    public function creators() {
         return $this->belongsTo(EventCreators::class);
+    }
+
+    public function eventScripts() {
+        return $this->belongsTo(EventScripts::class);
     }
 }

@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\EventCreators;
 use App\Models\Events;
+use App\Models\EventScripts;
 use App\Models\EventStatus;
 use App\Models\EventTypes;
 use App\Models\Rooms;
@@ -27,6 +28,7 @@ class EventsSeeder extends Seeder
                 'time' => '12:01:54',
                 'duration' => 78,
                 'price' => 120,
+                'id_event_script' => EventScripts::first()->where('title', 'Сценарий для фильма Князь Владимир')->value('id'),
                 'id_creator' => EventCreators::first()->where('creator', 'Культурный центр')->value('id'),
                 'id_event_status' => EventStatus::first()->where('status', 'Запланированно')->value('id')
             ]
@@ -42,6 +44,7 @@ class EventsSeeder extends Seeder
                 'time' => '12:00:14',
                 'duration' => 30,
                 'price' => 250,
+                'id_event_script' => EventScripts::first()->where('title', 'Какой то сценарий к какому то мероприятию')->value('id'),
                 'id_creator' => EventCreators::first()->where('creator', 'Some company')->value('id'),
                 'id_event_status' => EventStatus::first()->where('status', 'Запланированно')->value('id')
             ]
