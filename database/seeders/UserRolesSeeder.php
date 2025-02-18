@@ -13,7 +13,7 @@ class UserRolesSeeder extends Seeder
      */
     public function run(): void
     {
-        UserRoles::firstOrCreate(['role' => 'admin']);
-        UserRoles::firstOrCreate(['role' => 'user']);
+        UserRoles::updateOrCreate(['role' => 'admin']);
+        UserRoles::updateOrCreate(['role' => 'user']);
     }
 }

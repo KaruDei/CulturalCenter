@@ -13,7 +13,7 @@ class ActorRolesSeeder extends Seeder
      */
     public function run(): void
     {
-        ActorRoles::create(['role' => 'Ведущий']);
-        ActorRoles::create(['role' => 'Актер']);
+        ActorRoles::updateOrCreate(['role' => 'Ведущий']);
+        ActorRoles::updateOrCreate(['role' => 'Актер']);
     }
 }

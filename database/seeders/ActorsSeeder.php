@@ -14,7 +14,7 @@ class ActorsSeeder extends Seeder
      */
     public function run(): void
     {
-        Actors::create(['full_name' => "Иванов Иван Ивановчи", 'id_actor_role' => ActorRoles::first()->where('role', 'Ведущий')->value('id')]);
-        Actors::create(['full_name' => "Гончаров Гончар Гончарович", 'id_actor_role' => ActorRoles::first()->where('role', 'Актер')->value('id')]);
+        Actors::updateOrCreate(['full_name' => "Иванов Иван Ивановчи"], ['id_actor_role' => ActorRoles::first()->where('role', 'Ведущий')->value('id')]);
+        Actors::updateOrCreate(['full_name' => "Гончаров Гончар Гончарович"], ['id_actor_role' => ActorRoles::first()->where('role', 'Актер')->value('id')]);
     }
 }

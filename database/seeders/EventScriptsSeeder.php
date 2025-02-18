@@ -13,16 +13,20 @@ class EventScriptsSeeder extends Seeder
      */
     public function run(): void
     {
-        EventScripts::create(
+        EventScripts::updateOrCreate(
             [
-                'title' => 'Сценарий для фильма Князь Владимир', 
+                'title' => 'Сценарий для фильма Князь Владимир'
+            ],
+            [
                 'content' => 'Зрители содятся по местам. Выключается свет. Включается фильм. Фильм заканчивается. Включается свет. Зрители выходят из зала.'
             ]
         );
 
-        EventScripts::create(
+        EventScripts::updateOrCreate(
             [
-                'title' => 'Какой то сценарий к какому то мероприятию', 
+                'title' => 'Какой то сценарий к какому то мероприятию'
+            ],
+            [
                 'content' => 'Что то происходит ¯\_(ツ)_/¯'
             ]
         );
