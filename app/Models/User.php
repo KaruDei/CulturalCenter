@@ -21,6 +21,7 @@ class User extends Authenticatable
         'full_name',
         'email',
         'password',
+        'id_user_role',
     ];
 
     // Add link for UserRoles

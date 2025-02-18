@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -46,16 +47,16 @@ Route::get('/profile', function () {
 Route::get('/authorization', function () {
     return view('Auth.authorization');
 })->name('authorization');
+Route::post('/authorization', [UserController::class, 'UserAuthorization']);
 
 // Registration
 Route::get('/registration', function () {
     return view('Auth.registration'); 
 })->name('registration');
+Route::post('/registration', [UserController::class, 'UserRegistration']);
 
 // Logout
-Route::get('/logout', function () {
-    return redirect()->route('home'); 
-})->name('logout');
+Route::get('/logout', [UserController::class, 'UserLogout'])->name('logout');
 
 // Admin Panel
 Route::get('/adminPanel', function () {
