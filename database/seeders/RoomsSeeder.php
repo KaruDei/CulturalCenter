@@ -13,8 +13,8 @@ class RoomsSeeder extends Seeder
      */
     public function run(): void
     {
-        Rooms::updateOrCreate(['number' => 101, 'seats' => 25]);
-        Rooms::updateOrCreate(['number' => 102, 'seats' => 50]);
-        Rooms::updateOrCreate(['number' => 103, 'seats' => 100]);
+        Rooms::updateOrCreate(['number' => 101]);
+        Rooms::updateOrCreate(['number' => 102]);
+        Rooms::updateOrCreate(['number' => 103]);
     }
 }
