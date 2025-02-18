@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ env('APP_NAME') }}</title>
     @vite(['resources\css\app.css', 'resources\js\app.js'])
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +22,7 @@
                     <ul class="flex space-x-8">
                         <li><a href="{{Route('home')}}" class="text-teal-700 hover:text-amber-500 transition duration-300">Главная</a></li> <!-- Золото при наведении -->
                         <li><a href="{{Route('events')}}" class="text-teal-700 hover:text-amber-500 transition duration-300">Мероприятия</a></li>
-                        <li><a href="{{Route('aboutUs')}}" class="text-teal-700 hover:text-amber-500 transition duration-300">Услуги</a></li>
+                        <li><a href="{{Route('exhibitions')}}" class="text-teal-700 hover:text-amber-500 transition duration-300">Выставки</a></li>
                         <li><a href="{{Route('aboutUs')}}" class="text-teal-700 hover:text-amber-500 transition duration-300">О нас</a></li>
                         <li><a href="{{Route('contacts')}}" class="text-teal-700 hover:text-amber-500 transition duration-300">Контакты</a></li>
                         <li><a href="{{Route('profile')}}" class="text-teal-700 hover:text-amber-500 transition duration-300">Профиль</a></li>
