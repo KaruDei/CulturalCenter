@@ -26,4 +26,8 @@ class Events extends Model
     public function eventScripts() {
         return $this->belongsTo(EventScripts::class);
     }
+
+    public function exhibitions() {
+        return $this->belongsTo(Exhibitions::class);
+    }
 }
