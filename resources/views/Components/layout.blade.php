@@ -35,7 +35,9 @@
         </header>
 
         <main class="flex flex-auto justify-center items-center py-12">
+            
                 {{ $slot }}
+           
         </main>
 
         <footer class="bg-old-lace text-teal-700 py-4 text-center border-t border-amber-200"> <!-- Рамка "под золото" -->
