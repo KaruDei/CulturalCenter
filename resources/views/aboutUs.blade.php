@@ -1,5 +1,6 @@
 <x-layout>
     <div class="p-12 mt-10 mb-10 bg-floral-white rounded-xl shadow-2xl border border-amber-100"> <!-- Фон, рамка и тень в стиле бального зала -->
+    <div class="bg-floral-white rounded-xl shadow-2xl p-12 max-w-4xl border border-amber-100"> <!-- Рамка "под золото" -->
         <h1 class="text-4xl font-bold text-teal-800 mb-8 border-b-2 border-amber-200 pb-2">О нас</h1> <!-- Золотая граница под заголовком -->
 
         <section class="mb-10">
@@ -45,5 +46,6 @@
                 <!-- Добавьте больше отзывов по мере необходимости -->
             </div>
         </section>
+</div>
     </div>
 </x-layout>
