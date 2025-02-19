@@ -1,4 +1,4 @@
-<x-layout-admin>
+<x-admin-layout>
     <div class="flex flex-col items-center justify-center min-h-screen">
         <div class="info-aboutus bg-floral-white rounded-xl shadow-2xl p-12 max-w-4xl border border-amber-100 "> 
         <h1 class="text-4xl font-bold text-teal-800 mb-8 border-b-2 border-amber-200 pb-2 text-center">Авторизация</h1>
@@ -39,4 +39,4 @@
             </div>
         </form>
     </div>
-</x-layout-admin>
+</x-admin-layout>
