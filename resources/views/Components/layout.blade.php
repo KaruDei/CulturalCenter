@@ -50,7 +50,7 @@
             </div>
         </header>
         
-        <main class=" flex-auto mt-40">
+        <main class=" flex-auto mt-40 mb-20">
                 {{ $slot }}
         </main>
 

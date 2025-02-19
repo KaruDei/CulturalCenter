@@ -59,3 +59,24 @@ Route::get('/logout', [UserController::class, 'UserLogout'])->name('logout');
 Route::get('/adminPanel', function () {
     return view('Admin.adminPanel'); 
 })->name('adminPanel');
+
+// User
+Route::get('/adminUser', function () {
+    return view('Admin.adminUser'); 
+})->name('adminUser');
+
+// Orders
+Route::get('/adminOrders', function () {
+    return view('Admin.adminOrders'); 
+})->name('adminOrders');
+
+// Events
+Route::get('/adminEvents', function () {
+    return view('Admin.adminEvents'); 
+})->name('adminEvents');
+
+// Exhibitions
+Route::get('/adminExhibitions', function () {
+    return view('Admin.adminExhibitions'); 
+})->name('adminExhibitions');
+
