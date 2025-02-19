@@ -13,7 +13,7 @@
 <body class="h-full bg-linen text-gray-800">
     <div class="flex flex-col h-full">
 
-        <header class="bg-white shadow-md py-6 border-b-2 border-amber-200 fixed w-full z-10"> <!-- Замените на непрозрачный цвет -->
+        <header class=" bg-white shadow-md py-6 border-b-2 border-amber-200 fixed w-full z-10"> <!-- Замените на непрозрачный цвет -->
             <div class="container mx-auto flex items-center justify-between">
                 <a href="{{Route('home')}}" class="text-3xl font-bold text-teal-800 hover:text-amber-500 transition duration-300"> <!-- Золото при наведении -->
                     Cultural Center
@@ -50,7 +50,7 @@
             </div>
         </header>
         
-        <main class=" flex-auto">
+        <main class=" flex-auto mt-40">
                 {{ $slot }}
         </main>
 
