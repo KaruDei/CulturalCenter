@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
@@ -13,12 +14,8 @@ Route::get('/', function () {
 })->name('home');
 
 // Events
-Route::get('/events', function () {
-   return view('events'); 
-})->name('events');
-Route::get('/events/{id}', function ($id) {
-    return view('event', ['id' => $id]); 
-})->name('event');
+Route::get('/events', [EventController::class, 'GetAllEventRecords'])->name('events');
+Route::get('/events/{id}', [EventController::class, 'GetEventRecord'])->name('event');
 
  // Exhibitions
 Route::get('/exhibitions', function () {
