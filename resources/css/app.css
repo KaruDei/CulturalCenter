@@ -4,9 +4,13 @@
 
 body {
     font-family: 'Lora', serif !important; /* Изящный шрифт с засечками */
+    overflow-x: hidden;
 }
 
 .info-aboutus {
     margin-top: 130px;
     margin-bottom: 45px;
+}
+h2{
+    font-size: 25px;
 }
