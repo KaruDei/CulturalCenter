@@ -7,10 +7,11 @@ body {
     overflow-x: hidden;
 }
 
-.info-aboutus {
-    margin-top: 130px;
-    margin-bottom: 45px;
-}
 h2{
     font-size: 25px;
+}
+
+/* Маркер в профиле */
+li button::before {
+    font-size: 1.2em; /* Пример: немного больше размер */
 }
