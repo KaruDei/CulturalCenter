@@ -7,11 +7,33 @@ body {
     overflow-x: hidden;
 }
 
+/* .info-aboutus {
+    margin-top: 130px;
+    margin-bottom: 45px;
+} */
 h2{
     font-size: 25px;
+}
+.checkbox-theatre{
+    width: 100px;
+    height: 100px;
+    display: none;
+}
+.label-theatre{
+    display: none;
+}
+.asdd:hover .asd {
+    top: -200px;
+    transition: top 0.3s;
+} 
+.asd {
+    top: 0;
+    position: relative;
 }
 
 /* Маркер в профиле */
 li button::before {
     font-size: 1.2em; /* Пример: немного больше размер */
 }
+
+
