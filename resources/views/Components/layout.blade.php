@@ -50,11 +50,11 @@
             </div>
         </header>
         
-        <main class=" flex-auto">
+        <main class=" flex-auto mt-40">
                 {{ $slot }}
         </main>
 
-        <footer class=" mt-20 bg-old-lace text-teal-700 py-4 text-center border-t border-amber-200"> <!-- Рамка "под золото" -->
+        <footer class=" bg-old-lace text-teal-700 py-4 text-center border-t border-amber-200"> <!-- Рамка "под золото" -->
             <p>&copy; 2025. Все права защищены.</p>
         </footer>
     </div>
