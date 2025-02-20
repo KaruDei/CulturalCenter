@@ -39,9 +39,9 @@
                 </div>
 
                 <div>
-                    <label for="avatar" class="block text-gray-700 text-lg font-medium mb-2">Выберите аватар:</label>
-                    <input type="file" id="avatar" name="avatar" accept="image/*" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-old-lace">
-                    @error('avatar')
+                    <label for="picture" class="block text-gray-700 text-lg font-medium mb-2">Выберите аватар:</label>
+                    <input type="file" id="picture" name="picture" accept="image/*" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-old-lace">
+                    @error('picture')
                         <p class="text-red-500 text-sm mt-3">{{$message}}</p>
                     @enderror
                 </div>
