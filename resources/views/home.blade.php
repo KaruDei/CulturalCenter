@@ -1,26 +1,58 @@
 <x-layout>
     <div class="flex flex-col">
-        <div class="w-screen h-[600px] relative mt-[-80px] flex ">
-            <div id="next_btn" class="w-40 h-full bg-black absolute z-40 left-0 opacity-20 hover:opacity-50 cursor-pointer"></div>
-                <div id="slider-item-1" class="slider-item bg-gray-500 w-screen opacity-100 h-full z-30  absolute"></div>
-                <div id="slider-item-2" class="slider-item bg-red-500 w-screen opacity-0 h-full  z-30  absolute"></div>
-                <div id="slider-item-3" class="slider-item bg-blue-500 w-screen opacity-0 h-full z-30  absolute"></div>
-            <div id="prev_btn" class="w-40 h-full bg-black absolute z-40 right-0 opacity-20 hover:opacity-50 cursor-pointer"></div>
+        <div class="slider">
+                <img class="slider-item slider-item-1" src="{{ asset('images/0QNStUuWe11UCkUaSeUqRQ.png') }}" alt="">
+                <img class="slider-item slider-item-2" src="{{ asset('images/1739989222-BobStoneBeginer.png') }}" alt="">
+                <img class="slider-item slider-item-3" src="{{ asset('images/filters_quality(95)format(webp).png') }}" alt="">
         </div>
 
-        <div class="flex flex-col container items-stretch ml-auto mr-auto">
-                <h1 class="text-5xl font-medium text-teal-800 mb-10 mt-10 mx-auto ">Ближайшие мероприятия</h1>
+        <div class="events-container ">
+                <h1>Ближайшие мероприятия</h1>
 
 
-                <div class="grid grid-cols-4 gap-5">
+                <div class="event-grid grid grid-cols-4 gap-5">
 
-                    <div class="anim-parent bg-floral-white rounded-xl shadow-2xl max-w-4xl border border-amber-100  w-[400fr] h-[600px] text-center overflow-hidden group transition-transform duration-150">                     
-                        <div  class=" w-full h-[540px] bg-gray-500 relative group hover:top[200px] transition-transform duration-150"></div> <!-- этот див вместо картинки  -->
-                        <div class="anim z-40 relative top-0 bg-white">
-                            <h2 class="mt-3 mb-3">Название</h2>
-                            <p class="ml-5 mr-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi culpa earum nobis modi, beatae dolorum placeat consequuntur, dolore itaque consequatur, amet quas iste libero non obcaecati facere odit labore. Id.</p>      
+                    <div src="" class="event-item">                     
+                        <img class="event-img">
+                        <div class="event-text">
+                            <h2>Название</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi culpa earum nobis modi, beatae dolorum placeat consequuntur, dolore itaque consequatur, amet quas iste libero non obcaecati facere odit labore. Id.</p>      
                         </div>
                     </div>
+
+                    <div src="" class="event-item">                     
+                        <img class="event-img">
+                        <div class="event-text">
+                            <h2>Название</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi culpa earum nobis modi, beatae dolorum placeat consequuntur, dolore itaque consequatur, amet quas iste libero non obcaecati facere odit labore. Id.</p>      
+                        </div>
+                    </div>
+
+                    <div src="" class="event-item">                     
+                        <img class="event-img">
+                        <div class="event-text">
+                            <h2>Название</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi culpa earum nobis modi, beatae dolorum placeat consequuntur, dolore itaque consequatur, amet quas iste libero non obcaecati facere odit labore. Id.</p>      
+                        </div>
+                    </div>
+
+                    <div src="" class="event-item">                     
+                        <img class="event-img">
+                        <div class="event-text">
+                            <h2>Название</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi culpa earum nobis modi, beatae dolorum placeat consequuntur, dolore itaque consequatur, amet quas iste libero non obcaecati facere odit labore. Id.</p>      
+                        </div>
+                    </div>
+
+                    <div src="" class="event-item">                     
+                        <img class="event-img">
+                        <div class="event-text">
+                            <h2>Название</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi culpa earum nobis modi, beatae dolorum placeat consequuntur, dolore itaque consequatur, amet quas iste libero non obcaecati facere odit labore. Id.</p>      
+                        </div>
+                    </div>
+
+                   
 
                        
                 </div>
@@ -50,28 +82,6 @@
                             <p class="text-teal-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus odit numquam cupiditate rem, facilis porro aperiam, vel modi fuga suscipit repellat ipsam ut fugit totam! Mollitia harum nisi perferendis ad?</p>
                         </div>
                     </div>
-                    <div class="bg-floral-white rounded-xl shadow-2xl border border-amber-100 w-full h-[300px] flex flex-row overflow-hidden mt-10 mb-10">
-                        <div  class="w-1/3 h-full bg-gray-500"></div> <!-- этот див вместо картинки  -->
-                        <div class="flex flex-col px-5 pt-5">
-                            <h2 class="text-teal-700">Имя</h2>
-                            <p class="text-teal-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus odit numquam cupiditate rem, facilis porro aperiam, vel modi fuga suscipit repellat ipsam ut fugit totam! Mollitia harum nisi perferendis ad?</p>
-                        </div>
-                    </div>
-                    <div class="bg-floral-white rounded-xl shadow-2xl border border-amber-100 w-full h-[300px] flex flex-row overflow-hidden mt-10 mb-10">
-                        <div  class="w-1/3 h-full bg-gray-500"></div> <!-- этот див вместо картинки  -->
-                        <div class="flex flex-col px-5 pt-5">
-                            <h2 class="text-teal-700">Имя</h2>
-                            <p class="text-teal-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus odit numquam cupiditate rem, facilis porro aperiam, vel modi fuga suscipit repellat ipsam ut fugit totam! Mollitia harum nisi perferendis ad?</p>
-                        </div>
-                    </div>
-                    <div class="bg-floral-white rounded-xl shadow-2xl border border-amber-100 w-full h-[300px] flex flex-row overflow-hidden mt-10 mb-10">
-                        <div  class="w-1/3 h-full bg-gray-500"></div> <!-- этот див вместо картинки  -->
-                        <div class="flex flex-col px-5 pt-5">
-                            <h2 class="text-teal-700">Имя</h2>
-                            <p class="text-teal-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus odit numquam cupiditate rem, facilis porro aperiam, vel modi fuga suscipit repellat ipsam ut fugit totam! Mollitia harum nisi perferendis ad?</p>
-                        </div>
-                    </div>
-
             </div>
 
         </div>

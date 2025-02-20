@@ -22,16 +22,6 @@ h2{
 .label-theatre{
     display: none;
 }
-.anim-parent:hover .anim {
-    top: -200px;
-    transition: top 0.3s ease; /* Плавный переход при подъёме */
-}
-
-.anim {
-    top: 0;
-    position: relative;
-    transition: top 0.3s ease; /* Плавный переход при опускании */
-}
 /* Маркер в профиле */
 li button::before {
     font-size: 1.2em; /* Пример: немного больше размер */
