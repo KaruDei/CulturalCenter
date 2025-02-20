@@ -17,15 +17,15 @@ class EventActorsSeeder extends Seeder
     {
         EventActors::updateOrCreate(
             [
-                'id_event' => Events::first()->where('title', 'Князь Владимир')->value('id'),
-                'id_actor' => Actors::first()->where('full_name', 'Гончаров Гончар Гончарович')->value('id'),
+                'id_event' => Events::where('title', 'Князь Владимир')->first()->value('id'),
+                'id_actor' => Actors::where('full_name', 'Гончаров Гончар Гончарович')->first()->value('id'),
             ]
         );
 
         EventActors::updateOrCreate(
             [
-                'id_event' => Events::first()->where('title', 'Шоу')->value('id'),
-                'id_actor' => Actors::first()->where('full_name', 'Иванов Иван Ивановчи')->value('id'),
+                'id_event' => Events::where('title', 'Шоу')->first()->value('id'),
+                'id_actor' => Actors::where('full_name', 'Иванов Иван Иванович')->first()->value('id'),
             ]
         );
     }

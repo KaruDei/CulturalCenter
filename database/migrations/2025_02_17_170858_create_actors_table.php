@@ -14,7 +14,9 @@ return new class extends Migration
         Schema::create('actors', function (Blueprint $table) {
             $table->id();
             $table->string('full_name')->unique();
+            $table->text('description');
             $table->foreignId('id_actor_role')->constrained('actor_roles')->onDelete('cascade');
+            $table->string('picture')->nullable();
             $table->timestamps();
         });
     }
