@@ -10,8 +10,8 @@ try {
 
     nextButton.onclick = function() {
 
-        sliderItems[currentIndex].classList.remove('visible');
-        sliderItems[currentIndex].classList.add('hidden');
+        sliderItems[currentIndex].classList.remove('opacity-100');
+        sliderItems[currentIndex].classList.add('opacity-0');
 
         currentIndex++;
         
@@ -19,13 +19,13 @@ try {
             currentIndex = 0;
         }
 
-        sliderItems[currentIndex].classList.remove('hidden');
-        sliderItems[currentIndex].classList.add('visible');
+        sliderItems[currentIndex].classList.remove('opacity-0');
+        sliderItems[currentIndex].classList.add('opacity-100');
         
      }
      prevButton.onclick = function() { 
-         sliderItems[currentIndex].classList.remove('visible'); 
-         sliderItems[currentIndex].classList.add('hidden'); 
+         sliderItems[currentIndex].classList.remove('opacity-100'); 
+         sliderItems[currentIndex].classList.add('opacity-0'); 
 
          if (currentIndex <= 0) { 
              currentIndex = sliderItems.length - 1; 
@@ -33,8 +33,8 @@ try {
              currentIndex--; 
          }
    
-          sliderItems[currentIndex].classList.remove("hidden");  
-          sliderItems[currentIndex].classList.add("visible");   
+          sliderItems[currentIndex].classList.remove("opacity-0");  
+          sliderItems[currentIndex].classList.add("opacity-100");   
       }  
 
 } catch (error) {
