@@ -1,11 +1,11 @@
 <x-layout>
     <div class="flex flex-col">
-        <div class="flex justify-center w-screen h-[600px] relative mt-[-80px]">
-            <div id="next_btn" class="w-40 h-full bg-black absolute left-0 opacity-20 hover:opacity-50 cursor-pointer"></div>
-            <div id="slider-item-1" class="bg-gray-500 w-full h-full flex justify-between gap-14"></div>
-            <div id="slider-item-2" class=" bg-red-500 w-full h-full hidden"></div>
-            <div id="slider-item-3" class=" bg-blue-500 w-full h-full hidden "></div>
-            <div id="prev_btn" class="w-40 h-full bg-black absolute right-0 opacity-20 hover:opacity-50 cursor-pointer"></div>
+        <div class="w-screen h-[600px] relative mt-[-80px] flex ">
+            <div id="next_btn" class="w-40 h-full bg-black absolute z-40 left-0 opacity-20 hover:opacity-50 cursor-pointer"></div>
+                <div id="slider-item-1" class="slider-item bg-gray-500 w-screen opacity-100 h-full z-30  absolute"></div>
+                <div id="slider-item-2" class="slider-item bg-red-500 w-screen opacity-0 h-full  z-30  absolute"></div>
+                <div id="slider-item-3" class="slider-item bg-blue-500 w-screen opacity-0 h-full z-30  absolute"></div>
+            <div id="prev_btn" class="w-40 h-full bg-black absolute z-40 right-0 opacity-20 hover:opacity-50 cursor-pointer"></div>
         </div>
 
         <div class="flex flex-col container items-stretch ml-auto mr-auto">
@@ -14,41 +14,9 @@
 
                 <div class="grid grid-cols-4 gap-5">
 
-                    <div class=" bg-floral-white rounded-xl shadow-2xl max-w-4xl border border-amber-100  w-[400fr] h-[600px] text-center overflow-hidden group transition-transform duration-150">                     
-                        <div  class="w-full h-[540px] bg-gray-500 relative group hover:top[200px] transition-transform duration-150"></div> <!-- этот див вместо картинки  -->
-                        <div class=" z-50 relative top-0 bg-white">
-                            <h2 class="mt-3 mb-3">Название</h2>
-                            <p class="ml-5 mr-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi culpa earum nobis modi, beatae dolorum placeat consequuntur, dolore itaque consequatur, amet quas iste libero non obcaecati facere odit labore. Id.</p>      
-                        </div>
-                    </div>
-
-                    <div class=" bg-floral-white rounded-xl shadow-2xl max-w-4xl border border-amber-100  w-[400fr] h-[600px] text-center overflow-hidden asdd">                     
-                        <div  class="w-full h-[540px] bg-gray-500 relative"></div> <!-- этот див вместо картинки  -->
-                        <div class="asd relative bg-white">
-                            <h2 class="mt-3 mb-3">Название</h2>
-                            <p class="ml-5 mr-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi culpa earum nobis modi, beatae dolorum placeat consequuntur, dolore itaque consequatur, amet quas iste libero non obcaecati facere odit labore. Id.</p>      
-                        </div>
-                    </div>
-
-                    <div class=" bg-floral-white rounded-xl shadow-2xl max-w-4xl border border-amber-100  w-[400fr] h-[600px] text-center overflow-hidden asdd">                     
-                        <div  class="w-full h-[540px] bg-gray-500 relative"></div> <!-- этот див вместо картинки  -->
-                        <div class="asd relative bg-white">
-                            <h2 class="mt-3 mb-3">Название</h2>
-                            <p class="ml-5 mr-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi culpa earum nobis modi, beatae dolorum placeat consequuntur, dolore itaque consequatur, amet quas iste libero non obcaecati facere odit labore. Id.</p>      
-                        </div>
-                    </div>
-
-                    <div class=" bg-floral-white rounded-xl shadow-2xl max-w-4xl border border-amber-100  w-[400fr] h-[600px] text-center overflow-hidden asdd">                     
-                        <div  class="w-full h-[540px] bg-gray-500 relative"></div> <!-- этот див вместо картинки  -->
-                        <div class="asd relative bg-white">
-                            <h2 class="mt-3 mb-3">Название</h2>
-                            <p class="ml-5 mr-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi culpa earum nobis modi, beatae dolorum placeat consequuntur, dolore itaque consequatur, amet quas iste libero non obcaecati facere odit labore. Id.</p>      
-                        </div>
-                    </div>
-
-                    <div class=" bg-floral-white rounded-xl shadow-2xl max-w-4xl border border-amber-100  w-[400fr] h-[600px] text-center overflow-hidden asdd">                     
-                        <div  class="w-full h-[540px] bg-gray-500 relative"></div> <!-- этот див вместо картинки  -->
-                        <div class="asd relative bg-white">
+                    <div class="anim-parent bg-floral-white rounded-xl shadow-2xl max-w-4xl border border-amber-100  w-[400fr] h-[600px] text-center overflow-hidden group transition-transform duration-150">                     
+                        <div  class=" w-full h-[540px] bg-gray-500 relative group hover:top[200px] transition-transform duration-150"></div> <!-- этот див вместо картинки  -->
+                        <div class="anim z-40 relative top-0 bg-white">
                             <h2 class="mt-3 mb-3">Название</h2>
                             <p class="ml-5 mr-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi culpa earum nobis modi, beatae dolorum placeat consequuntur, dolore itaque consequatur, amet quas iste libero non obcaecati facere odit labore. Id.</p>      
                         </div>
@@ -59,13 +27,13 @@
         </div>
 
         <div class="flex justify-center h-[1000px] mt-20">
-            <div class="h-full w-1/2 pt-64 md:pl-48 ">
-                <h1 class="text-5xl text-center text-teal-700 md:text-7xl md:text-left">Станьте автором собственного мероприятия</h1>
-                <button class=" text-4xl text-teal-700 shadow-2xl border-[5px] rounded-xl border-amber-300  w-[350px] h-[80px] flex flex-col items-center pt-3 mt-10 cursor-pointer hover:border-amber-200 hover:text-teal-400  transition-colors duration-300 ">
+            <div class="h-full w-1/2 pt-64 px-auto 2xl:pl-48 ">
+                <h1 class="text-5xl text-center text-teal-700 md:text-7xl 2xl:text-left">Станьте автором мероприятия</h1>
+                <button class=" text-4xl text-teal-700 shadow-2xl border-[5px] rounded-xl border-amber-300  w-[350px] h-[80px] flex flex-col items-center mx-auto mt-10 2xl:mx-0 cursor-pointer hover:border-amber-200 hover:text-teal-400  transition-colors duration-300 ">
                     Создать
                 </button>
             </div>
-            <div class="h-full w-1/2 bg-gray-200 hidden md:block">
+            <div class="h-full w-1/2 bg-gray-200 hidden 2xl:block">
                 <!-- этот див вместо картинки  -->
             </div>
         </div>

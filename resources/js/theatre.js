@@ -1,5 +1,5 @@
 try{
-    let con = document.getElementById("con");
+    let from = document.getElementById("from-theatre");
     let o = 1;
         for (let i = 0; i < 10; i++) {
             const br = document.createElement('br')
@@ -13,8 +13,8 @@ try{
                 label.textContent = o;
                 label.className = "label-theatre"
         
-                con.appendChild(checkbox);
-                con.appendChild(label)
+                form.appendChild(checkbox);
+                form.appendChild(label)
 
                 o++
         }}

@@ -22,13 +22,18 @@ h2{
 .label-theatre{
     display: none;
 }
-.asdd:hover .asd {
+.anim-parent:hover .anim {
     top: -200px;
-    transition: top 0.3s;
-} 
-.asd {
+    transition: top 0.3s ease; /* Плавный переход при подъёме */
+}
+
+.anim {
     top: 0;
     position: relative;
+    transition: top 0.3s ease; /* Плавный переход при опускании */
+}
+.slider-item{
+    transition:opacity 2.3s ease ;
 }
 
 /* Маркер в профиле */
