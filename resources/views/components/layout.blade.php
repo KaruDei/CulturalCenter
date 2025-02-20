@@ -8,8 +8,8 @@
     @vite([
         'resources\css\app.css',
         'resources\js\app.js',
-        'resources\css\main-page.css
-        '])
+        'resources\css\main-page.css'
+        ])
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
