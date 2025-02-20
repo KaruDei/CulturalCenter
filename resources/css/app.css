@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url(main-page.css);
 
 body {
     font-family: 'Lora', serif !important; /* Изящный шрифт с засечками */
@@ -32,10 +33,6 @@ h2{
     position: relative;
     transition: top 0.3s ease; /* Плавный переход при опускании */
 }
-.slider-item{
-    transition:opacity 2.3s ease ;
-}
-
 /* Маркер в профиле */
 li button::before {
     font-size: 1.2em; /* Пример: немного больше размер */
