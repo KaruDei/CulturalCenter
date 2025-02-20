@@ -5,15 +5,15 @@
 body {
     font-family: 'Lora', serif !important; /* Изящный шрифт с засечками */
     overflow-x: hidden;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
 }
 
 /* .info-aboutus {
     margin-top: 130px;
     margin-bottom: 45px;
 } */
-h2{
-    font-size: 25px;
-}
 .checkbox-theatre{
     width: 100px;
     height: 100px;

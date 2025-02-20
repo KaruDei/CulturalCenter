@@ -18,7 +18,7 @@
                             <h2>Название</h2>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi culpa earum nobis modi, beatae dolorum placeat consequuntur, dolore itaque consequatur, amet quas iste libero non obcaecati facere odit labore. Id.</p>      
                         </div>
-                    </div>
+                    </a>
 
                     <div src="" class="event-item">                     
                         <img class="event-img">

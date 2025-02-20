@@ -1,0 +1,93 @@
+/* общие стили страниц 
+о нас, контакты, регистрация, авторизация,профиль, одиночная страница мероприятия и выстовки */
+
+.container-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.all-info {
+    /* background-color: #fff0f0; Цвет фона */
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 3rem;
+    max-width: 800px;
+    border: 1px solid #ffcc00; /* Золотая граница */
+    margin: 2rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #007f7f; /* Цвет заголовка */
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #ffcc00; /* Золотая граница под заголовком */
+    padding-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #007f7f; /* Цвет подзаголовка */
+    margin-bottom: 1rem;
+    font-size: 25px;
+}
+
+p {
+    margin-top: 0.5rem;
+    color: #4a4a4a; /* Цвет текста */
+    line-height: 1.6;
+}
+
+.logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.logos img {
+    width: 8rem; /* Ширина логотипов */
+    height: auto;
+    margin: 1rem;
+    filter: grayscale(100%);
+    transition: filter 0.3s;
+}
+
+.logos img:hover {
+    filter: grayscale(0%);
+}
+
+blockquote {
+    border-left: 4px solid #ffcc00; /* Золотая полоска отзыва */
+    padding-left: 1rem;
+    font-style: italic;
+    color: #4a4a4a; /* Цвет текста отзыва */
+    margin-bottom: 1.5rem;
+}
+
+.testimonials {
+    margin-top: 2rem; /* Отступ сверху для секции */
+}
+
+.testimonial-title {
+    font-size: 2rem; /* Размер шрифта заголовка */
+    font-weight: 600; /* Полужирный шрифт */
+    color: #007f7f; /* Цвет заголовка */
+    margin-bottom: 1rem; /* Отступ снизу */
+}
+
+.testimonial-container {
+    margin-top: 1.5rem; /* Отступ сверху для контейнера отзывов */
+}
+
+.testimonial {
+    border-left: 4px solid #ffcc00; /* Золотая полоска отзыва */
+    padding-left: 1rem; /* Отступ слева */
+    font-style: italic; /* Курсивный текст */
+    color: #4a4a4a; /* Цвет текста отзыва */
+    margin-bottom: 1.5rem; /* Отступ снизу для каждого отзыва */
+}

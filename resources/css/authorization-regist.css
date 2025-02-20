@@ -1,0 +1,122 @@
+.auth-title {
+    font-size: 2.25rem; /* Размер заголовка (text-4xl) */
+    font-weight: bold; /* Полужирный шрифт */
+    color: #008080; /* Цвет заголовка (text-teal-800) */
+    margin-bottom: 2rem; /* Отступ снизу (mb-8) */
+    border-bottom: 2px solid #fbbf24; /* Нижняя граница (border-amber-200) */
+    padding-bottom: 0.5rem; /* Отступ снизу (pb-2) */
+    text-align: center; /* Центрирование текста */
+}
+
+.remember-section {
+    display: flex; /* Используем flexbox для выравнивания */
+    align-items: center; /* Вертикальное выравнивание по центру */
+    justify-content: space-between; /* Распределение пространства между элементами */
+}
+
+.remember-flex {
+    display: flex; /* Flexbox для группы чекбокса и метки */
+    align-items: center; /* Вертикальное выравнивание по центру */
+}
+
+.remember-checkbox {
+    height: 1rem; /* Высота чекбокса */
+    width: 1rem; /* Ширина чекбокса */
+    appearance: none; /* Убираем стандартный стиль */
+    background-color: white; /* Фоновый цвет */
+    border: 1px solid #d1d5db; /* Цвет границы */
+    border-radius: 0.25rem; /* Закругление углов */
+    outline: none; /* Убираем обводку */
+    cursor: pointer; /* Курсор при наведении */
+}
+
+.remember-section {
+    display: flex; /* Используем flexbox для выравнивания */
+    align-items: center; /* Вертикальное выравнивание по центру */
+    justify-content: space-between; /* Распределение пространства между элементами */
+}
+
+.remember-flex {
+    display: flex; /* Flexbox для группы чекбокса и метки */
+    align-items: center; /* Вертикальное выравнивание по центру */
+}
+
+.remember-checkbox {
+    display: none; /* Скрываем стандартный чекбокс */
+}
+
+.remember-label {
+    position: relative; /* Для позиционирования псевдоэлемента */
+    margin-left: 0.5rem; /* Отступ слева для метки */
+    color: #1f2937; /* Цвет текста метки */
+    font-size: 1.125rem; /* Размер текста метки */
+    padding-left: 1.5rem; /* Отступ для текста метки */
+}
+
+.remember-label::before {
+    content: ''; /* Создаем пустой контент для псевдоэлемента */
+    position: absolute; /* Позиционируем относительно метки */
+    left: 0; /* Сдвигаем влево */
+    top: 50%; /* Центрируем по вертикали */
+    transform: translateY(-50%); /* Центрируем по вертикали */
+    height: 1rem; /* Высота чекбокса */
+    width: 1rem; /* Ширина чекбокса */
+    background-color: white; /* Фоновый цвет */
+    border: 2px solid #d1d5db; /* Цвет границы */
+    border-radius: 0.25rem; /* Закругление углов */
+    cursor: pointer; /* Курсор при наведении */
+}
+
+.remember-checkbox:checked + .remember-label::before {
+    /* background-color: #fbbf24; Цвет при отметке */
+    border-color: #fbbf24; /* Цвет границы при отметке */
+}
+
+.remember-checkbox:checked + .remember-label::after {
+    content: '✔'; /* Галочка */
+    position: absolute; /* Позиционируем относительно метки */
+    left: 0.2rem; /* Позиция галочки */
+    top: 50%; /* Центрируем по вертикали */
+    transform: translateY(-50%); /* Центрируем по вертикали */
+    color: fbbf24; /* Цвет галочки */
+    font-size: 1rem; /* Размер галочки */
+}
+
+.forgot-text {
+    font-size: 1.125rem; /* Размер текста для ссылки */
+}
+
+.forgot-text-link {
+    font-weight: 500; /* Полужирный шрифт для ссылки */
+    color: #fbbf24; /* Цвет ссылки */
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+.forgot-text-link:hover {
+    color: #f59e0b; /* Цвет ссылки при наведении */
+}
+
+
+/* Кнопка */
+.custom-button {
+    background-color: white; /* Белый фон */
+    border: 2px solid gold; /* Золотистая рамка */
+    color: #007f7f; /* Зеленый цвет текста */
+    font-weight: bold; /* Полужирный шрифт */
+    padding: 0.75rem 1.5rem; /* Отступы */
+    border-radius: 0.375rem; /* Закругление углов */
+    cursor: pointer; /* Указатель при наведении */
+    transition: background-color 0.3s, color 0.3s; /* Плавный переход */
+    width: 100%; /* Ширина 100% */
+}
+
+.custom-button:hover {
+    /* background-color: gold; Цвет фона при наведении */
+    /* color: white; Цвет текста при наведении */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень при наведении */
+}
+
+.custom-button:focus {
+    outline: none; /* Убираем обводку при фокусе */
+    box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.5); /* Золотистая обводка при фокусе */
+}
