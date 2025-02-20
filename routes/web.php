@@ -14,8 +14,11 @@ Route::get('/', function () {
 })->name('home');
 
 // Events
-Route::get('/events', [EventController::class, 'GetAllEventRecords'])->name('events');
-Route::get('/events/{id}', [EventController::class, 'GetEventRecord'])->name('event');
+// Route::get('/events', [EventController::class, 'GetAllEventRecords'])->name('events');
+// Route::get('/events/{id}', [EventController::class, 'GetEventRecord'])->name('event');
+
+Route::view('/events', 'events')->name('events');
+Route::view('/events/{id}', 'event')->name('event');
 
  // Exhibitions
 Route::get('/exhibitions', function () {
