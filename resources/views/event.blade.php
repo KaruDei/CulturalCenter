@@ -1,13 +1,27 @@
 <x-layout>
     <div id="con" class="hidden">
     </div>
-    <div class="container grid grid-cols-2 mx-auto bg-floral-white rounded-xl  w-full h-[600px] p-10">
-        <div class=" h-[500px] bg-gray-500 mr-20" > <!--Картинка--></div>
-            <div class="h-full overflow-x-auto ">
-                <h1 class="text-4xl mb-20">Название</h1>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus dicta asperiores dolorem! Assumenda a dignissimos possimus, ad atque, eligendi officiis illum impedit libero commodi quo, delectus voluptatum! Enim, dicta totam Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas qui exercitationem debitis sint deleniti harum beatae quasi similique recusandae soluta unde accusamus modi, consequatur reiciendis. Velit, reiciendis quo. Temporibus, vero. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis sed itaque voluptatibus, adipisci nostrum quisquam alias eum distinctio iure in provident officiis rem natus commodi officia blanditiis modi. Fuga, reiciendis. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis fuga, quos delectus, veniam eum, placeat modi nihil tenetur aliquam molestiae autem sunt unde quas dolores eius impedit voluptatibus aspernatur cum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi ipsam quas iusto amet est necessitatibus architecto, eum libero voluptatum distinctio iure adipisci odit voluptates. Adipisci aut deserunt facilis quae ad? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae voluptatum nam magnam recusandae voluptate distinctio animi temporibus deleniti placeat architecto, repellat, aut facilis dolores necessitatibus iure itaque. Temporibus, repellat culpa! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error magnam a soluta repellat. Repudiandae possimus esse porro, illo facilis veritatis asperiores quibusdam aut atque vitae excepturi, numquam blanditiis optio doloremque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe asperiores recusandae expedita quod quae pariatur sed, facere, eveniet voluptatum molestiae veritatis! Vero doloribus iure nisi! Laudantium culpa non nostrum numquam.
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus dicta asperiores dolorem! Assumenda a dignissimos possimus, ad atque, eligendi officiis illum impedit libero commodi quo, delectus voluptatum! Enim, dicta totam Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas qui exercitationem debitis sint deleniti harum beatae quasi similique recusandae soluta unde accusamus modi, consequatur reiciendis. Velit, reiciendis quo. Temporibus, vero. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis sed itaque voluptatibus, adipisci nostrum quisquam alias eum distinctio iure in provident officiis rem natus commodi officia blanditiis modi. Fuga, reiciendis. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis fuga, quos delectus, veniam eum, placeat modi nihil tenetur aliquam molestiae autem sunt unde quas dolores eius impedit voluptatibus aspernatur cum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi ipsam quas iusto amet est necessitatibus architecto, eum libero voluptatum distinctio iure adipisci odit voluptates. Adipisci aut deserunt facilis quae ad? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae voluptatum nam magnam recusandae voluptate distinctio animi temporibus deleniti placeat architecto, repellat, aut facilis dolores necessitatibus iure itaque. Temporibus, repellat culpa! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error magnam a soluta repellat. Repudiandae possimus esse porro, illo facilis veritatis asperiores quibusdam aut atque vitae excepturi, numquam blanditiis optio doloremque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe asperiores recusandae expedita quod quae pariatur sed, facere, eveniet voluptatum molestiae veritatis! Vero doloribus iure nisi! Laudantium culpa non nostrum numquam.
-                </p>
+    <div class="container mx-auto bg-floral-white rounded-xl w-full h-[600px] p-10 shadow-2xl border-2 border-amber-200">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 h-full">
+            <!-- Картинка -->
+            <div class="h-[500px] md:h-full bg-gray-500 border border-amber-200 rounded-xl overflow-hidden">
+                <img src="" alt="Изображение балета Лебединое озеро" class="w-full h-full object-cover">
             </div>
+
+            <!-- Информация о мероприятии -->
+            <div class="h-full overflow-y-auto p-4">
+                <h1 class="text-4xl font-bold text-teal-800 mb-4">Балет "Лебединое озеро"</h1>
+                <p class="text-gray-700 leading-relaxed mb-8">
+                    Приглашаем вас на волшебный вечер в мир классического балета! "Лебединое озеро" - это завораживающая история о любви, предательстве и искуплении, рассказанная языком танца под бессмертную музыку Петра Ильича Чайковского.
+                    <br><br>
+                    Вас ждет великолепная постановка, талантливые артисты, роскошные костюмы и незабываемая атмосфера. Погрузитесь в мир прекрасных лебедей, злого колдуна и принца, ищущего свою настоящую любовь.
+                    <br><br>
+                    Не упустите возможность увидеть один из самых известных и любимых балетов в мире!
+                </p>
+                 <button class="text-4xl text-teal-700 shadow-2xl border-[5px] rounded-xl border-amber-300 w-[350px] h-[80px] flex flex-col items-center pt-3 mt-10 cursor-pointer hover:border-amber-200 hover:text-teal-400 transition-colors duration-300">
+                    Купить билет
+                </button>
+            </div>
+        </div>
     </div>
 </x-layout>

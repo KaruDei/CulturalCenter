@@ -14,13 +14,13 @@
 
                 <div class="grid grid-cols-4 gap-5">
 
-                    <div class=" bg-floral-white rounded-xl shadow-2xl max-w-4xl border border-amber-100  w-[400fr] h-[600px] text-center overflow-hidden group transition-transform duration-150">                     
+                    <a href="events/1" class=" bg-floral-white rounded-xl shadow-2xl max-w-4xl border border-amber-100  w-[400fr] h-[600px] text-center overflow-hidden group transition-transform duration-150">                     
                         <div  class="w-full h-[540px] bg-gray-500 relative group hover:top[200px] transition-transform duration-150"></div> <!-- этот див вместо картинки  -->
                         <div class=" z-50 relative top-0 bg-white">
                             <h2 class="mt-3 mb-3">Название</h2>
                             <p class="ml-5 mr-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi culpa earum nobis modi, beatae dolorum placeat consequuntur, dolore itaque consequatur, amet quas iste libero non obcaecati facere odit labore. Id.</p>      
                         </div>
-                    </div>
+                    </a>
 
                     <div class=" bg-floral-white rounded-xl shadow-2xl max-w-4xl border border-amber-100  w-[400fr] h-[600px] text-center overflow-hidden asdd">                     
                         <div  class="w-full h-[540px] bg-gray-500 relative"></div> <!-- этот див вместо картинки  -->
