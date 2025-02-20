@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title')->unique();
             $table->text('description');
+            $table->string('picture')->nullable();
             $table->date('start_date');
             $table->date('end_date');
             $table->foreignId('id_event')->nullable()->constrained('events')->onDelete('cascade');

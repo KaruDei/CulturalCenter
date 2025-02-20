@@ -10,8 +10,8 @@
         'resources\js\app.js',
         'resources\css\style.css', 
         'resources\css\contact.css', 
-        'resources\css\authorization-regist.css'
-        'resources\css\main-page.css'
+        'resources\css\authorization-regist.css',
+        'resources\css\main-page.css',
         ])
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

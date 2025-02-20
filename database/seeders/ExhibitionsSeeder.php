@@ -22,6 +22,7 @@ class ExhibitionsSeeder extends Seeder
                 'description' => 'Выставка картин о великом Князе Владимире.',
                 'start_date' => '2025-02-18',
                 'end_date' => '2025-02-18',
+                'picture' => '/images/1739989222-BobStoneBeginer.png',
                 'id_event' => Events::first()->where('title', 'Князь Владимир')->value('id')
             ]
         );
