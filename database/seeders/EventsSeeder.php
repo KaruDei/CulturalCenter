@@ -28,6 +28,7 @@ class EventsSeeder extends Seeder
                 'time' => '12:01:54',
                 'duration' => 78,
                 'price' => 120,
+                'picture' => '/images/1739989222-BobStoneBeginer.png',
                 'id_event_script' => EventScripts::first()->where('title', 'Сценарий для фильма Князь Владимир')->value('id'),
                 'id_creator' => EventCreators::first()->where('creator', 'Культурный центр')->value('id'),
                 'id_event_status' => EventStatus::first()->where('status', 'Запланированно')->value('id')

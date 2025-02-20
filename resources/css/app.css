@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url(main-page.css);
 
 body {
     font-family: 'Lora', serif !important; /* Изящный шрифт с засечками */

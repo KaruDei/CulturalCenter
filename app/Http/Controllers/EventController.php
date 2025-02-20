@@ -8,19 +8,19 @@ use App\Models\Events;
 class EventController extends Controller
 {
     // Получение всех записей
-    public function GetAllEventRecords()
+    public function GetAllRecords()
     {
-        return Events::all();
+        return Events::all()->toArray();
     }
 
     // Получение одной записи
-    public function GetEventRecord($id)
+    public function GetRecord($id)
     {
-        return Events::findOrFail($id);
+        return Events::findOrFail($id)->toArray();
     }
 
     // Создание новой записи
-    public function CreateEvent(Request $request)
+    public function Create(Request $request)
     {
         $fields = $request->validate([
             'title' => 'required|min:3|max:255|unique:events',
@@ -31,19 +31,19 @@ class EventController extends Controller
             'time' => 'required',
             'duration' => 'required|numeric|gte:0',
             'price' => 'required|numeric|gte:0',
-            'poster' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'id_event_script' => 'required|numeric',
             'id_creator' => 'required|numeric',
             'id_event_status' => 'required|numeric'
         ]);
 
-        if ($request->hasFile('poster'))
+        if ($request->hasFile('picture'))
         {
-            $image = $request->file('poster');
+            $image = $request->file('picture');
             $name = time() . '-' . $image->getClientOriginalName();
             $destinationPath = public_path('/images/events');
             $image->move($destinationPath, $name);
-            $fields['poster'] = '/images/events/' . $name;
+            $fields['picture'] = '/images/events/' . $name;
         }
 
         Events::create($fields);
@@ -52,7 +52,7 @@ class EventController extends Controller
     }
 
     // Изменение записи
-    public function UpdateEvent(Request $request, $id)
+    public function Update(Request $request, $id)
     {
         $fields = $request->validate([
             'title' => 'required|min:3|max:255|unique:events,title,' . $id,
@@ -63,7 +63,7 @@ class EventController extends Controller
             'time' => 'required',
             'duration' => 'required|numeric|gte:0',
             'price' => 'required|numeric|gte:0',
-            'poster' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'id_event_script' => 'required|numeric',
             'id_creator' => 'required|numeric',
             'id_event_status' => 'required|numeric'
@@ -76,17 +76,17 @@ class EventController extends Controller
             return redirect()->back()->with('error', 'Мероприятие не найденно!');
         }
 
-        if ($request->hasFile('poster'))
+        if ($request->hasFile('picture'))
         {
-            $image = $request->file('poster');
+            $image = $request->file('picture');
             $name = time() . '-' . $image->getClientOriginalName();
             $destinationPath = public_path('/images/events');
             $image->move($destinationPath, $name);
-            $fields['poster'] = '/images/events/' . $name;
+            $fields['picture'] = '/images/events/' . $name;
         }
         else 
         {
-            $fields['poster'] = $event->poster;
+            $fields['picture'] = $event->picture;
         }
 
         $event->update($fields);
@@ -95,7 +95,7 @@ class EventController extends Controller
     }
 
     // Удаление записи
-    public function DeleteEvent($id)
+    public function Delete($id)
     {
         $event = Events::findOrFail($id);
         try {

@@ -14,8 +14,13 @@ class NewsSeeder extends Seeder
     public function run(): void
     {
         News::updateOrCreate(
-            ['title' => 'Новость 1'],
-            ['content' => 'Супер пупер новость №1!']
+            [
+                'title' => 'Новость 1'
+            ],
+            [
+                'content' => 'Супер пупер новость №1!',
+                'picture' => '/images/1739989222-BobStoneBeginer.png'
+                ]
         );
 
         News::updateOrCreate(
