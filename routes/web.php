@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
@@ -8,17 +9,11 @@ use App\Http\Controllers\UserController;
 // });
 
 // Home
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/', [PageController::class, 'HomePage'])->name('home');
 
 // Events
-Route::get('/events', function () {
-   return view('events'); 
-})->name('events');
-Route::get('/events/{id}', function ($id) {
-    return view('event', ['id' => $id]); 
-})->name('event');
+Route::get('/events', [PageController::class, 'EventsPage'])->name('events');
+Route::get('/events/{id}', [PageController::class, 'EventPage'])->name('event');
 
  // Exhibitions
 Route::get('/exhibitions', function () {

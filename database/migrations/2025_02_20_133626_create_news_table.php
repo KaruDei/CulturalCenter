@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('actors', function (Blueprint $table) {
+        Schema::create('news', function (Blueprint $table) {
             $table->id();
-            $table->string('full_name')->unique();
-            $table->text('description');
-            $table->foreignId('id_actor_role')->constrained('actor_roles')->onDelete('cascade');
+            $table->string('title')->unique();
+            $table->text('content');
             $table->string('picture')->nullable();
             $table->timestamps();
         });
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('actors');
+        Schema::dropIfExists('news');
     }
 };

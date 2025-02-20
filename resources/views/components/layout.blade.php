@@ -8,16 +8,20 @@
     @vite([
         'resources\css\app.css',
         'resources\js\app.js',
-        'resources\css\style.css', 'resources\css\contact.css', 'resources\css\authorization-regist.css'
+        'resources\css\style.css', 
+        'resources\css\contact.css', 
+        'resources\css\authorization-regist.css'
+        'resources\css\main-page.css'
         ])
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('resources/css/main-page.css') }}">
 </head>
 <body class="h-full bg-linen text-gray-800">
     <div class="flex flex-col h-full">
 
-        <header class=" bg-white shadow-md py-6 border-b-2 border-amber-200 fixed w-full z-10"> <!-- Замените на непрозрачный цвет -->
+        <header class=" bg-white shadow-md py-6 border-b-2 border-amber-200 fixed w-full z-50"> <!-- Замените на непрозрачный цвет -->
             <div class="container mx-auto flex items-center justify-between">
                 <a href="{{Route('home')}}" class="text-3xl font-bold text-teal-800 hover:text-amber-500 transition duration-300"> <!-- Золото при наведении -->
                     Cultural Center

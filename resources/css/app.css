@@ -22,15 +22,6 @@ body {
 .label-theatre{
     display: none;
 }
-.asdd:hover .asd {
-    top: -200px;
-    transition: top 0.3s;
-} 
-.asd {
-    top: 0;
-    position: relative;
-}
-
 /* Маркер в профиле */
 li button::before {
     font-size: 1.2em; /* Пример: немного больше размер */

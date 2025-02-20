@@ -39,9 +39,9 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="avatar" class="form-label">Выберите аватар:</label>
-                    <input type="file" id="avatar" name="avatar" accept="image/*" class="form-input">
-                    @error('avatar')
+                    <label for="picture" class="form-label">Выберите аватар:</label>
+                    <input type="file" id="picture" name="picture" accept="image/*" class="form-input">
+                    @error('picture')
                         <p class="text-red-500 text-sm mt-3">{{$message}}</p>
                     @enderror
                 </div>
