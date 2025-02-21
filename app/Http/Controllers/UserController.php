@@ -51,7 +51,7 @@ class UserController extends Controller
         // Authorization
         if (Auth::attempt($filleds, $request->remember))
         {
-            return redirect()->intended('profile');
+            return redirect()->route('profile');
         }
         else
         {

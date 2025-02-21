@@ -16,12 +16,8 @@ Route::get('/events', [PageController::class, 'EventsPage'])->name('events');
 Route::get('/events/{id}', [PageController::class, 'EventPage'])->name('event');
 
  // Exhibitions
-Route::get('/exhibitions', function () {
-    return view('exhibitions'); 
-})->name('exhibitions');
-Route::get('/exhibitions/{id}', function ($id) {
-    return view('exhibition', ['id' => $id]); 
-})->name('exhibition');
+Route::get('/exhibitions', [PageController::class, 'ExhibitionsPage'])->name('exhibitions');
+Route::get('/exhibitions/{id}', [PageController::class, 'ExhibitionPage'])->name('exhibition');
 
 // About us
 Route::get('/aboutUs', function () {

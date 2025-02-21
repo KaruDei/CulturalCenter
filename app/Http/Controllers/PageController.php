@@ -11,20 +11,21 @@ class PageController extends Controller
     protected $eventController;
     protected $actorController;
     protected $newsController;
+    protected $exhibitionController;
 
-    public function __construct(EventController $eventController, ActorController $actorController, NewsController $newsController) 
+    public function __construct(EventController $eventController, ActorController $actorController, NewsController $newsController, ExhibitionController $exhibitionController) 
     {
         $this->eventController = $eventController;
         $this->actorController = $actorController;
         $this->newsController = $newsController;
+        $this->exhibitionController = $exhibitionController;
     }
 
     public function HomePage() {
         $events = $this->eventController->GetAllRecords();
-        $actors = $this->actorController->GetAllRecords();
         $news = $this->newsController->GetAllRecords();
 
-        return view('home', ['events' => $events, 'actors' => $actors, 'news' => $news]);
+        return view('home', ['events' => $events, 'news' => $news]);
     }
 
     public function EventsPage() {
@@ -35,6 +36,16 @@ class PageController extends Controller
     public function EventPage($id) {
         $event = $this->eventController->GetRecord($id);
         return view('event', ['event' => $event]);
+    }
+
+    public function ExhibitionsPage() {
+        $exhibitions = $this->exhibitionController->GetAllRecords();
+        return view('exhibitions', ['exhibitions' => $exhibitions]);
+    }
+
+    public function ExhibitionPage($id) {
+        $exhibition = $this->exhibitionController->GetRecord($id);
+        return view('exhibition', ['exhibition' => $exhibition]);
     }
 
     public function ProfilePage() {

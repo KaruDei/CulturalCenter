@@ -3,41 +3,44 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\News;
+use App\Models\Exhibitions;
 
-class NewsController extends Controller
+class ExhibitionController extends Controller
 {
     // Получение всех записей
     public function GetAllRecords()
     {
-        return News::all()->toArray();
+        return Exhibitions::all()->toArray();
     }
 
     // Получение одной записи
     public function GetRecord($id)
     {
-        return News::findOrFail($id)->toArray();
+        return Exhibitions::findOrFail($id)->toArray();
     }
 
     // Создание новой записи
     public function Create(Request $request)
     {
         $fields = $request->validate([
-            'title' => 'required|min:3|max:255|unique:news',
-            'content' => 'required|min:3',
+            'title' => 'required|min:3|max:255|unique:exhibitions',
+            'description' => 'required|min:3',
             'picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'start_date' => 'required', 
+            'end_date' => 'required',
+            'id_event' => 'numeric',
         ]);
 
         if ($request->hasFile('picture'))
         {
             $image = $request->file('picture');
             $name = time() . '-' . $image->getClientOriginalName();
-            $destinationPath = public_path('/images/news');
+            $destinationPath = public_path('/images/exhibitions');
             $image->move($destinationPath, $name);
-            $fields['picture'] = '/images/news/' . $name;
+            $fields['picture'] = '/images/exhibitions/' . $name;
         }
 
-        News::create($fields);
+        Exhibitions::create($fields);
 
         return redirect()->back()->with('success', 'Запись добавлена!');
     }
@@ -46,12 +49,15 @@ class NewsController extends Controller
     public function Update(Request $request, $id)
     {
         $fields = $request->validate([
-            'title' => 'required|min:3|max:255|unique:news,title,' . $id,
-            'content' => 'required|min:3',
+            'title' => 'required|min:3|max:255|unique:exhibitions,title,' . $id,
+            'description' => 'required|min:3',
             'picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'start_date' => 'required',
+            'end_date' => 'required',
+            'id_event' => 'numeric',
         ]);
 
-        $record = News::findOrFail($id);
+        $record = Exhibitions::findOrFail($id);
 
         if (!$record)
         {
@@ -62,9 +68,9 @@ class NewsController extends Controller
         {
             $image = $request->file('picture');
             $name = time() . '-' . $image->getClientOriginalName();
-            $destinationPath = public_path('/images/news');
+            $destinationPath = public_path('/images/exhibitions');
             $image->move($destinationPath, $name);
-            $fields['picture'] = '/images/news/' . $name;
+            $fields['picture'] = '/images/exhibitions/' . $name;
         }
         else 
         {
@@ -79,12 +85,12 @@ class NewsController extends Controller
     // Удаление записи
     public function Delete($id)
     {
-        $record = News::findOrFail($id);
+        $record = Exhibitions::findOrFail($id);
         try {
             $record->delete();
             return redirect()->back()->with('success', 'Запись удалена!');
         } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'Ошибка при удалении записи: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'Ошибка при удалении запись: ' . $e->getMessage());
         }
     }
 }

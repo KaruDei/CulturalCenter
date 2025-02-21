@@ -48,7 +48,7 @@ class EventController extends Controller
 
         Events::create($fields);
 
-        return redirect()->back()->with('success', 'Мероприятие добавленно!');
+        return redirect()->back()->with('success', 'Запись добавлена!');
     }
 
     // Изменение записи
@@ -69,11 +69,11 @@ class EventController extends Controller
             'id_event_status' => 'required|numeric'
         ]);
 
-        $event = Events::findOrFail($id);
+        $record = Events::findOrFail($id);
 
-        if (!$event)
+        if (!$record)
         {
-            return redirect()->back()->with('error', 'Мероприятие не найденно!');
+            return redirect()->back()->with('error', 'Запись не найдена!');
         }
 
         if ($request->hasFile('picture'))
@@ -86,23 +86,23 @@ class EventController extends Controller
         }
         else 
         {
-            $fields['picture'] = $event->picture;
+            $fields['picture'] = $record->picture;
         }
 
-        $event->update($fields);
+        $record->update($fields);
 
-        return redirect()->back()->with('success', 'Мероприятие изменено!');
+        return redirect()->back()->with('success', 'Запись изменена!');
     }
 
     // Удаление записи
     public function Delete($id)
     {
-        $event = Events::findOrFail($id);
+        $record = Events::findOrFail($id);
         try {
-            $event->delete();
-            return redirect()->back()->with('success', 'Мероприятие удалено!');
+            $record->delete();
+            return redirect()->back()->with('success', 'Запись удалена!');
         } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'Ошибка при удалении мероприятия: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'Ошибка при удалении записи: ' . $e->getMessage());
         }
     }
 }
