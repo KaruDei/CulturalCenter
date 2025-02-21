@@ -30,17 +30,17 @@
                     <p class="contact-text">
                         Наш очаг находится по адресу:
                         <br>
-                        <span class="contact-highlight">Улица [Название улицы], Дом [Номер дома], Город [Название города], [Почтовый индекс]</span>
+                        <span class="contact-highlight">Улица Пушкинская, Дом 268, Город Ижевск, 426006</span>
                     </p>
                     <p class="contact-text">
                         Позвоните нам по телефону:
                         <br>
-                        <span class="contact-highlight">[Номер телефона]</span>
+                        <span class="contact-highlight">+7 (3412) 91-81-18</span>
                     </p>
                     <p class="contact-text">
                         Напишите нам письмо:
                         <br>
-                        <span class="contact-highlight">[Адрес электронной почты]</span>
+                        <span class="contact-highlight">mveu@25.ru</span>
                     </p>
                 </div>
             </section>

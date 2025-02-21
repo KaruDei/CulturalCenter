@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.header {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem 2rem;
+    border-bottom: 2px solid #fbbf24; /* Цвет рамки под золото */
+    position: fixed;
+    width: 100%;
+    z-index: 50;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #007f7f; /* Цвет текста логотипа */
+    text-decoration: none;
+}
+
+.logo:hover {
+    color: #fbbf24; /* Золотой цвет при наведении */
+}
+
+.nav-list {
+    list-style: none; /* Убираем стандартные маркеры списка */
+    padding: 0;
+    display: flex;
+    gap: 1.5rem; /* Отступ между элементами списка */
+}
+
+.nav-link {
+    color: #007f7f; /* Цвет текста ссылки */
+    text-decoration: none;
+    transition: color 0.3s; /* Плавный переход цвета */
+}
+
+.nav-link:hover {
+    color: #fbbf24; /* Золотой цвет при наведении */
+}
+
+.main-content {
+    flex: 1;
+    margin-top: 80px; /* Отступ для фиксированного заголовка */
+    margin-bottom: 40px;
+}
+
+.footer {
+    color: #007f7f; /* Цвет текста в футере */
+    padding: 1rem;
+    text-align: center;
+    border-top: 2px solid #fbbf24; /* Рамка "под золото" */
+}
