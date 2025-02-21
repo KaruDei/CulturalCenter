@@ -35,7 +35,7 @@
 
         <div class="flex flex-col container items-stretch mx-auto">
 
-            <h1 class="text-5xl text-teal-700 mx-auto mt-20 mb-20"> Новости </h1>
+            <h1 class="text-5xl text-teal-700 mx-auto mt-20 mb-[80px]"> Новости </h1>
 
             <div class="">
 
