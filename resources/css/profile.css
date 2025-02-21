@@ -12,7 +12,7 @@
 .avatar-image {
     width: 10rem; /* Ширина аватара */
     height: 10rem; /* Высота аватара */
-    border-radius: 1rem; /* Закругление углов */
+    border-radius: 0.75rem; /* Закругление углов */
     object-fit: cover; /* Обрезка изображения для достижения нужного размера */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для аватара */
     border: 4px solid #fbbf24; /* Золотистая рамка */
@@ -44,7 +44,7 @@
 }
 
 .edit-button {
-    font-size: 1.5rem; /* Размер шрифта кнопки */
+    /* font-size: 1.5rem; Размер шрифта кнопки */
     color: #4f9c9c; /* Цвет текста кнопки */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для кнопки */
     border: 2px solid #fbbf24; /* Золотистая рамка */
@@ -53,12 +53,57 @@
     height: 50px; /* Высота кнопки */
     display: flex; /* Flexbox для центровки */
     align-items: center; /* Центрирование по вертикали */
-    justify-content: center; /* Центрирование по горизонтали */
-    cursor: pointer; /* Указатель при наведении */
-    transition: border-color 0.3s, color 0.3s; /* Плавный переход */
+   justify-content: center;  /* Центрирование */
 }
 
 .edit-button:hover {
     border-color: #fcd34d; /* Цвет рамки при наведении */
-    color: #4fd1c5; /* Цвет текста при наведении */
+    color: #0b4741; /* Цвет текста при наведении (teal-400) */
 }
+
+
+
+.visit-history {
+    margin-bottom: 20px;
+}
+
+.history-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.visit-list {
+    list-style: none;
+    padding-left: 20px; /* Отступ для стрелок */
+}
+
+.visit-list li {
+    margin-bottom: 5px;
+    position: relative; /* Для позиционирования стрелки */
+}
+
+.visit-list li::before {
+    content: '\2192'; /* Стрелка вправо (Юникод) */
+    position: absolute;
+    left: -20px; /* Позиционирование стрелки слева от элемента */
+    color: #f59e0b; /* Золотой цвет */
+    margin-top: 4px;
+}
+
+.visit-button {
+    background: none;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: #f59e0b; /* Золотой цвет */
+    text-decoration: none; /* Убираем подчеркивание */
+    display: inline-block; /* Чтобы текст не переносился */
+}
+
+.visit-button:hover {
+    color: #7e5104;
+    text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+
