@@ -9,51 +9,17 @@
         <div class="events-container ">
                 <h1>Ближайшие мероприятия</h1>
 
-
                 <div class="event-grid grid grid-cols-4 gap-5">
 
-                    <div src="" class="event-item">                     
-                        <img class="event-img">
-                        <div class="event-text">
-                            <h2>Название</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi culpa earum nobis modi, beatae dolorum placeat consequuntur, dolore itaque consequatur, amet quas iste libero non obcaecati facere odit labore. Id.</p>      
-                        </div>
-                    </a>
-
-                    <div src="" class="event-item">                     
-                        <img class="event-img">
-                        <div class="event-text">
-                            <h2>Название</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi culpa earum nobis modi, beatae dolorum placeat consequuntur, dolore itaque consequatur, amet quas iste libero non obcaecati facere odit labore. Id.</p>      
-                        </div>
-                    </div>
-
-                    <div src="" class="event-item">                     
-                        <img class="event-img">
-                        <div class="event-text">
-                            <h2>Название</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi culpa earum nobis modi, beatae dolorum placeat consequuntur, dolore itaque consequatur, amet quas iste libero non obcaecati facere odit labore. Id.</p>      
-                        </div>
-                    </div>
-
-                    <div src="" class="event-item">                     
-                        <img class="event-img">
-                        <div class="event-text">
-                            <h2>Название</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi culpa earum nobis modi, beatae dolorum placeat consequuntur, dolore itaque consequatur, amet quas iste libero non obcaecati facere odit labore. Id.</p>      
-                        </div>
-                    </div>
-
-                    <div src="" class="event-item">                     
-                        <img class="event-img">
-                        <div class="event-text">
-                            <h2>Название</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi culpa earum nobis modi, beatae dolorum placeat consequuntur, dolore itaque consequatur, amet quas iste libero non obcaecati facere odit labore. Id.</p>      
-                        </div>
-                    </div>
-
-                   
-
+                    @foreach ($events as $event)
+                        <a href="{{Route('event', $event['id'])}}" class="event-item">                     
+                            <img src="{{$event['picture']}}" class="event-img">
+                            <div class="event-text">
+                                <h2>{{$event['title']}}</h2>
+                                <p>{{$event['description']}}</p>      
+                            </div>
+                        </a>
+                    @endforeach
                        
                 </div>
         </div>
