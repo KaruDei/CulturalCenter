@@ -31,24 +31,7 @@
                     Создать
                 </button>
             </div>
-            <div class="h-full w-1/2 bg-gray-200 hidden 2xl:block">
-                <!-- этот див вместо картинки  -->
-            </div>
-        </div>
-
-        <div class="flex flex-col container items-stretch mx-auto">
-
-            <h1 class="text-5xl text-teal-700 mx-auto mt-20 mb-20">Наши Актеры</h1>
-
-            <div class=""> 
-                    <div class="bg-floral-white rounded-xl shadow-2xl border border-amber-100 w-full h-[300px] flex flex-row overflow-hidden mt-10 mb-10">
-                        <div  class="w-1/3 h-full bg-gray-500"></div> <!-- этот див вместо картинки  -->
-                        <div class="flex flex-col px-5 pt-5">
-                            <h2 class="text-teal-700">Имя</h2>
-                            <p class="text-teal-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus odit numquam cupiditate rem, facilis porro aperiam, vel modi fuga suscipit repellat ipsam ut fugit totam! Mollitia harum nisi perferendis ad?</p>
-                        </div>
-                    </div>
-            </div>
+            <img src="{{ asset('images/1739989222-BobStoneBeginer.png') }}" class="h-full w-1/2 sca hidden 2xl:block">
 
         </div>
 
@@ -58,27 +41,18 @@
 
             <div class="">
 
-                <div class="bg-floral-white rounded-xl shadow-2xl border border-amber-100 w-full h-[600px] grid grid-cols-2  overflow-hidden mt-10 mb-10 ">
-                    <div  class="h-full bg-gray-500 overflow-hidden"></div> <!-- этот див вместо картинки  -->
-                    <div class="flex flex-col px-5 pt-5 overflow-y-auto">
-                        <h2 class="text-teal-700">Название новости</h2>
-                        <p class="text-teal-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus odit numquam cupiditate rem, facilis porro aperiam, vel modi fuga suscipit repellat ipsam ut fugit totam! Mollitia harum nisi perferendis ad?
-                        </p>
-                    </div>
-                </div>
-
-            
-
-                <div class="bg-floral-white rounded-xl shadow-2xl border border-amber-100 w-full h-[600px] grid grid-cols-2  overflow-hidden mt-10 mb-10 ">
-                    <div  class="h-full bg-gray-500 overflow-hidden"></div> <!-- этот див вместо картинки  -->
-                    <div class="flex flex-col px-5 pt-5 overflow-y-auto">
-                        <h2 class="text-teal-700">Название новости</h2>
-                        <p class="text-teal-700">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur aspernatur error repellat tempore corrupti! Odit cumque facere nam adipisci, suscipit atque ducimus sunt beatae. Reiciendis, veniam corporis. Veniam, id      
-                        </p>
-                    </div>
-                </div>
-              
-
+            @foreach ($news as $newsItem)
+                    <div class="bg-floral-white rounded-xl shadow-2xl border border-amber-100 w-full h-[600px] grid grid-cols-2  overflow-hidden mt-10 mb-10 ">
+                        <img src="{{$newsItem['picture']}}"  class="h-full bg-gray-500 overflow-hidden">
+                        <div class="flex flex-col px-5 pt-5 overflow-y-auto">
+                            <h2 class="text-teal-700">{{$newsItem['title']}}</h2>
+                            <p class="text-teal-700">
+                                {{$newsItem['content']}}
+                            </p>
+                        </div>
+                    </div>              
+            @endforeach
+        
             </div>
 
         </div>
