@@ -24,15 +24,12 @@
                 </div>
         </div>
 
-        <div class="flex justify-center h-[1000px] mt-20">
-            <div class="h-full w-1/2 pt-64 px-auto 2xl:pl-48 ">
-                <h1 class="text-5xl text-center text-teal-700 md:text-7xl 2xl:text-left">Станьте автором мероприятия</h1>
-                <button class=" text-4xl text-teal-700 shadow-2xl border-[5px] rounded-xl border-amber-300  w-[350px] h-[80px] flex flex-col items-center mx-auto mt-10 2xl:mx-0 cursor-pointer hover:border-amber-200 hover:text-teal-400  transition-colors duration-300 ">
-                    Создать
-                </button>
+        <div class="container-avtor">
+            <div class="content">
+                <h1 class="title">Станьте автором мероприятия</h1>
+                <button class="create-button">Создать</button>
             </div>
-            <img src="{{ asset('images/1739989222-BobStoneBeginer.png') }}" class="h-full w-1/2 sca hidden 2xl:block">
-
+            <img src="{{ asset('images/1739989222-BobStoneBeginer.png') }}" class="image hidden">
         </div>
 
         <div class="flex flex-col container items-stretch mx-auto">

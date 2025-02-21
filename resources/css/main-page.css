@@ -91,3 +91,69 @@
     position: relative;
     transition: top 0.3s ease; 
 }
+
+/* Станьте автором мероприятия */
+.container-avtor {
+    display: flex; /* Flexbox для выравнивания */
+    justify-content: center; /* Центрирование содержимого */
+    height: 1000px; /* Высота контейнера */
+    margin-top: 20px; /* Отступ сверху */
+}
+
+.content {
+    height: 100%; /* Полная высота */
+    width: 50%; /* Ширина 50% */
+    padding-top: 16rem; /* Отступ сверху */
+    padding-left: 0; /* Отступ слева */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title {
+    font-size: 3rem; /* Размер шрифта заголовка */
+    text-align: center; /* Выравнивание по центру */
+    color: #4f9c9c; /* Цвет текста заголовка (teal-700) */
+}
+
+.title.md\:text-7xl {
+    font-size: 4rem; /* Размер шрифта для md */
+}
+
+/* .title.2xl\:text-left {
+    text-align: left; Выравнивание по левому краю для 2xl
+} */
+
+.create-button {
+    font-size: 2rem; /* Размер шрифта кнопки */
+    color: #4f9c9c; /* Цвет текста кнопки (teal-700) */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для кнопки */
+    border: 5px solid #fbbf24; /* Золотистая рамка */
+    border-radius: 0.75rem; /* Закругление углов */
+    width: 350px; /* Ширина кнопки */
+    height: 80px; /* Высота кнопки */
+    display: flex; /* Flexbox для центровки */
+    flex-direction: column; /* Вертикальное расположение элементов */
+    justify-content: center;
+    align-items: center; /* Центрирование по горизонтали */
+    margin: 2.5rem auto; /* Отступы сверху и снизу, авто по горизонтали */
+    cursor: pointer; /* Указатель при наведении */
+    transition: border-color 0.3s, color 0.3s; /* Плавный переход */
+}
+
+.create-button:hover {
+    border-color: #fcd34d; /* Цвет рамки при наведении */
+    color: #4fd1c5; /* Цвет текста при наведении (teal-400) */
+}
+
+.image {
+    height: 100%; /* Полная высота изображения */
+    width: 50%; /* Ширина 50% */
+    display: none; /* Скрываем изображение по умолчанию */
+}
+
+@media (min-width: 1536px) { /* Для 2xl и выше */
+    .image {
+        display: block; /* Показываем изображение на больших экранах */
+    }
+}

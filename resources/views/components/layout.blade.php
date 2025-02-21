@@ -12,6 +12,7 @@
         'resources\css\contact.css', 
         'resources\css\authorization-regist.css',
         'resources\css\main-page.css',
+        'resources\css\profile.css',
         ])
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
