@@ -1,12 +1,12 @@
 <x-layout>
-    <div class="flex flex-col items-center justify-center min-h-screen">
-        <div class="bg-floral-white rounded-xl shadow-2xl p-12 max-w-4xl border border-amber-100">
-            <h1 class="text-4xl font-bold text-teal-800 mb-8 border-b-2 border-amber-200 pb-2 text-center">Ваш личный кабинет</h1>
+    <div class="container-info">
+        <div class="all-info">
+            <h1 class="auth-title">Ваш личный кабинет</h1>
 
-            <section class="mb-8 flex items-center">
+            <section class="user-profile">
                 <!-- Аватар -->
-                <div class="mr-8 relative">
-                    <img src="{{$user->picture}}" alt="Аватар пользователя" class="w-40 h-40 rounded-xl object-cover shadow-md border-4 border-amber-200">
+                <div class="avatar">
+                    <img src="{{$user->picture}}" alt="Аватар пользователя" class="avatar-image">
                 </div>
 
                 <!-- Информация о пользователе -->

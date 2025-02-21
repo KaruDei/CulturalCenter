@@ -1,0 +1,64 @@
+.user-profile {
+    display: flex; /* Flexbox для выравнивания */
+    align-items: center; /* Центрирование по вертикали */
+    margin-bottom: 2rem; /* Отступ снизу */
+}
+
+.avatar {
+    margin-right: 2rem; /* Отступ справа от аватара */
+    position: relative; /* Для позиционирования, если нужно */
+}
+
+.avatar-image {
+    width: 10rem; /* Ширина аватара */
+    height: 10rem; /* Высота аватара */
+    border-radius: 1rem; /* Закругление углов */
+    object-fit: cover; /* Обрезка изображения для достижения нужного размера */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для аватара */
+    border: 4px solid #fbbf24; /* Золотистая рамка */
+}
+
+.user-info {
+    flex-grow: 1; /* Позволяет этому блоку занимать оставшееся пространство */
+}
+
+.user-title {
+    font-size: 2rem; /* Размер шрифта заголовка */
+    font-weight: 600; /* Полужирный текст */
+    color: #4f9c9c; /* Цвет заголовка */
+    margin-bottom: 1rem; /* Отступ снизу */
+}
+
+.user-details {
+    display: flex; /* Flexbox для выравнивания */
+    flex-direction: column; /* Вертикальное расположение элементов */
+    gap: 0.5rem; /* Промежуток между элементами */
+}
+
+.user-detail {
+    color: #4a5568; /* Цвет текста для деталей */
+}
+
+.detail-label {
+    font-weight: 600; /* Полужирный текст для меток */
+}
+
+.edit-button {
+    font-size: 1.5rem; /* Размер шрифта кнопки */
+    color: #4f9c9c; /* Цвет текста кнопки */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для кнопки */
+    border: 2px solid #fbbf24; /* Золотистая рамка */
+    border-radius: 0.75rem; /* Закругление углов */
+    width: 200px; /* Ширина кнопки */
+    height: 50px; /* Высота кнопки */
+    display: flex; /* Flexbox для центровки */
+    align-items: center; /* Центрирование по вертикали */
+    justify-content: center; /* Центрирование по горизонтали */
+    cursor: pointer; /* Указатель при наведении */
+    transition: border-color 0.3s, color 0.3s; /* Плавный переход */
+}
+
+.edit-button:hover {
+    border-color: #fcd34d; /* Цвет рамки при наведении */
+    color: #4fd1c5; /* Цвет текста при наведении */
+}
