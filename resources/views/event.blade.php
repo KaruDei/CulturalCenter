@@ -15,14 +15,13 @@
             </div>
         </div>
     </div>
-    
-    <div class="flex justify-center"> 
-        <div class="label-theatre">
-
-        </div>
-
-        <form action="" class="form-theatre">
+    <h1 class="text-center">Купить билеты </h1>
+    <div class="flex justify-center container items-center"> 
+        <form action="">
                 
+            <div class="form-theatre"></div>
+
+            <button class="buy-button">Купить билет</button>
         </form>
     </div>    
 </x-layout>
