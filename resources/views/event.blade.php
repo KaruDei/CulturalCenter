@@ -15,13 +15,31 @@
             </div>
         </div>
     </div>
-    <h1 class="text-center">Купить билеты </h1>
-    <div class="flex justify-center container items-center"> 
-        <form action="">
-                
-            <div class="form-theatre"></div>
 
-            <button class="buy-button">Купить билет</button>
-        </form>
-    </div>    
+
+    <div>
+        <h1 class="text-center">Купить билеты </h1>
+        <div class="flex justify-center container items-center"> 
+            <form action="">
+                    
+                <div class="form-theatre"></div>
+
+                <button class="buy-button">Купить билет</button>
+            </form>
+        </div>   
+        <h1 class="text-center">Актеры </h1> 
+        @foreach ($actors as $actor)
+            <div class="px-[200px]"> 
+                <div class="bg-floral-white rounded-xl shadow-2xl border border-amber-100 w-full h-[300px] flex flex-row overflow-hidden mt-10 mb-10">
+                    <img src="{{$actor['picture']}}"  class="w-1/3 h-full bg-gray-500">
+                    <div class="flex flex-col px-5 pt-5">
+                        <h2 class="text-teal-700">{{$actor['full_name']}}</h2>
+                        <p>Роль: Князь Владимир</p>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    </div>        
+
+   
 </x-layout>
