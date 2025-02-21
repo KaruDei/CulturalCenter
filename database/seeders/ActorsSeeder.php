@@ -21,16 +21,17 @@ class ActorsSeeder extends Seeder
             [
                 'description' => "Иванов Иван Иванович самый уважаемы актёр планеты. Он сыграл множество знаменитых ролей.",
                 'id_actor_role' => ActorRoles::first()->where('role', 'Ведущий')->value('id'),
+                'picture' => '/images/actors/actor1.png',
             ]
         );
         Actors::updateOrCreate(
             [
-                'full_name' => "Гончаров Гончар Гончарович"
+                'full_name' => "Ра́йан То́мас Го́слинг"
             ], 
             [
-                'description' => "Гончаров Гончар Гончарович актёр который очень хорошо чувствует своих героев.",
+                'description' => "Ра́йан То́мас Го́слинг — канадский актёр. Известен по ролям в независимых фильмах и крупных студийных проектах разных жанров. Сборы фильмов с его участием составили свыше 1,9 миллиарда долларов. Обладатель многих наград, включая «Золотого глобуса», и номинант трёх «Оскаров» и одного BAFTA.",
                 'id_actor_role' => ActorRoles::first()->where('role', 'Актер')->value('id'),
-                'picture' => '/images/1739989222-BobStoneBeginer.png',
+                'picture' => '/images/actors/actor2.png',
             ]
         );
     }

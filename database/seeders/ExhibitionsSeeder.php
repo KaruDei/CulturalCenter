@@ -16,25 +16,38 @@ class ExhibitionsSeeder extends Seeder
     {
         Exhibitions::updateOrCreate(
             [
-                'title' => 'Выставка картин'
+                'title' => 'Выставка 1'
             ],
             [
                 'description' => 'Выставка картин о великом Князе Владимире.',
                 'start_date' => '2025-02-18',
                 'end_date' => '2025-02-18',
-                'picture' => '/images/1739989222-BobStoneBeginer.png',
+                'picture' => '/images/exhibitions/X5hxZOIFORs.jpg',
                 'id_event' => Events::first()->where('title', 'Князь Владимир')->value('id')
             ]
         );
 
         Exhibitions::updateOrCreate(
             [
-                'title' => 'Выставка скульптур'
+                'title' => 'Выставка 2'
             ],
             [
                 'description' => 'Выставка самых известных скульптур мира.',
                 'start_date' => '2025-02-19',
                 'end_date' => '2025-02-19',
+                'picture' => '/images/exhibitions/exhibits104.jpg',
+            ]
+        );
+
+        Exhibitions::updateOrCreate(
+            [
+                'title' => 'Выставка 3'
+            ],
+            [
+                'description' => 'Выставка самых известных скульптур мира.',
+                'start_date' => '2025-02-19',
+                'end_date' => '2025-02-19',
+                'picture' => '/images/exhibitions/zoteev-20.jpg',
             ]
         );
     }

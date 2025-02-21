@@ -41,7 +41,7 @@
 
             @foreach ($news as $newsItem)
                     <div class="bg-floral-white rounded-xl shadow-2xl border border-amber-100 w-full h-[600px] grid grid-cols-2  overflow-hidden mt-10 mb-10 ">
-                        <img src="{{$newsItem['picture']}}"  class="h-full bg-gray-500 overflow-hidden">
+                        <img src="{{$newsItem['picture']}}"  class="h-full w-full object-cover bg-gray-500 overflow-hidden">
                         <div class="flex flex-col px-5 pt-5 overflow-y-auto">
                             <h2 class="text-teal-700">{{$newsItem['title']}}</h2>
                             <p class="text-teal-700">
