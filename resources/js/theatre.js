@@ -11,6 +11,12 @@
             label.textContent = i +"ряд"
             form.appendChild(label);
             for(let j = 1; j <= 10; j++){
+                const img = document.createElement('img');
+                img.src = "images/filters_quality(95)format(webp).png"; // Укажите путь к вашему изображению
+                img.alt = 'Описание изображения'; // Добавьте описание для доступности
+                img.style.width = '20px'; // Установите ширину изображения (при необходимости)
+                img.style.height = '20px'; // Установите высоту изображения (при необходимости)
+                img.style.marginRight = '5px'; // Добавляем отступ справа от изображения
                 const checkbox = document.createElement('input');
                 let labelforcheckbox = document.createElement ('label')
                 labelforcheckbox.textContent = checkboxCount
@@ -22,6 +28,7 @@
                 checkbox.id = `checkbox-${checkboxCount}`;
                 checkbox.className = "checkbox-theatre"
                 form.appendChild(checkbox);
+                labelforcheckbox.appendChild(img)
 
                 checkboxCount++
         }}
