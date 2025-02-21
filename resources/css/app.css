@@ -16,7 +16,7 @@ body {
 } */
 .checkbox-theatre{
 
- display: none;
+display: none;
 }
 .form-theatre{
     display: grid;
@@ -35,8 +35,13 @@ body {
     height: 50px;
     color: white;
     text-align: center;
-    padding-top: 10px;
+    border: solid 5px rgb(112, 1, 1);
+    border-radius: 10px;
+
     
+}
+.labelforcheckbox img{
+    pointer-events: none;
 }
 .label-theatre{
     display: flex;
