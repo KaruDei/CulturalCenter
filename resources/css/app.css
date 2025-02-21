@@ -15,12 +15,24 @@ body {
     margin-bottom: 45px;
 } */
 .checkbox-theatre{
-    width: 100px;
-    height: 100px;
-    display: none;
+    width: 20px;
+    height: 20px;
+}
+.form-theatre{
+    display: grid;
+    grid-template-columns: repeat(10,  1fr);
+    gap: 10px;
+    width: 200px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 200px;
+
 }
 .label-theatre{
-    display: none;
+    display: flex;
+    flex-direction: column;
 }
 /* Маркер в профиле */
 li button::before {
