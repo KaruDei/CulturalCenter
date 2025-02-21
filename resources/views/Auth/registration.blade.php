@@ -51,7 +51,7 @@
                 </div>
 
                 <div class="forgot-text ml-[76px]">
-                    Уже есть аккаунт? <a href="{{Route('authorization')}}" class="forgot-text-link">Войти</a>
+                    Уже есть аккаунт? <a href="{{Route('login')}}" class="forgot-text-link">Войти</a>
                 </div>
             </form>
         </div>

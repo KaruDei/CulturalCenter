@@ -3,7 +3,7 @@
         <div class="all-info"> 
             <h1 class="auth-title">Авторизация</h1>
 
-        <form action="{{ Route('authorization') }}" method="post" class="contact-form">
+        <form action="{{ Route('login') }}" method="post" class="contact-form">
             @csrf
             <div class="form-group">
                 <label for="email" class="form-label">Ваш почтовый адрес:</label>

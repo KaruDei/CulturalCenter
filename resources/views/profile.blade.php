@@ -6,7 +6,7 @@
             <section class="mb-8 flex items-center">
                 <!-- Аватар -->
                 <div class="mr-8 relative">
-                    <img src="" alt="Аватар пользователя" class="w-40 h-40 rounded-xl object-cover shadow-md border-4 border-amber-200">
+                    <img src="{{$user->picture}}" alt="Аватар пользователя" class="w-40 h-40 rounded-xl object-cover shadow-md border-4 border-amber-200">
                 </div>
 
                 <!-- Информация о пользователе -->
@@ -14,10 +14,10 @@
                     <h2 class="text-3xl font-semibold text-teal-700 mb-4">Информация о вас</h2>
                     <div class="space-y-2">
                         <p class="text-gray-700">
-                            <span class="font-semibold">Имя:</span> Пользователь Пользователевич
+                            <span class="font-semibold">Имя:</span> {{$user->full_name}}
                         </p>
                         <p class="text-gray-700">
-                            <span class="font-semibold">Email:</span> user@example.com
+                            <span class="font-semibold">Email:</span> {{$user->email}}
                         </p>
                         <button class="text-teal-700 shadow-2xl border-[2px] rounded-xl border-amber-300 w-[200px] h-[50px] flex items-center justify-center cursor-pointer hover:border-amber-200 hover:text-teal-400 transition-colors duration-300">
                             Редактировать профиль

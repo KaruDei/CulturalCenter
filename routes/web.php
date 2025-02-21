@@ -33,26 +33,6 @@ Route::get('/contacts', function () {
     return view('contacts'); 
 })->name('contacts');
 
-// Profile
-Route::get('/profile', function () {
-    return view('profile'); 
-})->name('profile');
-
-// Authorization
-Route::get('/authorization', function () {
-    return view('Auth.authorization');
-})->name('authorization');
-Route::post('/authorization', [UserController::class, 'UserAuthorization']);
-
-// Registration
-Route::get('/registration', function () {
-    return view('Auth.registration'); 
-})->name('registration');
-Route::post('/registration', [UserController::class, 'UserRegistration']);
-
-// Logout
-Route::get('/logout', [UserController::class, 'UserLogout'])->name('logout');
-
 // Admin Panel
 Route::get('/adminPanel', function () {
     return view('Admin.adminPanel'); 
@@ -78,3 +58,20 @@ Route::get('/adminExhibitions', function () {
     return view('Admin.adminExhibitions'); 
 })->name('adminExhibitions');
 
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [PageController::class, 'ProfilePage'])->name('profile');
+
+    Route::get('/logout', [UserController::class, 'UserLogout'])->name('logout');
+});
+
+Route::middleware('guest')->group(function () {
+    Route::get('/login', function () {
+            return view('Auth.authorization');
+    })->name('login');
+    Route::post('/login', [UserController::class, 'UserAuthorization']);
+
+    Route::get('/reg', function () {
+        return view('Auth.registration'); 
+    })->name('registration');
+    Route::post('/reg', [UserController::class, 'UserRegistration']);
+});

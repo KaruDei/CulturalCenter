@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\EventController;
+use Illuminate\Support\Facades\Auth;
 
 class PageController extends Controller
 {
@@ -34,5 +35,10 @@ class PageController extends Controller
     public function EventPage($id) {
         $event = $this->eventController->GetRecord($id);
         return view('event', ['event' => $event]);
+    }
+
+    public function ProfilePage() {
+        $user = Auth::user();
+        return view('profile', ['user' => $user]);
     }
 }

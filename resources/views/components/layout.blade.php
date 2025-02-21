@@ -40,7 +40,7 @@
 
                         @guest
                            
-                            <li><a href="{{Route('authorization')}}" class="text-teal-700 hover:text-amber-500 transition duration-300">Авторизация</a></li>
+                            <li><a href="{{Route('login')}}" class="text-teal-700 hover:text-amber-500 transition duration-300">Авторизация</a></li>
 
                             <li><a href="{{Route('registration')}}" class="text-teal-700 hover:text-amber-500 transition duration-300">Регистрация</a></li>
                            
