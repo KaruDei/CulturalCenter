@@ -35,7 +35,8 @@ class PageController extends Controller
 
     public function EventPage($id) {
         $event = $this->eventController->GetRecord($id);
-        return view('event', ['event' => $event]);
+        $actors = $this->actorController->GetAllRecords();
+        return view('event', ['event' => $event, 'actors' => $actors]);
     }
 
     public function ExhibitionsPage() {
