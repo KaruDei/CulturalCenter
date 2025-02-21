@@ -16,17 +16,22 @@ class UserController extends Controller
             'full_name' => 'required|min:3|max:255',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:3|max:255|confirmed',
+            'picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
+        $fields['id_user_role'] = UserRoles::first()->where('role', 'user')->value('id');
+
+        if ($request->hasFile('picture'))
+        {
+            $image = $request->file('picture');
+            $name = time() . '-' . $image->getClientOriginalName();
+            $destinationPath = public_path('/images/user');
+            $image->move($destinationPath, $name);
+            $fields['picture'] = '/images/user/' . $name;
+        }
+
         // Registration
-        $user = User::create(
-            [
-                'full_name' => $fields['full_name'],
-                'email' => $fields['email'],
-                'password' => $fields['password'],
-                'id_user_role' => UserRoles::first()->where('role', 'user')->value('id'),
-            ]
-        );
+        $user = User::create($fields);
 
         //Login
         Auth::login($user);
@@ -75,17 +80,31 @@ class UserController extends Controller
         // Validation
         $fields = $request->validate([
             'full_name' => 'required|min:3|max:255',
-            'email' => 'required|email|unique:users',
+            'email' => 'required|email|unique:users,email' . $id,
             'password' => 'required|min:3|max:255|confirmed',
+            'picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-
-        // Update data
-        $user = User::first()->where('id', $id);
-        $user->full_name = $fields['full_name'];
-        $user->email = $fields['email'];
+        
         $fields['password'] = password_hash($fields['password']);
-        $user->password = $fields['password'];
-        $user->save();
+
+        $user = User::findOrFail($id);
+        
+        if ($request->hasFile('picture'))
+        {
+            $image = $request->file('picture');
+            $name = time() . '-' . $image->getClientOriginalName();
+            $destinationPath = public_path('/images/user');
+            $image->move($destinationPath, $name);
+            $fields['picture'] = '/images/user/' . $name;
+        }
+        else 
+        {
+            $fields['picture'] = $user->picture;
+        }
+        
+        // Update data
+        
+        $user->update($fields);
 
         // Redirect
         return redirect()->route('profile')->with('success', 'Данные успешно измененны');

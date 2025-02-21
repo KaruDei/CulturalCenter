@@ -32,6 +32,7 @@ class UserSeeder extends Seeder
             [
                 'full_name' => 'User User User',
                 'password' => 'user',
+                'picture' => '/images/user/1740129142-miku-miku-beam.gif',
                 'id_user_role' => UserRoles::first()->where('role', 'user')->value('id'),
             ]
         );
