@@ -32,6 +32,7 @@ class EventController extends Controller
             'duration' => 'required|numeric|gte:0',
             'price' => 'required|numeric|gte:0',
             'picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'bigpicture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'id_event_script' => 'required|numeric',
             'id_creator' => 'required|numeric',
             'id_event_status' => 'required|numeric'
@@ -44,6 +45,15 @@ class EventController extends Controller
             $destinationPath = public_path('/images/events');
             $image->move($destinationPath, $name);
             $fields['picture'] = '/images/events/' . $name;
+        }
+
+        if ($request->hasFile('bigpicture'))
+        {
+            $image = $request->file('bigpicture');
+            $name = time() . '-' . $image->getClientOriginalName();
+            $destinationPath = public_path('/images/events');
+            $image->move($destinationPath, $name);
+            $fields['bigpicture'] = '/images/events/' . $name;
         }
 
         Events::create($fields);
@@ -64,6 +74,7 @@ class EventController extends Controller
             'duration' => 'required|numeric|gte:0',
             'price' => 'required|numeric|gte:0',
             'picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'bigpicture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'id_event_script' => 'required|numeric',
             'id_creator' => 'required|numeric',
             'id_event_status' => 'required|numeric'
@@ -87,6 +98,19 @@ class EventController extends Controller
         else 
         {
             $fields['picture'] = $record->picture;
+        }
+
+        if ($request->hasFile('bigpicture'))
+        {
+            $image = $request->file('bigpicture');
+            $name = time() . '-' . $image->getClientOriginalName();
+            $destinationPath = public_path('/images/events');
+            $image->move($destinationPath, $name);
+            $fields['bigpicture'] = '/images/events/' . $name;
+        }
+        else 
+        {
+            $fields['bigpicture'] = $record->bigpicture;
         }
 
         $record->update($fields);

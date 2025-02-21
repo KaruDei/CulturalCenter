@@ -1,9 +1,10 @@
 <x-layout>
     <div class="flex flex-col">
         <div class="slider">
-                <img class="slider-item slider-item-1" src="{{ asset('images/0QNStUuWe11UCkUaSeUqRQ.png') }}" alt="">
-                <img class="slider-item slider-item-2" src="{{ asset('images/1739989222-BobStoneBeginer.png') }}" alt="">
-                <img class="slider-item slider-item-3" src="{{ asset('images/filters_quality(95)format(webp).png') }}" alt="">
+                <img class="slider-item slider-item-1" src="{{$events[0]['bigpicture']}}" alt="">
+                <img class="slider-item slider-item-2" src="{{$events[1]['bigpicture']}}" alt="">
+                <img class="slider-item slider-item-3" src="{{$events[2]['bigpicture']}}" alt="">
+                {{-- <img class="slider-item slider-item-3" src="{{ asset('images/filters_quality(95)format(webp).png') }}" alt=""> --}}
         </div>
 
         <div class="events-container ">
@@ -29,7 +30,7 @@
                 <h1 class="title">Станьте автором мероприятия</h1>
                 <button class="create-button">Создать</button>
             </div>
-            <img src="{{ asset('images/1739989222-BobStoneBeginer.png') }}" class="image hidden">
+            <img src="{{ asset('icons/chel.png') }}" class="image hidden">
         </div>
 
         <div class="flex flex-col container items-stretch mx-auto">

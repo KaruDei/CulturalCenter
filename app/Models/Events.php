@@ -16,6 +16,7 @@ class Events extends Model
         'duration',
         'price',
         'picture',
+        'bigpicture',
         'id_event_script',
         'id_creator',
         'id_event_status',

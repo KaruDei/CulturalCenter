@@ -24,7 +24,7 @@ class EventActorsSeeder extends Seeder
 
         EventActors::updateOrCreate(
             [
-                'id_event' => Events::where('title', 'Шоу')->first()->value('id'),
+                'id_event' => Events::where('title', 'Илья Муромец и Соловей Разбойник')->first()->value('id'),
                 'id_actor' => Actors::where('full_name', 'Иванов Иван Иванович')->first()->value('id'),
             ]
         );
