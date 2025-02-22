@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class EventStatus extends Model
 {
-    protected $fillabel = [
+    protected $fillable = [
         'status',
     ];
 
