@@ -3,22 +3,62 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Auth;
 
 class PageController extends Controller
 {
-    protected $eventController;
     protected $actorController;
-    protected $newsController;
+    protected $actorRoleController;
+    protected $eventActorController;
+    protected $eventController;
+    protected $eventCreatorController;
+    protected $eventScriptController;
+    protected $eventStatusController;
+    protected $eventTicketController;
+    protected $eventTypeController;
     protected $exhibitionController;
+    protected $newsController;
+    protected $roomController;
+    protected $seatController;
+    protected $TicketStatusController;
+    protected $userController;
+    protected $userRoleController;
 
-    public function __construct(EventController $eventController, ActorController $actorController, NewsController $newsController, ExhibitionController $exhibitionController) 
+    public function __construct(
+        ActorController $actorController,
+        ActorRoleController $actorRoleController,
+        EventActorController $eventActorController,
+        EventController $eventController,
+        EventCreatorController $eventCreatorController,
+        EventScriptController $eventScriptController,
+        EventStatusController $eventStatusController,
+        EventTicketController $eventTicketController,
+        EventTypeController $eventTypeController,
+        ExhibitionController $exhibitionController,
+        NewsController $newsController,
+        RoomController $roomController,
+        SeatController $seatController,
+        TicketStatusController $TicketStatusController,
+        UserController $userController,
+        UserRoleController $userRoleController
+    ) 
     {
-        $this->eventController = $eventController;
         $this->actorController = $actorController;
-        $this->newsController = $newsController;
+        $this->actorRoleController = $actorRoleController;
+        $this->eventActorController = $eventActorController;
+        $this->eventController = $eventController;
+        $this->eventCreatorController = $eventCreatorController;
+        $this->eventScriptController = $eventScriptController;
+        $this->eventStatusController = $eventStatusController;
+        $this->eventTicketController = $eventTicketController;
+        $this->eventTypeController = $eventTypeController;
         $this->exhibitionController = $exhibitionController;
+        $this->newsController = $newsController;
+        $this->roomController = $roomController;
+        $this->seatController = $seatController;
+        $this->TicketStatusController = $TicketStatusController;
+        $this->userController = $userController;
+        $this->userRoleController = $userRoleController;
     }
 
     public function HomePage() {
