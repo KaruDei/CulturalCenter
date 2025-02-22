@@ -38,9 +38,12 @@ class ActorController extends Controller
             $fields['picture'] = '/images/actors/' . $name;
         }
 
-        Actors::create($fields);
-
-        return redirect()->back()->with('success', 'Запись добавлена!');
+        try {
+            Actors::create($fields);
+            return redirect()->back()->with('success', 'Запись добавлена!');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Ошибка при добавлении записи: ' . $e->getMessage());
+        }
     }
 
     // Изменение записи
@@ -55,11 +58,6 @@ class ActorController extends Controller
 
         $record = Actors::findOrFail($id);
 
-        if (!$record)
-        {
-            return redirect()->back()->with('error', 'Запись не найдена!');
-        }
-
         if ($request->hasFile('picture'))
         {
             $image = $request->file('picture');
@@ -73,15 +71,19 @@ class ActorController extends Controller
             $fields['picture'] = $record->picture;
         }
 
-        $record->update($fields);
-
-        return redirect()->back()->with('success', 'Запись изменена!');
+        try {
+            $record->update($fields);
+            return redirect()->back()->with('success', 'Запись изменена!');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Ошибка при изменении записи: ' . $e->getMessage());
+        }
     }
 
     // Удаление записи
     public function Delete($id)
     {
         $record = Actors::findOrFail($id);
+        
         try {
             $record->delete();
             return redirect()->back()->with('success', 'Запись удалена!');

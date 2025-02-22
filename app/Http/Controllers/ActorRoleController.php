@@ -3,42 +3,31 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\News;
+use App\Models\ActorRoles;
 
-class NewsController extends Controller
+class ActorRoleController extends Controller
 {
     // Получение всех записей
     public function GetAllRecords()
     {
-        return News::all()->toArray();
+        return ActorRoles::all()->toArray();
     }
 
     // Получение одной записи
     public function GetRecord($id)
     {
-        return News::findOrFail($id)->toArray();
+        return ActorRoles::findOrFail($id)->toArray();
     }
 
     // Создание новой записи
     public function Create(Request $request)
     {
         $fields = $request->validate([
-            'title' => 'required|min:3|max:255|unique:news',
-            'content' => 'required|min:3',
-            'picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'role' => 'required|min:1|max:255|unique:actor_roles',
         ]);
 
-        if ($request->hasFile('picture'))
-        {
-            $image = $request->file('picture');
-            $name = time() . '-' . $image->getClientOriginalName();
-            $destinationPath = public_path('/images/news');
-            $image->move($destinationPath, $name);
-            $fields['picture'] = '/images/news/' . $name;
-        }
-
         try {
-            News::create($fields);
+            ActorRoles::create($fields);
             return redirect()->back()->with('success', 'Запись добавлена!');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Ошибка при добавлении записи: ' . $e->getMessage());
@@ -49,30 +38,10 @@ class NewsController extends Controller
     public function Update(Request $request, $id)
     {
         $fields = $request->validate([
-            'title' => 'required|min:3|max:255|unique:news,title,' . $id,
-            'content' => 'required|min:3',
-            'picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'role' => 'required|min:1|max:255|unique:actor_roles,role,' . $id,
         ]);
 
-        $record = News::findOrFail($id);
-
-        if (!$record)
-        {
-            return redirect()->back()->with('error', 'Запись не найдена!');
-        }
-
-        if ($request->hasFile('picture'))
-        {
-            $image = $request->file('picture');
-            $name = time() . '-' . $image->getClientOriginalName();
-            $destinationPath = public_path('/images/news');
-            $image->move($destinationPath, $name);
-            $fields['picture'] = '/images/news/' . $name;
-        }
-        else 
-        {
-            $fields['picture'] = $record->picture;
-        }
+        $record = ActorRoles::findOrFail($id);
 
         try {
             $record->update($fields);
@@ -85,7 +54,7 @@ class NewsController extends Controller
     // Удаление записи
     public function Delete($id)
     {
-        $record = News::findOrFail($id);
+        $record = ActorRoles::findOrFail($id);
         
         try {
             $record->delete();

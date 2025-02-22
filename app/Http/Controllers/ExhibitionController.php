@@ -40,9 +40,13 @@ class ExhibitionController extends Controller
             $fields['picture'] = '/images/exhibitions/' . $name;
         }
 
-        Exhibitions::create($fields);
+        try {
+            Exhibitions::create($fields);
+            return redirect()->back()->with('success', 'Запись добавлена!');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Ошибка при добавлении записи: ' . $e->getMessage());
+        }
 
-        return redirect()->back()->with('success', 'Запись добавлена!');
     }
 
     // Изменение записи
@@ -77,15 +81,19 @@ class ExhibitionController extends Controller
             $fields['picture'] = $record->picture;
         }
 
-        $record->update($fields);
-
-        return redirect()->back()->with('success', 'Запись изменена!');
+        try {
+            $record->update($fields);
+            return redirect()->back()->with('success', 'Запись изменена!');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Ошибка при изменении записи: ' . $e->getMessage());
+        }
     }
 
     // Удаление записи
     public function Delete($id)
     {
         $record = Exhibitions::findOrFail($id);
+        
         try {
             $record->delete();
             return redirect()->back()->with('success', 'Запись удалена!');

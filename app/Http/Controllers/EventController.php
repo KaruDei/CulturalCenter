@@ -56,9 +56,12 @@ class EventController extends Controller
             $fields['bigpicture'] = '/images/events/' . $name;
         }
 
-        Events::create($fields);
-
-        return redirect()->back()->with('success', 'Запись добавлена!');
+        try {
+            Events::create($fields);
+            return redirect()->back()->with('success', 'Запись добавлена!');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Ошибка при добавлении записи: ' . $e->getMessage());
+        }
     }
 
     // Изменение записи
@@ -113,15 +116,19 @@ class EventController extends Controller
             $fields['bigpicture'] = $record->bigpicture;
         }
 
-        $record->update($fields);
-
-        return redirect()->back()->with('success', 'Запись изменена!');
+        try {
+            $record->update($fields);
+            return redirect()->back()->with('success', 'Запись изменена!');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Ошибка при изменении записи: ' . $e->getMessage());
+        }
     }
 
     // Удаление записи
     public function Delete($id)
     {
         $record = Events::findOrFail($id);
+        
         try {
             $record->delete();
             return redirect()->back()->with('success', 'Запись удалена!');
