@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class EventScripts extends Model
 {
+    protected $fillable = [
+        'title',
+        'content',
+    ];
+
     public function events () {
         return $this->hasMany(Events::class);
     }
