@@ -9,7 +9,7 @@
 
         <div class="events-container ">
                 <h1>Ближайшие мероприятия</h1>
-
+                
                 <div class="event-grid grid grid-cols-4 gap-5">
 
                     @foreach ($events as $event)

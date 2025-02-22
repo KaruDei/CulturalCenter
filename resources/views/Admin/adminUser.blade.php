@@ -1,4 +1,13 @@
 <x-admin-layout>
+
+    <div class="modalWindow-container">
+        <div class="modalWindow-background">
+            
+        </div>
+        <div class="modalWindow-body" >
+            <p class="button-close">Закрыть</p>
+        </div>
+    </div>
     <div class="flex flex-col items-center justify-center min-h-screen bg-linen">
 
         <h1 class="text-4xl font-bold text-teal-800 mb-12 border-b-4 border-amber-300 pb-4 text-center">Все пользователи</h1>
@@ -26,7 +35,7 @@
                         <td class="py-2 px-4 border-b">5</td>
                         <td class="py-2 px-4 border-b">
                             <div class="flex space-x-2">
-                                <button class="bg-white hover:bg-gray-100 text-teal-700 font-semibold py-2 px-4 border border-teal-500 rounded transition duration-300">Редактировать</button>
+                                <button id="buttonUpdate"class="bg-white hover:bg-gray-100 text-teal-700 font-semibold py-2 px-4 border border-teal-500 rounded transition duration-300">Модальное окно</button>
                                 <button class="bg-white hover:bg-gray-100 text-red-700 font-semibold py-2 px-4 border border-red-500 rounded transition duration-300">Удалить</button>
                             </div>
                         </td>
@@ -65,4 +74,5 @@
             </table>
         </div>
     </div>
+
 </x-admin-layout>

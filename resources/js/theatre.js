@@ -1,4 +1,4 @@
-
+try{
     let form = document.querySelector(".form-theatre");
     let labelForm = document.querySelector('.label-theatre')
     let checkboxCount = 1;
@@ -50,3 +50,6 @@
                 }
             };
         });
+}catch(error){
+
+}        
