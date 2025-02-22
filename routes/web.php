@@ -31,9 +31,9 @@ Route::get('/contacts', function () {
 })->name('contacts');
 
 // Admin Panel
-// Route::get('/adminPanel', function () {
-//     return view('Admin.adminPanel'); 
-// })->name('adminPanel');
+Route::get('/adminPanel', function () {
+    return view('Admin.adminPanel'); 
+})->name('adminPanel');
 
 // User
 Route::get('/adminUser', function () {
