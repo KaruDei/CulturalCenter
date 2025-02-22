@@ -17,7 +17,7 @@
                         </svg>
                     </div>
                 </div>
-                <a href="{{Route('adminUser')}}" class="text-amber-600 hover:text-amber-700 mt-4 block">Подробнее</a>
+                <a href="{{Route('admin.users')}}" class="text-amber-600 hover:text-amber-700 mt-4 block">Подробнее</a>
             </div>
 
             <!-- Мероприятия -->
@@ -33,7 +33,7 @@
                         </svg>
                     </div>
                 </div>
-                <a href="{{Route('adminEvents')}}" class="text-amber-600 hover:text-amber-700 mt-4 block">Подробнее</a>
+                <a href="{{Route('admin.events')}}" class="text-amber-600 hover:text-amber-700 mt-4 block">Подробнее</a>
             </div>
 
             <!-- Выставки -->
@@ -50,7 +50,7 @@
                         </svg>
                     </div>
                 </div>
-                <a href="{{Route('adminExhibitions')}}" class="text-amber-600 hover:text-amber-700 mt-4 block">Подробнее</a>
+                <a href="{{Route('admin.exhibitions')}}" class="text-amber-600 hover:text-amber-700 mt-4 block">Подробнее</a>
             </div>
 
             <!-- Заказы -->
@@ -66,7 +66,7 @@
                         </svg>
                     </div>
                 </div>
-                <a href="{{Route('adminOrders')}}" class="text-amber-600 hover:text-amber-700 mt-4 block">Подробнее</a>
+                <a href="{{Route('admin.event-orders')}}" class="text-amber-600 hover:text-amber-700 mt-4 block">Подробнее</a>
             </div>
         </div>
     </div>

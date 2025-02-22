@@ -24,25 +24,22 @@
     <div class="container-layout">
         <header class=" header"> <!-- Замените на непрозрачный цвет -->
             <div class="header-content">
-                <a href="{{Route('adminPanel')}}" class="logo"> <!-- Золото при наведении -->
+                <a href="{{Route('admin.dashboard')}}" class="logo"> <!-- Золото при наведении -->
                     Admin Panel
                 </a>
                 <nav>
                     <ul class="nav-list">
-                        <li><a href="{{Route('adminPanel')}}" class="nav-link">Главная</a></li>
+                        <li><a href="{{Route('admin.dashboard')}}" class="nav-link">Главная</a></li>
 
-                        <li><a href="{{Route('adminUser')}}" class="nav-link">Пользователи</a></li>
+                        <li><a href="{{Route('admin.users')}}" class="nav-link">Пользователи</a></li>
 
-                        <li><a href="{{Route('adminEvents')}}" class="nav-link">Мероприятия</a></li>
+                        <li><a href="{{Route('admin.events')}}" class="nav-link">Мероприятия</a></li>
 
-                        <li><a href="{{Route('adminExhibitions')}}" class="nav-link">Выставки</a></li>
+                        <li><a href="{{Route('admin.exhibitions')}}" class="nav-link">Выставки</a></li>
 
-                        <li><a href="{{Route('adminOrders')}}" class="nav-link">Заказы</a></li>
+                        <li><a href="{{Route('admin.event-orders')}}" class="nav-link">Заказы</a></li>
 
                         <li><a href="{{Route('logout')}}" class="nav-link">Выход</a></li>
-                        
-                       
-                        
                     </ul>
                 </nav>
             </div>

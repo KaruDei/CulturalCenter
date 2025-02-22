@@ -5,67 +5,71 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\CheckRoleAdmin;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-// Home
+// User
 Route::get('/', [PageController::class, 'HomePage'])->name('home');
 
-// Events
 Route::get('/events', [PageController::class, 'EventsPage'])->name('events');
 Route::get('/events/{id}', [PageController::class, 'EventPage'])->name('event');
 
- // Exhibitions
 Route::get('/exhibitions', [PageController::class, 'ExhibitionsPage'])->name('exhibitions');
 Route::get('/exhibitions/{id}', [PageController::class, 'ExhibitionPage'])->name('exhibition');
 
-// About us
-Route::get('/aboutUs', function () {
-    return view('aboutUs'); 
-})->name('aboutUs');
+Route::get('/aboutUs', [PageController::class, 'AboutUsPage'])->name('aboutUs');
 
-// Contacts
-Route::get('/contacts', function () {
-    return view('contacts'); 
-})->name('contacts');
+Route::get('/contacts', [PageController::class, 'ContactsPage'])->name('contacts');
 
-// Admin Panel
-Route::get('/adminPanel', function () {
-    return view('Admin.adminPanel'); 
-})->name('adminPanel');
+Route::get('/contacts', [PageController::class, 'ContactsPage'])->name('contacts');
 
-// User
-Route::get('/adminUser', function () {
-    return view('Admin.adminUser'); 
-})->name('adminUser');
 
-// Orders
-Route::get('/adminOrders', function () {
-    return view('Admin.adminOrders'); 
-})->name('adminOrders');
 
-// Events
-Route::get('/adminEvents', function () {
-    return view('Admin.adminEvents'); 
-})->name('adminEvents');
 
-// Exhibitions
-Route::get('/adminExhibitions', function () {
-    return view('Admin.adminExhibitions'); 
-})->name('adminExhibitions');
+// Admin
+Route::get('/admin', [PageController::class, 'AdminDashboardPage'])->name('admin.dashboard');
+
+Route::get('/admin/users', [PageController::class, 'AdminUsersPage'])->name('admin.users');
+
+Route::get('/admin/event-orders', [PageController::class, 'AdminEventOrdersPage'])->name('admin.event-orders');
+
+Route::get('/admin/events', [PageController::class, 'AdminEventsPage'])->name('admin.events');
+
+Route::get('/admin/exhibitions', [PageController::class, 'AdminExhibitionsPage'])->name('admin.exhibitions');
+
+Route::get('/admin/actors', [PageController::class, 'AdminActorsPage'])->name('admin.actors');
+
+Route::get('/admin/actor-roles', [PageController::class, 'AdminActorRolesPage'])->name('admin.actor-roles');
+
+Route::get('/admin/event-actors', [PageController::class, 'AdminEventActorsPage'])->name('admin.event-actors');
+
+Route::get('/admin/event-creators', [PageController::class, 'AdminEventCreatorsPage'])->name('admin.event-creators');
+
+Route::get('/admin/event-scripts', [PageController::class, 'AdminEventScriptsPage'])->name('admin.event-scripts');
+
+Route::get('/admin/event-status', [PageController::class, 'AdminEventStatusPage'])->name('admin.event-status');
+
+Route::get('/admin/event-tickets', [PageController::class, 'AdminEventTicketsPage'])->name('admin.event-tickets');
+
+Route::get('/admin/event-types', [PageController::class, 'AdminEventTypesPage'])->name('admin.event-types');
+
+Route::get('/admin/news', [PageController::class, 'AdminNewsPage'])->name('admin.news');
+
+Route::get('/admin/rooms', [PageController::class, 'AdminRoomsPage'])->name('admin.rooms');
+
+Route::get('/admin/seats', [PageController::class, 'AdminSeatsPage'])->name('admin.seats');
+
+Route::get('/admin/ticket-status', [PageController::class, 'AdminTicketStatusPage'])->name('admin.ticket-status');
+
+Route::get('/admin/user-roles', [PageController::class, 'AdminUserRolesPage'])->name('admin.user-roles');
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [PageController::class, 'ProfilePage'])->name('profile');
 
     Route::get('/logout', [UserController::class, 'UserLogout'])->name('logout');
 
-    // Позже поместить сюда все пути для админа
-    // Route::middleware(CheckRoleAdmin::class)->group(function () {
-    //     Route::get('/adminPanel', function () {
-    //         return view('Admin.adminPanel'); 
-    //     })->name('adminPanel');
-    // });
+    Route::middleware(CheckRoleAdmin::class)->group(function () {
+        // Позже поместить сюда все пути для админа
+    });
 });
 
 Route::middleware('guest')->group(function () {
