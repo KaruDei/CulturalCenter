@@ -19,7 +19,7 @@ class UserController extends Controller
             'picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        $fields['id_user_role'] = UserRoles::first()->where('role', 'user')->value('id');
+        $fields['user_role_id'] = UserRoles::first()->where('role', 'user')->value('id');
 
         if ($request->hasFile('picture'))
         {

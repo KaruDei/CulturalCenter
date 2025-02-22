@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
                 'full_name' => 'Admin Admin Admin',
                 'password' => 'admin',
                 'picture' => '/images/1739989222-BobStoneBeginer.png',
-                'id_user_role' => UserRoles::first()->where('role', 'admin')->value('id'),
+                'user_role_id' => UserRoles::first()->where('role', 'admin')->value('id'),
             ]
         );
         User::updateOrCreate(
@@ -33,7 +33,7 @@ class UserSeeder extends Seeder
                 'full_name' => 'User User User',
                 'password' => 'user',
                 'picture' => '/images/user/1740129142-miku-miku-beam.gif',
-                'id_user_role' => UserRoles::first()->where('role', 'user')->value('id'),
+                'user_role_id' => UserRoles::first()->where('role', 'user')->value('id'),
             ]
         );
     }

@@ -22,11 +22,20 @@ class User extends Authenticatable
         'email',
         'password',
         'picture',
-        'id_user_role',
+        'user_role_id',
     ];
 
+    public function hasRole($role)
+    {
+        if ($this->userRole->role == 'admin') {
+            return true;
+        }
+
+        return false;
+    }
+
     // Add link for UserRoles
-    public function userRoles () {
+    public function userRole () {
         return $this->belongsTo(UserRoles::class);
     }
 

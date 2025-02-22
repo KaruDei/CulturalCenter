@@ -3,6 +3,7 @@
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Middleware\CheckRoleAdmin;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -30,9 +31,9 @@ Route::get('/contacts', function () {
 })->name('contacts');
 
 // Admin Panel
-Route::get('/adminPanel', function () {
-    return view('Admin.adminPanel'); 
-})->name('adminPanel');
+// Route::get('/adminPanel', function () {
+//     return view('Admin.adminPanel'); 
+// })->name('adminPanel');
 
 // User
 Route::get('/adminUser', function () {
@@ -58,6 +59,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [PageController::class, 'ProfilePage'])->name('profile');
 
     Route::get('/logout', [UserController::class, 'UserLogout'])->name('logout');
+
+    // Позже поместить сюда все пути для админа
+    // Route::middleware(CheckRoleAdmin::class)->group(function () {
+    //     Route::get('/adminPanel', function () {
+    //         return view('Admin.adminPanel'); 
+    //     })->name('adminPanel');
+    // });
 });
 
 Route::middleware('guest')->group(function () {
