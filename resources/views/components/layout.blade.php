@@ -14,6 +14,7 @@
         'resources\css\main-page.css',
         'resources\css\profile.css',
         'resources\css\layout.css',
+        'resources\css\modalWindow.css'
         ])
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,6 +28,24 @@
                 <a href="{{Route('home')}}" class="logo">Cultural Center</a>
                 <nav>
                     <ul class="nav-list">
+                        <li><a href="{{Route('home')}}" class="nav-link">Главная</a></li>
+                        <li><a href="{{Route('events')}}" class="nav-link">Мероприятия</a></li>
+                        <li><a href="{{Route('exhibitions')}}" class="nav-link">Выставки</a></li>
+                        <li><a href="{{Route('aboutUs')}}" class="nav-link">О нас</a></li>
+                        <li><a href="{{Route('contacts')}}" class="nav-link">Контакты</a></li>
+    
+                        @guest
+                            <li><a href="{{Route('login')}}" class="nav-link">Авторизация</a></li>
+                            <li><a href="{{Route('registration')}}" class="nav-link">Регистрация</a></li>
+                        @endguest
+    
+                        @auth
+                            <li><a href="{{Route('profile')}}" class="nav-link">Профиль</a></li>
+                            <li><a href="{{Route('logout')}}" class="nav-link">Выход</a></li>
+                        @endauth
+                    </ul>
+                    <img src="/icons/armchair.png" class="burger-button">
+                    <ul class="burger-nav-list">
                         <li><a href="{{Route('home')}}" class="nav-link">Главная</a></li>
                         <li><a href="{{Route('events')}}" class="nav-link">Мероприятия</a></li>
                         <li><a href="{{Route('exhibitions')}}" class="nav-link">Выставки</a></li>
