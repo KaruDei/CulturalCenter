@@ -12,6 +12,7 @@ class PageController extends Controller
     protected $eventActorController;
     protected $eventController;
     protected $eventCreatorController;
+    protected $eventOrderController;
     protected $eventScriptController;
     protected $eventStatusController;
     protected $eventTicketController;
@@ -30,6 +31,7 @@ class PageController extends Controller
         EventActorController $eventActorController,
         EventController $eventController,
         EventCreatorController $eventCreatorController,
+        EventOrderController $eventOrderController,
         EventScriptController $eventScriptController,
         EventStatusController $eventStatusController,
         EventTicketController $eventTicketController,
@@ -48,6 +50,7 @@ class PageController extends Controller
         $this->eventActorController = $eventActorController;
         $this->eventController = $eventController;
         $this->eventCreatorController = $eventCreatorController;
+        $this->eventOrderController = $eventOrderController;
         $this->eventScriptController = $eventScriptController;
         $this->eventStatusController = $eventStatusController;
         $this->eventTicketController = $eventTicketController;
