@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('picture')->nullable();
             $table->date('start_date');
             $table->date('end_date');
-            $table->foreignId('id_event')->nullable()->constrained('events')->onDelete('cascade');
+            $table->foreignId('event_id')->nullable()->constrained('events')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -7,15 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class EventActors extends Model
 {
     protected $fillable = [
-        'id_event',
-        'id_actor',
+        'event_id',
+        'actor_id',
     ];
 
-    public function actors() {
-        return $this->hasMany(Actors::class);
+    public function actor() {
+        return $this->belongsTo(Actors::class, 'id');
     }
     
-    public function events() {
-        return $this->hasMany(Events::class);
+    public function event() {
+        return $this->belongsTo(Events::class, 'id');
     }
 }

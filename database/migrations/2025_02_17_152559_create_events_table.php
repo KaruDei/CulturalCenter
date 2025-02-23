@@ -15,17 +15,17 @@ return new class extends Migration
             $table->id();
             $table->string('title')->unique();
             $table->text('description');
-            $table->foreignId('id_event_type')->constrained('event_types')->onDelete('cascade');
-            $table->foreignId('id_room')->constrained('rooms')->onDelete('cascade');
+            $table->foreignId('event_type_id')->constrained('event_types')->onDelete('cascade');
+            $table->foreignId('room_id')->constrained('rooms')->onDelete('cascade');
             $table->date('date');
             $table->time('time');
             $table->integer('duration');
             $table->integer('price');
             $table->string('picture')->nullable();
             $table->string('bigpicture')->nullable();
-            $table->foreignId('id_event_script')->constrained('event_scripts')->onDelete('cascade');
-            $table->foreignId('id_creator')->nullable()->constrained('event_creators')->onDelete('cascade');
-            $table->foreignId('id_event_status')->constrained('event_statuses')->onDelete('cascade');
+            $table->foreignId('event_script_id')->constrained('event_scripts')->onDelete('cascade');
+            $table->foreignId('event_creator_id')->nullable()->constrained('event_creators')->onDelete('cascade');
+            $table->foreignId('event_status_id')->constrained('event_statuses')->onDelete('cascade');
             $table->timestamps();
         });
     }

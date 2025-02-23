@@ -20,7 +20,7 @@ Route::get('/contacts', [PageController::class, 'ContactsPage'])->name('contacts
 
 Route::get('/contacts', [PageController::class, 'ContactsPage'])->name('contacts');
 
-
+Route::get('/test', [PageController::class, 'TestPage'])->name('test');
 
 
 // Admin

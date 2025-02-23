@@ -18,7 +18,7 @@ class SeatsSeeder extends Seeder
         // Room 101
         Seats::updateOrCreate(
             [
-                'id_room' => Rooms::first()->where('number', 101)->value('id'),
+                'room_id' => Rooms::first()->where('number', 101)->value('id'),
                 'row' => 1,
                 'number' => 1,
             ]
@@ -26,7 +26,7 @@ class SeatsSeeder extends Seeder
 
         Seats::updateOrCreate(
             [
-                'id_room' => Rooms::first()->where('number', 101)->value('id'),
+                'room_id' => Rooms::first()->where('number', 101)->value('id'),
                 'row' => 1,
                 'number' => 2,
             ]
@@ -34,7 +34,7 @@ class SeatsSeeder extends Seeder
 
         Seats::updateOrCreate(
             [
-                'id_room' => Rooms::first()->where('number', 101)->value('id'),
+                'room_id' => Rooms::first()->where('number', 101)->value('id'),
                 'row' => 1,
                 'number' => 3,
             ]
@@ -42,7 +42,7 @@ class SeatsSeeder extends Seeder
 
         Seats::updateOrCreate(
             [
-                'id_room' => Rooms::first()->where('number', 101)->value('id'),
+                'room_id' => Rooms::first()->where('number', 101)->value('id'),
                 'row' => 2,
                 'number' => 4,
             ]
@@ -50,7 +50,7 @@ class SeatsSeeder extends Seeder
 
         Seats::updateOrCreate(
             [
-                'id_room' => Rooms::first()->where('number', 101)->value('id'),
+                'room_id' => Rooms::first()->where('number', 101)->value('id'),
                 'row' => 2,
                 'number' => 5,
             ]
@@ -58,7 +58,7 @@ class SeatsSeeder extends Seeder
 
         Seats::updateOrCreate(
             [
-                'id_room' => Rooms::first()->where('number', 101)->value('id'),
+                'room_id' => Rooms::first()->where('number', 101)->value('id'),
                 'row' => 2,
                 'number' => 6,
             ]
@@ -66,7 +66,7 @@ class SeatsSeeder extends Seeder
 
         Seats::updateOrCreate(
             [
-                'id_room' => Rooms::first()->where('number', 101)->value('id'),
+                'room_id' => Rooms::first()->where('number', 101)->value('id'),
                 'row' => 3,
                 'number' => 7,
             ]
@@ -74,7 +74,7 @@ class SeatsSeeder extends Seeder
 
         Seats::updateOrCreate(
             [
-                'id_room' => Rooms::first()->where('number', 101)->value('id'),
+                'room_id' => Rooms::first()->where('number', 101)->value('id'),
                 'row' => 3,
                 'number' => 8,
             ]
@@ -82,7 +82,7 @@ class SeatsSeeder extends Seeder
 
         Seats::updateOrCreate(
             [
-                'id_room' => Rooms::first()->where('number', 101)->value('id'),
+                'room_id' => Rooms::first()->where('number', 101)->value('id'),
                 'row' => 3,
                 'number' => 9,
             ]
@@ -92,7 +92,7 @@ class SeatsSeeder extends Seeder
 
         Seats::updateOrCreate(
             [
-                'id_room' => Rooms::first()->where('number', 102)->value('id'),
+                'room_id' => Rooms::first()->where('number', 102)->value('id'),
                 'row' => 1,
                 'number' => 1,
             ]
@@ -100,7 +100,7 @@ class SeatsSeeder extends Seeder
 
         Seats::updateOrCreate(
             [
-                'id_room' => Rooms::first()->where('number', 102)->value('id'),
+                'room_id' => Rooms::first()->where('number', 102)->value('id'),
                 'row' => 1,
                 'number' => 2,
             ]
@@ -108,7 +108,7 @@ class SeatsSeeder extends Seeder
 
         Seats::updateOrCreate(
             [
-                'id_room' => Rooms::first()->where('number', 102)->value('id'),
+                'room_id' => Rooms::first()->where('number', 102)->value('id'),
                 'row' => 1,
                 'number' => 3,
             ]
@@ -116,7 +116,7 @@ class SeatsSeeder extends Seeder
 
         Seats::updateOrCreate(
             [
-                'id_room' => Rooms::first()->where('number', 102)->value('id'),
+                'room_id' => Rooms::first()->where('number', 102)->value('id'),
                 'row' => 2,
                 'number' => 4,
             ]
@@ -124,7 +124,7 @@ class SeatsSeeder extends Seeder
 
         Seats::updateOrCreate(
             [
-                'id_room' => Rooms::first()->where('number', 102)->value('id'),
+                'room_id' => Rooms::first()->where('number', 102)->value('id'),
                 'row' => 2,
                 'number' => 5,
             ]
@@ -132,7 +132,7 @@ class SeatsSeeder extends Seeder
 
         Seats::updateOrCreate(
             [
-                'id_room' => Rooms::first()->where('number', 102)->value('id'),
+                'room_id' => Rooms::first()->where('number', 102)->value('id'),
                 'row' => 2,
                 'number' => 6,
             ]
@@ -140,7 +140,7 @@ class SeatsSeeder extends Seeder
 
         Seats::updateOrCreate(
             [
-                'id_room' => Rooms::first()->where('number', 102)->value('id'),
+                'room_id' => Rooms::first()->where('number', 102)->value('id'),
                 'row' => 3,
                 'number' => 7,
             ]
@@ -148,7 +148,7 @@ class SeatsSeeder extends Seeder
 
         Seats::updateOrCreate(
             [
-                'id_room' => Rooms::first()->where('number', 102)->value('id'),
+                'room_id' => Rooms::first()->where('number', 102)->value('id'),
                 'row' => 3,
                 'number' => 8,
             ]
@@ -156,7 +156,7 @@ class SeatsSeeder extends Seeder
 
         Seats::updateOrCreate(
             [
-                'id_room' => Rooms::first()->where('number', 102)->value('id'),
+                'room_id' => Rooms::first()->where('number', 102)->value('id'),
                 'row' => 3,
                 'number' => 9,
             ]
@@ -166,7 +166,7 @@ class SeatsSeeder extends Seeder
 
         Seats::updateOrCreate(
             [
-                'id_room' => Rooms::first()->where('number', 103)->value('id'),
+                'room_id' => Rooms::first()->where('number', 103)->value('id'),
                 'row' => 1,
                 'number' => 1,
             ]
@@ -174,7 +174,7 @@ class SeatsSeeder extends Seeder
 
         Seats::updateOrCreate(
             [
-                'id_room' => Rooms::first()->where('number', 103)->value('id'),
+                'room_id' => Rooms::first()->where('number', 103)->value('id'),
                 'row' => 1,
                 'number' => 2,
             ]
@@ -182,7 +182,7 @@ class SeatsSeeder extends Seeder
 
         Seats::updateOrCreate(
             [
-                'id_room' => Rooms::first()->where('number', 103)->value('id'),
+                'room_id' => Rooms::first()->where('number', 103)->value('id'),
                 'row' => 1,
                 'number' => 3,
             ]
@@ -190,7 +190,7 @@ class SeatsSeeder extends Seeder
 
         Seats::updateOrCreate(
             [
-                'id_room' => Rooms::first()->where('number', 103)->value('id'),
+                'room_id' => Rooms::first()->where('number', 103)->value('id'),
                 'row' => 2,
                 'number' => 4,
             ]
@@ -198,7 +198,7 @@ class SeatsSeeder extends Seeder
 
         Seats::updateOrCreate(
             [
-                'id_room' => Rooms::first()->where('number', 103)->value('id'),
+                'room_id' => Rooms::first()->where('number', 103)->value('id'),
                 'row' => 2,
                 'number' => 5,
             ]
@@ -206,7 +206,7 @@ class SeatsSeeder extends Seeder
 
         Seats::updateOrCreate(
             [
-                'id_room' => Rooms::first()->where('number', 103)->value('id'),
+                'room_id' => Rooms::first()->where('number', 103)->value('id'),
                 'row' => 2,
                 'number' => 6,
             ]
@@ -214,7 +214,7 @@ class SeatsSeeder extends Seeder
 
         Seats::updateOrCreate(
             [
-                'id_room' => Rooms::first()->where('number', 103)->value('id'),
+                'room_id' => Rooms::first()->where('number', 103)->value('id'),
                 'row' => 3,
                 'number' => 7,
             ]
@@ -222,7 +222,7 @@ class SeatsSeeder extends Seeder
 
         Seats::updateOrCreate(
             [
-                'id_room' => Rooms::first()->where('number', 103)->value('id'),
+                'room_id' => Rooms::first()->where('number', 103)->value('id'),
                 'row' => 3,
                 'number' => 8,
             ]
@@ -230,7 +230,7 @@ class SeatsSeeder extends Seeder
 
         Seats::updateOrCreate(
             [
-                'id_room' => Rooms::first()->where('number', 103)->value('id'),
+                'room_id' => Rooms::first()->where('number', 103)->value('id'),
                 'row' => 3,
                 'number' => 9,
             ]

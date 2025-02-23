@@ -24,19 +24,19 @@ class EventTicketController extends Controller
     {
         $fields = $request->validate([
             'price' => 'required|numeric',
-            'id_user' => 'required|numeric',
-            'id_event' => 'required|numeric',
-            'id_room' => 'required|numeric',
-            'id_seat' => 'required|numeric',
-            'id_ticket_status' => 'required|numeric',
+            'user_id' => 'required|numeric',
+            'event_id' => 'required|numeric',
+            'room_id' => 'required|numeric',
+            'seat_id' => 'required|numeric',
+            'ticket_status_id' => 'required|numeric',
         ]);
 
         if (EventTickets::where('price', $fields['price'])
-                            ->where('id_user', $fields['id_user'])
-                            ->where('id_event', $fields['id_event'])
-                            ->where('id_room', $fields['id_room'])
-                            ->where('id_seat', $fields['id_seat'])
-                            ->where('id_ticket_status', $fields['id_ticket_status'])
+                            ->where('user_id', $fields['user_id'])
+                            ->where('event_id', $fields['event_id'])
+                            ->where('room_id', $fields['room_id'])
+                            ->where('seat_id', $fields['seat_id'])
+                            ->where('ticket_status_id', $fields['ticket_status_id'])
                             ->exists())
         {
             return redirect()->back()->with('error', 'Такая запись уже сущетсвует!');
@@ -55,32 +55,32 @@ class EventTicketController extends Controller
     {
         $fields = $request->validate([
             'price' => 'required|numeric',
-            'id_user' => 'required|numeric',
-            'id_event' => 'required|numeric',
-            'id_room' => 'required|numeric',
-            'id_seat' => 'required|numeric',
-            'id_ticket_status' => 'required|numeric',
+            'user_id' => 'required|numeric',
+            'event_id' => 'required|numeric',
+            'room_id' => 'required|numeric',
+            'seat_id' => 'required|numeric',
+            'ticket_status_id' => 'required|numeric',
         ]);
 
         $record = EventTickets::findOrFail($id);
 
         if (
             $record->price == $fields['price'] 
-            && $record->id_user == $fields['id_user']
-            && $record->id_event == $fields['id_event']
-            && $record->id_room == $fields['id_room']
-            && $record->id_seat == $fields['id_seat']
-            && $record->id_ticket_status == $fields['id_ticket_status']
+            && $record->user_id == $fields['user_id']
+            && $record->event_id == $fields['event_id']
+            && $record->room_id == $fields['room_id']
+            && $record->seat_id == $fields['seat_id']
+            && $record->ticket_status_id == $fields['ticket_status_id']
         )
         {
             return redirect()->back()->with('error', 'Данные идентичны!');
         }
         else if (EventTickets::where('price', $fields['price'])
-                            ->where('id_user', $fields['id_user'])
-                            ->where('id_event', $fields['id_event'])
-                            ->where('id_room', $fields['id_room'])
-                            ->where('id_seat', $fields['id_seat'])
-                            ->where('id_ticket_status', $fields['id_ticket_status'])
+                            ->where('user_id', $fields['user_id'])
+                            ->where('event_id', $fields['event_id'])
+                            ->where('room_id', $fields['room_id'])
+                            ->where('seat_id', $fields['seat_id'])
+                            ->where('ticket_status_id', $fields['ticket_status_id'])
                             ->exists())
         {
             return redirect()->back()->with('error', 'Такая запись уже сущетсвует!');

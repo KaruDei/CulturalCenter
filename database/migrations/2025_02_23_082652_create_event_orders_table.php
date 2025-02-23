@@ -15,14 +15,14 @@ return new class extends Migration
             $table->id();
             $table->string('title')->unique();
             $table->text('description');
-            $table->foreignId('id_event_type')->constrained('event_types')->onDelete('cascade');
+            $table->foreignId('event_type_id')->constrained('event_types')->onDelete('cascade');
             $table->integer('duration');
             $table->integer('price');
             $table->string('picture')->nullable();
             $table->string('bigpicture')->nullable();
             $table->text('script');
-            $table->foreignId('id_creator')->constrained('event_creators')->onDelete('cascade');
-            $table->foreignId('id_event_status')->constrained('event_statuses')->onDelete('cascade');
+            $table->foreignId('event_creator_id')->constrained('event_creators')->onDelete('cascade');
+            $table->foreignId('event_status_id')->constrained('event_statuses')->onDelete('cascade');
             $table->timestamps();
         });
     }

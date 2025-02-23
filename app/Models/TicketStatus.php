@@ -12,6 +12,6 @@ class TicketStatus extends Model
 
     public function eventTickets()
     {
-        return $this->hasMany(EventTickets::class);
+        return $this->hasMany(EventTickets::class, 'ticket_status_id');
     }
 }

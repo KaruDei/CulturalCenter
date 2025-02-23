@@ -7,13 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Seats extends Model
 {
     protected $fillable = [
-        'id_room',
+        'room_id',
         'row',
         'number',
     ];
 
-    public function rooms()
+    public function room()
     {
-        return $this->belongsTo(Rooms::class);
+        return $this->belongsTo(Rooms::class, 'id');
     }
 }

@@ -11,6 +11,10 @@ class EventTypes extends Model
     ];
 
     public function events () {
-        return $this->hasMany(Events::class);
+        return $this->hasMany(Events::class, 'event_type_id');
+    }
+
+    public function eventOrders () {
+        return $this->hasMany(EventOrders::class, 'event_status_id');
     }
 }

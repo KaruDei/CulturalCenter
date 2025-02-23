@@ -25,17 +25,17 @@ class EventController extends Controller
         $fields = $request->validate([
             'title' => 'required|min:3|max:255|unique:events',
             'description' => 'required|min:3',
-            'id_event_type' => 'required|numeric',
-            'id_room' => 'required|numeric',
+            'event_type_id' => 'required|numeric',
+            'room_id' => 'required|numeric',
             'date' => 'required',
             'time' => 'required',
             'duration' => 'required|numeric|gte:0',
             'price' => 'required|numeric|gte:0',
             'picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'bigpicture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'id_event_script' => 'required|numeric',
-            'id_creator' => 'required|numeric',
-            'id_event_status' => 'required|numeric'
+            'event_script_id' => 'required|numeric',
+            'event_creator_id' => 'required|numeric',
+            'event_status_id' => 'required|numeric'
         ]);
 
         if ($request->hasFile('picture'))
@@ -70,17 +70,17 @@ class EventController extends Controller
         $fields = $request->validate([
             'title' => 'required|min:3|max:255|unique:events,title,' . $id,
             'description' => 'required|min:3',
-            'id_event_type' => 'required|numeric',
-            'id_room' => 'required|numeric',
+            'event_type_id' => 'required|numeric',
+            'room_id' => 'required|numeric',
             'date' => 'required',
             'time' => 'required',
             'duration' => 'required|numeric|gte:0',
             'price' => 'required|numeric|gte:0',
             'picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'bigpicture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'id_event_script' => 'required|numeric',
-            'id_creator' => 'required|numeric',
-            'id_event_status' => 'required|numeric'
+            'event_script_id' => 'required|numeric',
+            'event_creator_id' => 'required|numeric',
+            'event_status_id' => 'required|numeric'
         ]);
 
         $record = Events::findOrFail($id);

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('full_name')->unique();
             $table->text('description');
-            $table->foreignId('id_actor_role')->constrained('actor_roles')->onDelete('cascade');
+            $table->foreignId('actor_role_id')->constrained('actor_roles')->onDelete('cascade');
             $table->string('picture')->nullable();
             $table->timestamps();
         });

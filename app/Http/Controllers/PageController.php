@@ -65,6 +65,11 @@ class PageController extends Controller
     }
 
 
+    public function TestPage()
+    {
+        dd($this->actorController->GetAllRecords()[0]->eventActors[0]->event->eventStatus->eventOrders);
+    }
+
 
     /* 
                     User Pages

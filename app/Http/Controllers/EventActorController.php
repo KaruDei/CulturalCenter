@@ -23,11 +23,11 @@ class EventActorController extends Controller
     public function Create(Request $request)
     {
         $fields = $request->validate([
-            'id_event' => 'required|numeric',
-            'id_actor' => 'required|numeric',
+            'event_id' => 'required|numeric',
+            'actor_id' => 'required|numeric',
         ]);
 
-        if (EventActors::where('id_event', $fields['id_event'])->where('id_actor', $fields['id_actor'])->exists())
+        if (EventActors::where('event_id', $fields['event_id'])->where('actor_id', $fields['actor_id'])->exists())
         {
             return redirect()->back()->with('error', 'Актёр уже привязан к этому мероприятию');
         }
@@ -44,17 +44,17 @@ class EventActorController extends Controller
     public function Update(Request $request, $id)
     {
         $fields = $request->validate([
-            'id_event' => 'required|numeric',
-            'id_actor' => 'required|numeric',
+            'event_id' => 'required|numeric',
+            'actor_id' => 'required|numeric',
         ]);
 
         $record = EventActors::findOrFail($id);
 
-        if ($record->id_event == $fields['id_event'] && $record->id_actor == $fields['id_actor'])
+        if ($record->event_id == $fields['event_id'] && $record->actor_id == $fields['actor_id'])
         {
             return redirect()->back()->with('error', 'Этот актёр уже привязан к этому мероприятию');
         }
-        else if (EventActors::where('id_event', $fields['id_event'])->where('id_actor', $fields['id_actor'])->exists())
+        else if (EventActors::where('event_id', $fields['event_id'])->where('actor_id', $fields['actor_id'])->exists())
         {
             return redirect()->back()->with('error', 'Этот актёр уже привязан к этому мероприятию');
         }

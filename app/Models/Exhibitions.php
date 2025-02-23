@@ -12,10 +12,10 @@ class Exhibitions extends Model
         'picture',
         'start_date',
         'end_date',
-        'id_event',
+        'event_id',
     ];
 
     public function events() {
-        return $this->belongsTo(Events::class);
+        return $this->belongsTo(Events::class, 'id');
     }
 }

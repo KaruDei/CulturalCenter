@@ -23,12 +23,12 @@ class SeatController extends Controller
     public function Create(Request $request)
     {
         $fields = $request->validate([
-            'id_room' => 'required|numeric',
+            'room_id' => 'required|numeric',
             'row' => 'required|numeric',
             'number' => 'required|numeric',
         ]);
 
-        if (Seats::where('id_room', $fields['id_room'])
+        if (Seats::where('room_id', $fields['room_id'])
                 ->where('row', $fields['row'])
                 ->where('number', $fields['number'])
                 ->exists())
@@ -48,7 +48,7 @@ class SeatController extends Controller
     public function Update(Request $request, $id)
     {
         $fields = $request->validate([
-            'id_room' => 'required|numeric',
+            'room_id' => 'required|numeric',
             'row' => 'required|numeric',
             'number' => 'required|numeric',
         ]);
@@ -56,14 +56,14 @@ class SeatController extends Controller
         $record = Seats::findOrFail($id);
 
         if (
-            $record->price == $fields['id_room'] 
-            && $record->id_user == $fields['row']
-            && $record->id_event == $fields['number']
+            $record->price == $fields['room_id'] 
+            && $record->user_id == $fields['row']
+            && $record->event_id == $fields['number']
         )
         {
             return redirect()->back()->with('error', 'Данные идентичны!');
         }
-        else if (Seats::where('id_room', $fields['id_room'])
+        else if (Seats::where('room_id', $fields['room_id'])
                             ->where('row', $fields['row'])
                             ->where('number', $fields['number'])
                             ->exists())

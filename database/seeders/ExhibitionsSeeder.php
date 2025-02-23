@@ -23,7 +23,7 @@ class ExhibitionsSeeder extends Seeder
                 'start_date' => '2025-02-18',
                 'end_date' => '2025-02-18',
                 'picture' => '/images/exhibitions/X5hxZOIFORs.jpg',
-                'id_event' => Events::first()->where('title', 'Князь Владимир')->value('id')
+                'event_id' => Events::first()->where('title', 'Князь Владимир')->value('id')
             ]
         );
 

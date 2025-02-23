@@ -10,13 +10,13 @@ class ActorController extends Controller
     // Получение всех записей
     public function GetAllRecords()
     {
-        return Actors::all()->toArray();
+        return Actors::all();
     }
 
     // Получение одной записи
     public function GetRecord($id)
     {
-        return Actors::findOrFail($id)->toArray();
+        return Actors::findOrFail($id);
     }
 
     // Создание новой записи
@@ -25,7 +25,7 @@ class ActorController extends Controller
         $fields = $request->validate([
             'full_name' => 'required|min:3|max:255|unique:actors',
             'description' => 'required|min:3',
-            'id_actor_role' => 'required|numeric',
+            'actor_role_id' => 'required|numeric',
             'picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
@@ -52,7 +52,7 @@ class ActorController extends Controller
         $fields = $request->validate([
             'full_name' => 'required|min:3|max:255|unique:actors,full_name,' . $id,
             'description' => 'required|min:3',
-            'id_actor_role' => 'required|numeric',
+            'actor_role_id' => 'required|numeric',
             'picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 

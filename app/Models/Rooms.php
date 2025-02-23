@@ -11,10 +11,10 @@ class Rooms extends Model
     ];
 
     public function events () {
-        return $this->hasMany(Events::class);
+        return $this->hasMany(Events::class, 'room_id');
     }
 
     public function seats () {
-        return $this->hasMany(Seats::class);
+        return $this->hasMany(Seats::class, 'room_id');
     }
 }

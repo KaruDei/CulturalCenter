@@ -9,25 +9,25 @@ class EventOrders extends Model
     protected $fillable = [
         'title',
         'description',
-        'id_event_type',
+        'event_type_id',
         'duration',
         'price',
         'picture',
         'bigpicture',
         'script',
-        'id_creator',
-        'id_event_status',
+        'event_creator_id',
+        'event_status_id',
     ];
 
     public function eventStatus() {
-        return $this->belongsTo(EventStatus::class);
+        return $this->belongsTo(EventStatus::class, 'id');
     }
 
     public function eventTypes() {
-        return $this->belongsTo(EventTypes::class);
+        return $this->belongsTo(EventTypes::class, 'id');
     }
 
     public function eventCreator() {
-        return $this->belongsTo(EventCreators::class);
+        return $this->belongsTo(EventCreators::class, 'id');
     }
 }

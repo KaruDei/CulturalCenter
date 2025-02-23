@@ -36,7 +36,19 @@ class User extends Authenticatable
 
     // Add link for UserRoles
     public function userRole () {
-        return $this->belongsTo(UserRoles::class);
+        return $this->belongsTo(UserRoles::class, 'id');
+    }
+
+    public function userCreator () {
+        return $this->belongsTo(EventCreators::class, 'user_id');
+    }
+
+    public function userTickets () {
+        return $this->hasMany(EventTickets::class, 'user_id');
+    }
+
+    public function userSeats () {
+        return $this->hasMany(Seats::class, 'user_id');
     }
 
     /**

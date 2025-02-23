@@ -22,14 +22,14 @@ class EventOrdersSeeder extends Seeder
             ['title' => 'Заказ 1'], 
             [
                 'description' => 'Описание заказа 1', 
-                'id_event_type' => EventTypes::first()->where('type', 'Шоу')->value('id'),
+                'event_type_id' => EventTypes::first()->where('type', 'Шоу')->value('id'),
                 'duration' => 30,
                 'price' => 250,
                 'picture' => '/images/events/ilya-i-solovei.png',
                 'bigpicture' => '/images/events/ilya-i-solovei-big.png',
                 'script' => 'Какой то сценарий',
-                'id_creator' => EventCreators::where('user_id', User::where('email', 'admin@mail.ru')->first()->value('id'))->first()->value('id'),
-                'id_event_status' => EventStatus::first()->where('status', 'Заказано')->value('id'),
+                'event_creator_id' => EventCreators::where('user_id', User::where('email', 'admin@mail.ru')->first()->value('id'))->first()->value('id'),
+                'event_status_id' => EventStatus::first()->where('status', 'Заказано')->value('id'),
             
         ]);
     }

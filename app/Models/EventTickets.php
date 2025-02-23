@@ -8,15 +8,35 @@ class EventTickets extends Model
 {
     protected $fillable = [
         'price',
-        'id_user',
-        'id_event',
-        'id_room',
-        'id_seat',
-        'id_ticket_status',
+        'user_id',
+        'event_id',
+        'room_id',
+        'seat_id',
+        'ticket_status_id',
     ];
 
     public function ticketStatus()
     {
-        return $this->belongsTo(TicketStatus::class);
+        return $this->belongsTo(TicketStatus::class, 'id');
+    }
+
+    public function event()
+    {
+        return $this->belongsTo(Events::class, 'id');
+    }
+
+    public function room()
+    {
+        return $this->belongsTo(Rooms::class, 'id');
+    }
+
+    public function Seat()
+    {
+        return $this->belongsTo(Seats::class, 'id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id');
     }
 }

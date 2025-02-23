@@ -9,41 +9,41 @@ class Events extends Model
     protected $fillable = [
         'title',
         'description',
-        'id_event_type',
-        'id_room',
+        'event_type_id',
+        'room_id',
         'date',
         'time',
         'duration',
         'price',
         'picture',
         'bigpicture',
-        'id_event_script',
-        'id_creator',
-        'id_event_status',
+        'event_script_id',
+        'event_creator_id',
+        'event_status_id',
     ];
 
     // Add links
     public function room() {
-        return $this->belongsTo(Rooms::class);
+        return $this->belongsTo(Rooms::class, 'id');
     }
 
     public function eventStatus() {
-        return $this->belongsTo(EventStatus::class);
+        return $this->belongsTo(EventStatus::class, 'id');
     }
 
     public function eventType() {
-        return $this->belongsTo(EventTypes::class);
+        return $this->belongsTo(EventTypes::class, 'id');
     }
 
     public function eventCreator() {
-        return $this->belongsTo(EventCreators::class);
+        return $this->belongsTo(EventCreators::class, 'id');
     }
 
     public function eventScript() {
-        return $this->belongsTo(EventScripts::class);
+        return $this->belongsTo(EventScripts::class, 'id');
     }
 
     public function exhibition() {
-        return $this->belongsTo(Exhibitions::class);
+        return $this->belongsTo(Exhibitions::class, 'event_id');
     }
 }

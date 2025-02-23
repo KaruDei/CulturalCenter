@@ -28,7 +28,7 @@ class ExhibitionController extends Controller
             'picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'start_date' => 'required', 
             'end_date' => 'required',
-            'id_event' => 'numeric',
+            'event_id' => 'numeric',
         ]);
 
         if ($request->hasFile('picture'))
@@ -58,7 +58,7 @@ class ExhibitionController extends Controller
             'picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'start_date' => 'required',
             'end_date' => 'required',
-            'id_event' => 'numeric',
+            'event_id' => 'numeric',
         ]);
 
         $record = Exhibitions::findOrFail($id);

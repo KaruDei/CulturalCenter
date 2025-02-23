@@ -10,7 +10,7 @@ class ActorRoles extends Model
         'role',
     ];
 
-    public function events () {
-        return $this->hasMany(Actors::class);
+    public function actors () {
+        return $this->hasMany(Actors::class, 'actor_role_id');
     }
 }

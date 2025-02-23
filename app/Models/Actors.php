@@ -9,15 +9,15 @@ class Actors extends Model
     protected $fillable = [
         'full_name',
         'description',
-        'id_actor_role',
+        'actor_role_id',
         'picture',
     ];
 
-    public function actorRoles() {
-        return $this->belongsTo(ActorRoles::class);
+    public function actorRole() {
+        return $this->belongsTo(ActorRoles::class, 'id');
     }
 
     public function eventActors() {
-        return $this->hasMany(EventActors::class);
+        return $this->hasMany(EventActors::class, 'actor_id');
     }
 }

@@ -12,6 +12,6 @@ class EventScripts extends Model
     ];
 
     public function events () {
-        return $this->hasMany(Events::class);
+        return $this->hasMany(Events::class, 'event_script_id');
     }
 }
