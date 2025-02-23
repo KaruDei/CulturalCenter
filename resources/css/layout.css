@@ -44,14 +44,17 @@ body {
     gap: 1.5rem; /* Отступ между элементами списка */
 }
 .burger-nav-list{
+    left: 75.5%;
+    text-align: center;
+    width: 200px;
+    height: 250px;
     list-style: none; /* Убираем стандартные маркеры списка */
-    padding: 0;
     position: absolute;
     display: none;
     flex-direction: column;
     gap: 10px; 
     background-color: white;
-    border:5px solid teal;
+    border:3px solid #fbbf24;
     border-radius: 10px;
     padding: 5px;
     z-index: 1;
@@ -63,6 +66,7 @@ body {
     margin-bottom: 10px;
     transform: rotate(0deg);
     transition: all 0.3s;
+    cursor: pointer;
 
 }
 .nav-link {
