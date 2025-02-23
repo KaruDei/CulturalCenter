@@ -19,7 +19,12 @@ body {
     z-index:999;
     height: 98px;
 }
-
+@media (max-width: 768px) {
+    .header {
+      padding: 1rem 20px; /* Adjust padding for smaller screens */
+      height: auto;     /* Let height adjust to content */
+    }
+  }
 .header-content {
     display: flex;
     justify-content: space-between;
