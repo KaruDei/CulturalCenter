@@ -10,7 +10,7 @@
         <div class="events-container ">
                 <h1>Ближайшие мероприятия</h1>
                 
-                <div class="event-grid grid grid-cols-4 gap-5">
+                <div class="event-grid">
 
                     @foreach ($events as $event)
                         <a href="{{Route('event', $event['id'])}}" class="event-item">                     

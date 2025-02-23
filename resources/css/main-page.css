@@ -91,7 +91,15 @@
     position: relative;
     transition: top 0.3s ease; 
 }
-
+@media (max-width: 768px) {
+    .event-grid {
+        display: block;
+    }
+    .event-text{
+        height: 200px;
+        overflow: hidden;
+    }
+  }
 /* Станьте автором мероприятия */
 .container-avtor {
     display: flex;
