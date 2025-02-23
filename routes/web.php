@@ -83,3 +83,7 @@ Route::middleware('guest')->group(function () {
     })->name('registration');
     Route::post('/reg', [UserController::class, 'UserRegistration']);
 });
+
+Route::get('/admin/edit/user', function () {
+    return view('admin.admin-edit-user');
+})->name('admin-edit-user');
