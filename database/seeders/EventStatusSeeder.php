@@ -13,8 +13,10 @@ class EventStatusSeeder extends Seeder
      */
     public function run(): void
     {
-        EventStatus::updateOrCreate(['status' => 'Запланированно']);
+        EventStatus::updateOrCreate(['status' => 'Запланировано']);
         EventStatus::updateOrCreate(['status' => 'Активно']);
         EventStatus::updateOrCreate(['status' => 'Завершенно']);
+        EventStatus::updateOrCreate(['status' => 'Заказано']);
+        EventStatus::updateOrCreate(['status' => 'Отменено']);
     }
 }

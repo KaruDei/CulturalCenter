@@ -23,7 +23,7 @@ class EventCreatorController extends Controller
     public function Create(Request $request)
     {
         $fields = $request->validate([
-            'creator' => 'required|min:3|max:255|unique:event_creators',
+            'user_id' => 'required|numeric',
         ]);
 
         try {
@@ -38,7 +38,7 @@ class EventCreatorController extends Controller
     public function Update(Request $request, $id)
     {
         $fields = $request->validate([
-            'creator' => 'required|min:3|max:255|unique:event_creators,creator,' . $id,
+            'user_id' => 'required|numeric|unique:event_creators,user_id,' . $id,
         ]);
 
         $record = EventCreators::findOrFail($id);

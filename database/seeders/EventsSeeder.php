@@ -8,6 +8,7 @@ use App\Models\EventScripts;
 use App\Models\EventStatus;
 use App\Models\EventTypes;
 use App\Models\Rooms;
+use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -31,8 +32,8 @@ class EventsSeeder extends Seeder
                 'picture' => '/images/events/knazVladimir.png',
                 'bigpicture' => '/images/events/knazVladimir-big.png',
                 'id_event_script' => EventScripts::first()->where('title', 'Сценарий для фильма Князь Владимир')->value('id'),
-                'id_creator' => EventCreators::first()->where('creator', 'Культурный центр')->value('id'),
-                'id_event_status' => EventStatus::first()->where('status', 'Запланированно')->value('id')
+                'id_creator' => EventCreators::where('user_id', User::where('email', 'admin@mail.ru')->first()->value('id'))->first()->value('id'),
+                'id_event_status' => EventStatus::first()->where('status', 'Запланировано')->value('id')
             ]
         );
 
@@ -49,8 +50,8 @@ class EventsSeeder extends Seeder
                 'picture' => '/images/events/alesha-popovich-i-tugarin-zmei.png',
                 'bigpicture' => '/images/events/alesha-popovich-i-tugarin-zmei-big.png',
                 'id_event_script' => EventScripts::first()->where('title', 'Какой то сценарий к какому то мероприятию')->value('id'),
-                'id_creator' => EventCreators::first()->where('creator', 'Some company')->value('id'),
-                'id_event_status' => EventStatus::first()->where('status', 'Запланированно')->value('id')
+                'id_creator' => EventCreators::where('user_id', User::where('email', 'admin@mail.ru')->first()->value('id'))->first()->value('id'),
+                'id_event_status' => EventStatus::first()->where('status', 'Запланировано')->value('id')
             ]
         );
 
@@ -67,8 +68,7 @@ class EventsSeeder extends Seeder
                 'picture' => '/images/events/dobrina-i-zmei.png',
                 'bigpicture' => '/images/events/dobrina-i-zmei-big.png',
                 'id_event_script' => EventScripts::first()->where('title', 'Какой то сценарий к какому то мероприятию')->value('id'),
-                'id_creator' => EventCreators::first()->where('creator', 'Some company')->value('id'),
-                'id_event_status' => EventStatus::first()->where('status', 'Запланированно')->value('id')
+                'id_event_status' => EventStatus::first()->where('status', 'Запланировано')->value('id')
             ]
         );
 
@@ -85,8 +85,7 @@ class EventsSeeder extends Seeder
                 'picture' => '/images/events/ilya-i-solovei.png',
                 'bigpicture' => '/images/events/ilya-i-solovei-big.png',
                 'id_event_script' => EventScripts::first()->where('title', 'Какой то сценарий к какому то мероприятию')->value('id'),
-                'id_creator' => EventCreators::first()->where('creator', 'Some company')->value('id'),
-                'id_event_status' => EventStatus::first()->where('status', 'Запланированно')->value('id')
+                'id_event_status' => EventStatus::first()->where('status', 'Запланировано')->value('id')
             ]
         );
     }

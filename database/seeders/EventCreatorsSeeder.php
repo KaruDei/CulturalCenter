@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\EventCreators;
+use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -13,7 +14,7 @@ class EventCreatorsSeeder extends Seeder
      */
     public function run(): void
     {
-        EventCreators::updateOrCreate(['creator' => "Культурный центр"]);
-        EventCreators::updateOrCreate(['creator' => "Some company"]);
+        EventCreators::updateOrCreate(['user_id' => User::where('email', 'admin@mail.ru')->first()->value('id')]);
+        EventCreators::updateOrCreate(['user_id' => User::where('email', 'user@mail.ru')->first()->value('id')]);
     }
 }

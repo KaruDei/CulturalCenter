@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class EventCreators extends Model
 {
     protected $fillable = [
-        'creator',
+        'user_id',
     ];
 
     public function events () {

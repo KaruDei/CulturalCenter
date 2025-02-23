@@ -13,4 +13,8 @@ class EventStatus extends Model
     public function events () {
         return $this->hasMany(Events::class);
     }
+
+    public function eventOrders () {
+        return $this->hasMany(EventOrders::class);
+    }
 }
