@@ -8,7 +8,7 @@
         </div>
 
         <div class="events-container ">
-                <h1>Ближайшие мероприятия</h1>
+                <h1 class="h">Ближайшие мероприятия</h1>
                 
                 <div class="event-grid">
 
@@ -35,7 +35,7 @@
 
         <div class="flex flex-col container items-stretch mx-auto">
 
-            <h1 class="text-5xl text-teal-700 mx-auto mt-20 mb-[80px]"> Новости </h1>
+            <h1 class="h text-5xl text-teal-700 mx-auto mt-20 mb-[80px]"> Новости </h1>
 
             <div class="">
 

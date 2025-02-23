@@ -99,6 +99,9 @@
         height: 200px;
         overflow: hidden;
     }
+    .events-container{
+        padding: 10px;
+    }
   }
 /* Станьте автором мероприятия */
 .container-avtor {
@@ -163,5 +166,26 @@
 @media (min-width: 1536px) { /* Для 2xl и выше */
     .image {
         display: block; /* Показываем изображение на больших экранах */
+    }
+   
+}
+@media (max-width: 768px) {
+    .create-button {
+        padding: 0;
+        width: 200px;
+        height: 50px;
+        font-size: 10px;
+    }
+    .title{
+        font-size: 20px;
+    }
+}
+@media (max-width: 768px){
+    .h{
+        font-size: 30px;
+    }
+    .events-container h1{
+       font-size: 30px;
+       text-align: center;
     }
 }
