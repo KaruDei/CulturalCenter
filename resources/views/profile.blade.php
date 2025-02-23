@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="container-info">
+    <div class="mt-14 container-info">
         <div class="all-info">
             <h1 class="auth-title">Ваш личный кабинет</h1>
 
