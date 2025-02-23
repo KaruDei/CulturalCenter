@@ -1,7 +1,7 @@
 <x-admin-layout>
     <div class="container-info-admin">
         <div class="all-info"> 
-            <h1 class="auth-title">Редактировать пользователя</h1>
+            <h1 class="auth-title">Добавить пользователя</h1>
 
             <form action="{{ Route('registration') }}" method="post" class="contact-form" enctype="multipart/form-data">
                 @csrf
@@ -47,7 +47,7 @@
                 </div>
 
                 <div>
-                    <button type="submit" class="custom-button">Редактировать</button>
+                    <button type="submit" class="custom-button">Добавить</button>
                 </div>
 
             </form>

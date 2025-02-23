@@ -11,6 +11,17 @@
     top: -60px;
 }
 
+.container-info-admin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    /* position: relative; */
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
 .all-info {
     /* background-color: #fff0f0; Цвет фона */
     border-radius: 1rem;
