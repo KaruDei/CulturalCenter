@@ -27,6 +27,7 @@ try{
                 checkbox.type = 'checkbox';
                 checkbox.id = `checkbox-${checkboxCount}`;
                 checkbox.className = "checkbox-theatre"
+                checkbox.name = "seat-" + (checkboxCount);
                 form.appendChild(checkbox);
                 labelforcheckbox.appendChild(img)
 
