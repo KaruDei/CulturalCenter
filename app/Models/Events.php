@@ -18,7 +18,7 @@ class Events extends Model
         'picture',
         'bigpicture',
         'event_script_id',
-        'event_creator_id',
+        'user_id',
         'event_status_id',
     ];
 
@@ -33,10 +33,6 @@ class Events extends Model
 
     public function eventType() {
         return $this->belongsTo(EventTypes::class, 'id');
-    }
-
-    public function eventCreator() {
-        return $this->belongsTo(EventCreators::class, 'id');
     }
 
     public function eventScript() {

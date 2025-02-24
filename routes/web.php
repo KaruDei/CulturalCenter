@@ -40,8 +40,6 @@ Route::get('/admin/actor-roles', [PageController::class, 'AdminActorRolesPage'])
 
 Route::get('/admin/event-actors', [PageController::class, 'AdminEventActorsPage'])->name('admin.event-actors');
 
-Route::get('/admin/event-creators', [PageController::class, 'AdminEventCreatorsPage'])->name('admin.event-creators');
-
 Route::get('/admin/event-scripts', [PageController::class, 'AdminEventScriptsPage'])->name('admin.event-scripts');
 
 Route::get('/admin/event-status', [PageController::class, 'AdminEventStatusPage'])->name('admin.event-status');

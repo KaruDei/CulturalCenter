@@ -2,13 +2,12 @@
 
 namespace Database\Seeders;
 
-use App\Models\EventCreators;
+use App\Models\User;
 use App\Models\Events;
 use App\Models\EventScripts;
 use App\Models\EventStatus;
 use App\Models\EventTypes;
 use App\Models\Rooms;
-use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -32,7 +31,7 @@ class EventsSeeder extends Seeder
                 'picture' => '/images/events/knazVladimir.png',
                 'bigpicture' => '/images/events/knazVladimir-big.png',
                 'event_script_id' => EventScripts::first()->where('title', 'Сценарий для фильма Князь Владимир')->value('id'),
-                'event_creator_id' => EventCreators::where('user_id', User::where('email', 'admin@mail.ru')->first()->value('id'))->first()->value('id'),
+                'user_id' => User::where('id', User::where('email', 'admin@mail.ru')->first()->value('id'))->first()->value('id'),
                 'event_status_id' => EventStatus::first()->where('status', 'Запланировано')->value('id')
             ]
         );
@@ -50,7 +49,7 @@ class EventsSeeder extends Seeder
                 'picture' => '/images/events/alesha-popovich-i-tugarin-zmei.png',
                 'bigpicture' => '/images/events/alesha-popovich-i-tugarin-zmei-big.png',
                 'event_script_id' => EventScripts::first()->where('title', 'Какой то сценарий к какому то мероприятию')->value('id'),
-                'event_creator_id' => EventCreators::where('user_id', User::where('email', 'admin@mail.ru')->first()->value('id'))->first()->value('id'),
+                'user_id' => User::where('id', User::where('email', 'admin@mail.ru')->first()->value('id'))->first()->value('id'),
                 'event_status_id' => EventStatus::first()->where('status', 'Запланировано')->value('id')
             ]
         );

@@ -28,7 +28,7 @@ class EventOrdersSeeder extends Seeder
                 'picture' => '/images/events/ilya-i-solovei.png',
                 'bigpicture' => '/images/events/ilya-i-solovei-big.png',
                 'script' => 'Какой то сценарий',
-                'event_creator_id' => EventCreators::where('user_id', User::where('email', 'admin@mail.ru')->first()->value('id'))->first()->value('id'),
+                'user_id' => User::where('id', User::where('email', 'admin@mail.ru')->first()->value('id'))->first()->value('id'),
                 'event_status_id' => EventStatus::first()->where('status', 'Заказано')->value('id'),
             
         ]);

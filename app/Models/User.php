@@ -39,16 +39,16 @@ class User extends Authenticatable
         return $this->belongsTo(UserRoles::class, 'id');
     }
 
-    public function userCreator () {
-        return $this->belongsTo(EventCreators::class, 'user_id');
-    }
-
     public function userTickets () {
         return $this->hasMany(EventTickets::class, 'user_id');
     }
 
     public function userSeats () {
         return $this->hasMany(Seats::class, 'user_id');
+    }
+
+    public function userOrders () {
+        return $this->hasMany(EventOrders::class, 'user_id');
     }
 
     /**

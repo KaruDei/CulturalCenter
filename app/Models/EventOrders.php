@@ -15,7 +15,7 @@ class EventOrders extends Model
         'picture',
         'bigpicture',
         'script',
-        'event_creator_id',
+        'user_id',
         'event_status_id',
     ];
 
@@ -25,9 +25,5 @@ class EventOrders extends Model
 
     public function eventTypes() {
         return $this->belongsTo(EventTypes::class, 'id');
-    }
-
-    public function eventCreator() {
-        return $this->belongsTo(EventCreators::class, 'id');
     }
 }

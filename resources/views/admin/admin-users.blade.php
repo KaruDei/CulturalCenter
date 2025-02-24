@@ -16,51 +16,24 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td class="py-2 px-4 border-b">Иван Иванов</td>
-                        <td class="py-2 px-4 border-b">ivan@example.com</td>
-                        <td class="py-2 px-4 border-b">********</td>
-                        <td class="py-2 px-4 border-b">
-                            <img src="" alt="Аватар Ивана" class="w-12 h-12 rounded-full object-cover">
-                        </td>
-                        <td class="py-2 px-4 border-b">5</td>
-                        <td class="py-2 px-4 border-b">
-                            <div class="flex space-x-2">
-                                <button class="bg-white hover:bg-gray-100 text-teal-700 font-semibold py-2 px-4 border border-teal-500 rounded transition duration-300"><a href="{{Route('admin-edit-user')}}" class="nav-link">Редактировать</a></button>
-                                <button class="bg-white hover:bg-gray-100 text-red-700 font-semibold py-2 px-4 border border-red-500 rounded transition duration-300">Удалить</button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="py-2 px-4 border-b">Петр Петров</td>
-                        <td class="py-2 px-4 border-b">petr@example.com</td>
-                        <td class="py-2 px-4 border-b">********</td>
-                        <td class="py-2 px-4 border-b">
-                            <img src="" alt="Аватар Петра" class="w-12 h-12 rounded-full object-cover">
-                        </td>
-                        <td class="py-2 px-4 border-b">12</td>
-                        <td class="py-2 px-4 border-b">
-                            <div class="flex space-x-2">
-                                <button class="bg-white hover:bg-gray-100 text-teal-700 font-semibold py-2 px-4 border border-teal-500 rounded transition duration-300">Редактировать</button>
-                                <button class="bg-white hover:bg-gray-100 text-red-700 font-semibold py-2 px-4 border border-red-500 rounded transition duration-300">Удалить</button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="py-2 px-4 border-b">Мария Сидорова</td>
-                        <td class="py-2 px-4 border-b">maria@example.com</td>
-                        <td class="py-2 px-4 border-b">********</td>
-                        <td class="py-2 px-4 border-b">
-                            <img src="" alt="Аватар Марии" class="w-12 h-12 rounded-full object-cover">
-                        </td>
-                        <td class="py-2 px-4 border-b">3</td>
-                        <td class="py-2 px-4 border-b">
-                            <div class="flex space-x-2">
-                                <button class="bg-white hover:bg-gray-100 text-teal-700 font-semibold py-2 px-4 border border-teal-500 rounded transition duration-300">Редактировать</button>
-                                <button class="bg-white hover:bg-gray-100 text-red-700 font-semibold py-2 px-4 border border-red-500 rounded transition duration-300">Удалить</button>
-                            </div>
-                        </td>
-                    </tr>
+
+                    @foreach ($users as $user)
+                        <tr>
+                            <td class="py-2 px-4 border-b">{{$user->full_name}}</td>
+                            <td class="py-2 px-4 border-b">{{$user->email}}</td>
+                            <td class="py-2 px-4 border-b">{{$user->password}}</td>
+                            <td class="py-2 px-4 border-b">
+                                <img src="{{$user->picture}}" alt="Аватар {{$user->full_name}}" class="w-12 h-12 rounded-full object-cover">
+                            </td>
+                            <td class="py-2 px-4 border-b">{{$user->userOrders->count()}}</td>
+                            <td class="py-2 px-4 border-b">
+                                <div class="flex space-x-2">
+                                    <button id="button-{{$user->id}}" class="bg-white hover:bg-gray-100 text-teal-700 font-semibold py-2 px-4 border border-teal-500 rounded transition duration-300">Редактировать</button>
+                                    <button id="button-{{$user->id}}" class="bg-white hover:bg-gray-100 text-red-700 font-semibold py-2 px-4 border border-red-500 rounded transition duration-300">Удалить</button>
+                                </div>
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

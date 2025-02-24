@@ -11,7 +11,6 @@ class PageController extends Controller
     protected $actorRoleController;
     protected $eventActorController;
     protected $eventController;
-    protected $eventCreatorController;
     protected $eventOrderController;
     protected $eventScriptController;
     protected $eventStatusController;
@@ -30,7 +29,6 @@ class PageController extends Controller
         ActorRoleController $actorRoleController,
         EventActorController $eventActorController,
         EventController $eventController,
-        EventCreatorController $eventCreatorController,
         EventOrderController $eventOrderController,
         EventScriptController $eventScriptController,
         EventStatusController $eventStatusController,
@@ -49,7 +47,6 @@ class PageController extends Controller
         $this->actorRoleController = $actorRoleController;
         $this->eventActorController = $eventActorController;
         $this->eventController = $eventController;
-        $this->eventCreatorController = $eventCreatorController;
         $this->eventOrderController = $eventOrderController;
         $this->eventScriptController = $eventScriptController;
         $this->eventStatusController = $eventStatusController;
@@ -161,11 +158,6 @@ class PageController extends Controller
         return view('admin.admin-event-actors');
     }
 
-
-    public function AdminEventCreatorsPage() {
-        return view('admin.admin-event-creators');
-    }
-
     public function AdminEventScriptsPage() {
         return view('admin.admin-event-scripts');
     }
@@ -203,7 +195,8 @@ class PageController extends Controller
     }
 
     public function AdminUsersPage() {
-        return view('admin.admin-users');
+        $users = $this->userController->GetAllRecords();
+        return view('admin.admin-users', ['users' => $users]);
     }
 
     public function AdminUserRolesPage() {

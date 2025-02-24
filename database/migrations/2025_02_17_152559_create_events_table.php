@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('picture')->nullable();
             $table->string('bigpicture')->nullable();
             $table->foreignId('event_script_id')->constrained('event_scripts')->onDelete('cascade');
-            $table->foreignId('event_creator_id')->nullable()->constrained('event_creators')->onDelete('cascade');
+            $table->foreignId('user_id')->nullable()->constrained('users')->onDelete('cascade');
             $table->foreignId('event_status_id')->constrained('event_statuses')->onDelete('cascade');
             $table->timestamps();
         });

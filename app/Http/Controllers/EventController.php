@@ -34,7 +34,7 @@ class EventController extends Controller
             'picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'bigpicture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'event_script_id' => 'required|numeric',
-            'event_creator_id' => 'required|numeric',
+            'user_id' => 'required|numeric',
             'event_status_id' => 'required|numeric'
         ]);
 
@@ -79,7 +79,7 @@ class EventController extends Controller
             'picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'bigpicture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'event_script_id' => 'required|numeric',
-            'event_creator_id' => 'required|numeric',
+            'user_id' => 'required|numeric',
             'event_status_id' => 'required|numeric'
         ]);
 
