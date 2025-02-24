@@ -4,29 +4,30 @@
         <div class="modalWindow-background">
             
         </div>
-        <form action="{{Route('admin.users')}}" method="POST" class="modalWindow-body bg-white p-6 rounded-lg shadow-lg" enctype="multipart/form-data">
+        <form action="{{Route('admin.users')}}" method="POST" class="modalWindow-body">
             @csrf
             @method("patch")
-            <p class="button-close text-teal-500 cursor-pointer text-right mb-4">Закрыть</p>
+            <p class="button-close">Закрыть</p>
             
-            <label for="fullname" class="block text-gray-700 font-semibold mb-1">ФИО</label>
+            <label for="fullname" class="form-label">ФИО</label>
             <input type="hidden" name="user_id" id="labelID" class="input-modal">
-            <input type="text" name="full_name" id="inputFullname" class=" border rounded-md p-2 w-full mb-4" placeholder="Введите ФИО" required>
+            <input type="text" name="full_name" id="inputFullname" class="form-input" placeholder="Введите ФИО" required>
             
-            <label for="email" class="block text-gray-700 font-semibold mb-1">Почта</label>
-            <input type="email" name="email" id="inputEmail" class=" border rounded-md p-2 w-full mb-4" placeholder="Введите почту" required>
+            <label for="email" class="form-label">Почта</label>
+            <input type="email" name="email" id="inputEmail" class="form-input" placeholder="Введите почту" required>
             
-            <label for="password" class="block text-gray-700 font-semibold mb-1">Пароль</label>
-            <input type="password" name="password" id="inputPassword" class=" border rounded-md p-2 w-full mb-4" placeholder="Введите пароль" required>
+            <label for="password" class="form-label">Пароль</label>
+            <input type="password" name="password" id="inputPassword" class="form-input" placeholder="Введите пароль" required>
             
-            <label for="picture" class="block text-gray-700 font-semibold mb-1">
-                <img id="labelPicture" src="" alt="Изображение профиля" class="w-12 h-12 rounded-full object-cover mb-2">
+            <label for="picture" class="form-label">
+                <img id="labelPicture" src="" alt="Изображение профиля" class="profile-image">
                 Загрузить изображение
             </label>
-            <input type="file" name="picture" id="inputPicture" class="border rounded-md p-2 w-full mb-4">
+            <input type="file" name="picture" id="inputPicture" class="form-input">
             
-            <input type="submit" value="Сохранить" class=" mt-1 bg-white hover:bg-gray-100 text-teal-700 font-semibold py-2 px-4 border border-teal-500 rounded transition duration-300"">
+            <input type="submit" value="Сохранить" class="submit-button">
         </form>
+        
         
     </div>
 

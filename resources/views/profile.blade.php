@@ -4,26 +4,28 @@
         <div class="modalWindow-background">
             
         </div>
-        <form action="{{Route('admin.users')}}" method="POST" class="modalWindow-body", enctype="multipart/form-data">
+        <form action="{{Route('admin.users')}}" method="POST" class="modalWindow-body">
             @csrf
             @method("patch")
             <p class="button-close">Закрыть</p>
-            <label for="fullname">
-                ФИО
-            </label>
-            <input type="hidden" name="user_id" id="labelID" class="input-modal" value="{{$user->id}}">
-            <input type="text" name="full_name" id="inputFullname" class="input-modal" value="{{$user->full_name}}">
-            <label for="email">
-                почта
-            </label>
-            <input type="text" name="email" id="inputEmail" class="input-modal" value="{{$user->email}}">
-            <label for="inputPassword">Пароль</label>
-            <input type="password" name="password" id="inputPassword" class="input-modal" value="{{$user->password}}">
-            <label for="picture">
+            
+            <label for="fullname" class="form-label">ФИО</label>
+            <input type="hidden" name="user_id" id="labelID" class="input-modal">
+            <input type="text" name="full_name" id="inputFullname" class="form-input" placeholder="Введите ФИО" required>
+            
+            <label for="email" class="form-label">Почта</label>
+            <input type="email" name="email" id="inputEmail" class="form-input" placeholder="Введите почту" required>
+            
+            <label for="password" class="form-label">Пароль</label>
+            <input type="password" name="password" id="inputPassword" class="form-input" placeholder="Введите пароль" required>
+            
+            <label for="picture" class="form-label">
                 <img id="labelPicture" src="{{$user->picture}}" alt="asdasd" class="w-12 h-12 rounded-full object-cover">
+                Загрузить изображение
             </label>
-            <input type="file" name="picture" id="inputPicture" class="input-modal">
-            <input type="submit" name="" id="" class="input-modal">
+            <input type="file" name="picture" id="inputPicture" class="form-input">
+            
+            <input type="submit" value="Сохранить" class="submit-button">
         </form>
     </div>
 
