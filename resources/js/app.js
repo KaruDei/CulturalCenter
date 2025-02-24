@@ -1,5 +1,6 @@
 import './bootstrap';
 import './slider'
 import './theatre'
-import './modal'
+import './adminUserModal'
 import './burger'
+import './profileModal'
