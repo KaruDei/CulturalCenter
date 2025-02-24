@@ -1,8 +1,10 @@
-let buttons = []
+try {
+    let buttons = []
 let i = 1
 const modal = document.querySelector(".modalWindow-container")
 const closeButton =document.querySelector(".button-close")
 let modalBody = document.querySelector(".modalWindow-body")
+let labelID = document.getElementById("labelID")
 let inputFullname = document.getElementById("inputFullname")
 let inputEmail = document.getElementById("inputEmail")
 let labelPicture = document.getElementById("labelPicture")
@@ -21,9 +23,10 @@ buttons.forEach(button => {
         let a = button.id
         let parentDiv = button.parentElement.parentElement.parentElement;
         modal.style.display = "flex"
-        inputFullname.value = parentDiv.children[0].innerHTML 
-        inputEmail.value = parentDiv.children[1].innerHTML
-        labelPicture.src = parentDiv.children[2].children[0].src
+        labelID.value = parentDiv.children[0].innerHTML 
+        inputFullname.value = parentDiv.children[1].innerHTML 
+        inputEmail.value = parentDiv.children[2].innerHTML
+        labelPicture.src = parentDiv.children[3].children[0].src
         
 
         
@@ -37,3 +40,6 @@ closeButton.addEventListener('click', function(){
 
 
 console.log(buttons)
+} catch (error) {
+    
+}
