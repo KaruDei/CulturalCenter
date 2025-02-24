@@ -6,7 +6,7 @@
 .modalWindow-container{
     display: none;
     flex-direction: column;
-
+    margin-top: -80px
 }
 .modalWindow-background{
     position: fixed;
