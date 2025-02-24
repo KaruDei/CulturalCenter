@@ -151,7 +151,8 @@ class PageController extends Controller
     }
 
     public function AdminEventsPage() {
-        return view('admin.admin-events');
+        $events = $this->eventController->GetAllRecords();
+        return view('admin.admin-events' ,['events' => $events]);
     }
     
     public function AdminEventActorsPage() {
