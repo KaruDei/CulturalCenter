@@ -3,6 +3,7 @@
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\EventTicketController;
 use App\Http\Middleware\CheckRoleAdmin;
 
 // User
@@ -10,6 +11,7 @@ Route::get('/', [PageController::class, 'HomePage'])->name('home');
 
 Route::get('/events', [PageController::class, 'EventsPage'])->name('events');
 Route::get('/events/{id}', [PageController::class, 'EventPage'])->name('event');
+Route::post('/events/{id}', [EventTicketController::class, 'Create'])->name('event');
 
 Route::get('/exhibitions', [PageController::class, 'ExhibitionsPage'])->name('exhibitions');
 Route::get('/exhibitions/{id}', [PageController::class, 'ExhibitionPage'])->name('exhibition');

@@ -27,23 +27,37 @@ class EventTicketController extends Controller
             'user_id' => 'required|numeric',
             'event_id' => 'required|numeric',
             'room_id' => 'required|numeric',
-            'seat_id' => 'required|numeric',
-            'ticket_status_id' => 'required|numeric',
+            'seat_id' => 'required|array',
+            // 'seat_id' => 'required|numeric',
+            // 'ticket_status_id' => 'required|numeric',
         ]);
+        $fields['ticket_status_id'] = 1;
 
-        if (EventTickets::where('price', $fields['price'])
-                            ->where('user_id', $fields['user_id'])
-                            ->where('event_id', $fields['event_id'])
-                            ->where('room_id', $fields['room_id'])
-                            ->where('seat_id', $fields['seat_id'])
-                            ->where('ticket_status_id', $fields['ticket_status_id'])
-                            ->exists())
+        $seats = $fields['seat_id'];
+
+        foreach ($seats as $key => $value)
         {
-            return redirect()->back()->with('error', 'Такая запись уже сущетсвует!');
+            if (EventTickets::where('price', $fields['price'])
+                                ->where('user_id', $fields['user_id'])
+                                ->where('event_id', $fields['event_id'])
+                                ->where('room_id', $fields['room_id'])
+                                ->where('seat_id', $key)
+                                // ->where('ticket_status_id', $fields['ticket_status_id'])
+                                ->exists())
+            {
+                return redirect()->back()->with('error', 'Такая запись уже сущетсвует!');
+            }
         }
 
         try {
-            EventTickets::create($fields);
+            foreach ($seats as $key => $value)
+            {
+                if ($value == 'on')
+                {
+                    $fields['seat_id'] = $key;
+                    EventTickets::create($fields);
+                }
+            }
             return redirect()->back()->with('success', 'Запись добавлена!');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Ошибка при добавлении записи: ' . $e->getMessage());

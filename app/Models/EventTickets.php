@@ -30,7 +30,7 @@ class EventTickets extends Model
         return $this->belongsTo(Rooms::class, 'id');
     }
 
-    public function Seat()
+    public function seat()
     {
         return $this->belongsTo(Seats::class, 'id');
     }
