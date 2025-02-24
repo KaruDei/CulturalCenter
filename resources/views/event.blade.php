@@ -19,14 +19,24 @@
 
     <div>
         <h1 class="text-center">Купить билеты </h1>
+        @guest
+            <p class="text-center text-xl"><span class="text-red-700">*</span> Для покупки билетов, войдите в систему <span class="text-red-700">*</span></p>
+        @endguest
+        
+        @auth
         <div class="flex justify-center container items-center"> 
-            <form action="">
-                    
-                <div class="form-theatre"></div>
+            <form action="{{Route('test')}}" method="post">
+                @csrf
+                @method('POST')
+
+                <div class="form-theatre">
+
+                </div>
 
                 <button class="buy-button">Купить билет</button>
             </form>
-        </div>   
+        </div>
+        @endauth
         <h1 class="text-center">Актеры </h1> 
         @foreach ($actors as $actor)
             <div class="px-[200px]"> 

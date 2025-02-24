@@ -62,9 +62,9 @@ class PageController extends Controller
     }
 
 
-    public function TestPage()
+    public function TestPage(Request $request)
     {
-        dd($this->actorController->GetAllRecords()[0]->eventActors[0]->event->eventStatus->eventOrders);
+        dd($request);
     }
 
 
