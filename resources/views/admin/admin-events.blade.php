@@ -1,5 +1,5 @@
 <x-admin-layout>
-    <div class="flex flex-col items-center justify-center bg-linen">
+    <div class="flex flex-col items-center justify-start min-h-screen bg-linen mt-6 pt-20">
 
         <h1 class="text-4xl font-bold text-teal-800 mb-12 border-b-4 border-amber-300 pb-4 text-center">Все мероприятия</h1>
 
@@ -23,7 +23,7 @@
                         <th class="py-2 px-4 border-b text-left">Действия</th>
                     </tr>
                 </thead>
-                <tbody class="h-20">
+                <tbody>
                     @php 
                         $i = 0; 
                     @endphp
@@ -33,7 +33,11 @@
                     @endphp
                     <tr class="h-20">
                         <td class="py-2 px-4 border-b">{{$event->title}}</td>
-                        <td class="py-2 px-4 border-b h-20 overflow-hidden">{{$event->description}}</td>
+                        <td class="py-2 px-4 border-b">
+                            <div class="w-60 h-40 overflow-y-auto">
+                                {{$event->description}}
+                            </div>
+                        </td>
                         <td class="py-2 px-4 border-b">Танцы</td>
                         <td class="py-2 px-4 border-b">Зал 1</td>
                         <td class="py-2 px-4 border-b">2024-04-28</td>
