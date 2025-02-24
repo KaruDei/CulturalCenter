@@ -23,7 +23,10 @@ class EventOrders extends Model
         return $this->belongsTo(EventStatus::class, 'id');
     }
 
-    public function eventTypes() {
-        return $this->belongsTo(EventTypes::class, 'id');
+    public function eventType() {
+        return $this->belongsTo(EventTypes::class, 'event_type_id');
+    }
+    public function user() {
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

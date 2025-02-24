@@ -23,20 +23,23 @@ class Events extends Model
     ];
 
     // Add links
+    public function user() {
+        return $this->belongsTo(User::class, 'user_id');
+    }
     public function room() {
-        return $this->belongsTo(Rooms::class, 'id');
+        return $this->belongsTo(Rooms::class, 'room_id');
     }
 
     public function eventStatus() {
-        return $this->belongsTo(EventStatus::class, 'id');
+        return $this->belongsTo(EventStatus::class, 'event_status_id');
     }
 
     public function eventType() {
-        return $this->belongsTo(EventTypes::class, 'id');
+        return $this->belongsTo(EventTypes::class, 'event_type_id');
     }
 
     public function eventScript() {
-        return $this->belongsTo(EventScripts::class, 'id');
+        return $this->belongsTo(EventScripts::class, 'event_script_id');
     }
 
     public function exhibition() {

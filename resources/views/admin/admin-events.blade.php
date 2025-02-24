@@ -1,8 +1,6 @@
 <x-admin-layout>
     <div class="flex flex-col items-center justify-start min-h-screen bg-linen mt-6 pt-20">
-
         <h1 class="text-4xl font-bold text-teal-800 mb-12 border-b-4 border-amber-300 pb-4 text-center">Все мероприятия</h1>
-
         <div class="overflow-x-auto w-full max-w-5xl">
             <table class="h-20 w-full bg-floral-white rounded-xl shadow-md border border-amber-100">
                 <thead class="bg-amber-100 text-teal-800">
@@ -38,17 +36,25 @@
                                 {{$event->description}}
                             </div>
                         </td>
-                        <td class="py-2 px-4 border-b">Танцы</td>
-                        <td class="py-2 px-4 border-b">Зал 1</td>
-                        <td class="py-2 px-4 border-b">2024-04-28</td>
-                        <td class="py-2 px-4 border-b">19:00</td>
-                        <td class="py-2 px-4 border-b">3 часа</td>
-                        <td class="py-2 px-4 border-b">500р</td>
-                        <td class="py-2 px-4 border-b">Стандарт</td>
-                        <td class="py-2 px-4 border-b">Админ</td>
-                        <td class="py-2 px-4 border-b">Активен</td>
-                        <td class="py-2 px-4 border-b">2024-04-20</td>
-                        <td class="py-2 px-4 border-b">2024-04-20</td>
+                        <td class="py-2 px-4 border-b">{{$event->eventType->type}}</td>
+                        <td class="py-2 px-4 border-b">{{$event->room->number}}</td>
+                        <td class="py-2 px-4 border-b">{{$event->date}}</td>
+                        <td class="py-2 px-4 border-b">{{$event->time}}</td>
+                        <td class="py-2 px-4 border-b">{{$event->duration}} Минут</td>
+                        <td class="py-2 px-4 border-b">{{$event->price}}</td>
+                        <td class="py-2 px-4 border-b">{{$event->eventScript->title}}</td>
+                        <td class="py-2 px-4 border-b">
+                            
+                            @if (empty($event->user))
+                                Мы
+                            @else
+                                {{$event->user->full_name}}
+                            @endif
+                        
+                        </td>
+                        <td class="py-2 px-4 border-b">{{$event->eventStatus->status}}</td>
+                        <td class="py-2 px-4 border-b">{{$event->created_at}}</td>
+                        <td class="py-2 px-4 border-b">{{$event->updated_at}}</td>
                         <td class="py-2 px-4 border-b">
                             <div class="flex space-x-2">
                                 <button class="bg-white hover:bg-gray-100 text-teal-700 font-semibold py-2 px-4 border border-teal-500 rounded transition duration-300">Редактировать</button>
