@@ -10,13 +10,13 @@ class RoomController extends Controller
     // Получение всех записей
     public function GetAllRecords()
     {
-        return Rooms::all()->toArray();
+        return Rooms::all();
     }
 
     // Получение одной записи
     public function GetRecord($id)
     {
-        return Rooms::findOrFail($id)->toArray();
+        return Rooms::findOrFail($id);
     }
 
     // Создание новой записи

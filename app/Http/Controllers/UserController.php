@@ -9,6 +9,17 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
+    public function GetAllRecords()
+    {
+        return User::all();
+    }
+
+    // Получение одной записи
+    public function GetRecord($id)
+    {
+        return User::findOrFail($id);
+    }
+
     public function UserRegistration(Request $request) 
     {
         // Validation

@@ -10,13 +10,13 @@ class EventScriptController extends Controller
     // Получение всех записей
     public function GetAllRecords()
     {
-        return EventScripts::all()->toArray();
+        return EventScripts::all();
     }
 
     // Получение одной записи
     public function GetRecord($id)
     {
-        return EventScripts::findOrFail($id)->toArray();
+        return EventScripts::findOrFail($id);
     }
 
     // Создание новой записи

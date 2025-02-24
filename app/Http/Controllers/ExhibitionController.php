@@ -10,13 +10,13 @@ class ExhibitionController extends Controller
     // Получение всех записей
     public function GetAllRecords()
     {
-        return Exhibitions::all()->toArray();
+        return Exhibitions::all();
     }
 
     // Получение одной записи
     public function GetRecord($id)
     {
-        return Exhibitions::findOrFail($id)->toArray();
+        return Exhibitions::findOrFail($id);
     }
 
     // Создание новой записи

@@ -10,13 +10,13 @@ class SeatController extends Controller
     // Получение всех записей
     public function GetAllRecords()
     {
-        return Seats::all()->toArray();
+        return Seats::all();
     }
 
     // Получение одной записи
     public function GetRecord($id)
     {
-        return Seats::findOrFail($id)->toArray();
+        return Seats::findOrFail($id);
     }
 
     // Создание новой записи

@@ -10,13 +10,13 @@ class UserRoleController extends Controller
     // Получение всех записей
     public function GetAllRecords()
     {
-        return UserRoles::all()->toArray();
+        return UserRoles::all();
     }
 
     // Получение одной записи
     public function GetRecord($id)
     {
-        return UserRoles::findOrFail($id)->toArray();
+        return UserRoles::findOrFail($id);
     }
 
     // Создание новой записи

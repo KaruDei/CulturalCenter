@@ -10,13 +10,13 @@ class NewsController extends Controller
     // Получение всех записей
     public function GetAllRecords()
     {
-        return News::all()->toArray();
+        return News::all();
     }
 
     // Получение одной записи
     public function GetRecord($id)
     {
-        return News::findOrFail($id)->toArray();
+        return News::findOrFail($id);
     }
 
     // Создание новой записи

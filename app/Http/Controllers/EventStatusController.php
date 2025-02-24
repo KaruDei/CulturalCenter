@@ -10,13 +10,13 @@ class EventStatusController extends Controller
     // Получение всех записей
     public function GetAllRecords()
     {
-        return EventStatus::all()->toArray();
+        return EventStatus::all();
     }
 
     // Получение одной записи
     public function GetRecord($id)
     {
-        return EventStatus::findOrFail($id)->toArray();
+        return EventStatus::findOrFail($id);
     }
 
     // Создание новой записи

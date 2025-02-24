@@ -10,13 +10,13 @@ class ActorRoleController extends Controller
     // Получение всех записей
     public function GetAllRecords()
     {
-        return ActorRoles::all()->toArray();
+        return ActorRoles::all();
     }
 
     // Получение одной записи
     public function GetRecord($id)
     {
-        return ActorRoles::findOrFail($id)->toArray();
+        return ActorRoles::findOrFail($id);
     }
 
     // Создание новой записи

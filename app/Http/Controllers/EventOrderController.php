@@ -10,13 +10,13 @@ class EventOrderController extends Controller
     // Получение всех записей
     public function GetAllRecords()
     {
-        return EventOrders::all()->toArray();
+        return EventOrders::all();
     }
 
     // Получение одной записи
     public function GetRecord($id)
     {
-        return EventOrders::findOrFail($id)->toArray();
+        return EventOrders::findOrFail($id);
     }
 
     // Создание новой записи

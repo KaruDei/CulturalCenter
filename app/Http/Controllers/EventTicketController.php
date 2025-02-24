@@ -10,13 +10,13 @@ class EventTicketController extends Controller
     // Получение всех записей
     public function GetAllRecords()
     {
-        return EventTickets::all()->toArray();
+        return EventTickets::all();
     }
 
     // Получение одной записи
     public function GetRecord($id)
     {
-        return EventTickets::findOrFail($id)->toArray();
+        return EventTickets::findOrFail($id);
     }
 
     // Создание новой записи

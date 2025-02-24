@@ -10,13 +10,13 @@ class EventActorController extends Controller
     // Получение всех записей
     public function GetAllRecords()
     {
-        return EventActors::all()->toArray();
+        return EventActors::all();
     }
 
     // Получение одной записи
     public function GetRecord($id)
     {
-        return EventActors::findOrFail($id)->toArray();
+        return EventActors::findOrFail($id);
     }
 
     // Создание новой записи

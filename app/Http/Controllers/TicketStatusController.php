@@ -10,13 +10,13 @@ class TicketStatusController extends Controller
     // Получение всех записей
     public function GetAllRecords()
     {
-        return TicketStatus::all()->toArray();
+        return TicketStatus::all();
     }
 
     // Получение одной записи
     public function GetRecord($id)
     {
-        return TicketStatus::findOrFail($id)->toArray();
+        return TicketStatus::findOrFail($id);
     }
 
     // Создание новой записи

@@ -10,13 +10,13 @@ class EventController extends Controller
     // Получение всех записей
     public function GetAllRecords()
     {
-        return Events::all()->toArray();
+        return Events::all();
     }
 
     // Получение одной записи
     public function GetRecord($id)
     {
-        return Events::findOrFail($id)->toArray();
+        return Events::findOrFail($id);
     }
 
     // Создание новой записи
