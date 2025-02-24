@@ -19,6 +19,11 @@
 
     <div>
         <h1 class="text-center">Купить билеты </h1>
+        <pre>
+            {{print_r($event->tickets->toArray())}}
+            {{print_r($event->room->seats->toArray())}}
+            
+        </pre>
         @guest
             <p class="text-center text-xl"><span class="text-red-700">*</span> Для покупки билетов, войдите в систему <span class="text-red-700">*</span></p>
         @endguest
@@ -30,7 +35,16 @@
                 @method('POST')
 
                 <div class="form-theatre">
-
+                    @for($i=1; $i<= $event->room->seats->max("row"); $i++)
+                            <p>{{$i}}</p>
+                        
+                        @foreach ($event->room->seats->where("row", $i) as $seat )
+                            <label id="label-{{$seat->number}}" class="labelforcheckbox" for="seat-{{$seat->number}}"></label>
+                            <input class="checkbox" type="checkbox" id="seat-{{$seat->number}}">
+                           
+                        @endforeach
+            
+                    @endfor
                 </div>
 
                 <button class="buy-button">Купить билет</button>
