@@ -33,7 +33,7 @@
         @endguest
         
         @auth
-        <div class="flex justify-center container items-center"> 
+        <div class="flex justify-center container items-center mx-auto"> 
             <form action="{{Route('event', $event->id)}}" method="post">
                 @csrf
                 @method('POST')
@@ -42,12 +42,8 @@
                 <input type="hidden" name="user_id" value="{{Auth()->id()}}">
                 <input type="hidden" name="event_id" value="{{$event->id}}">
                 <input type="hidden" name="room_id" value="{{$event->room->id}}">
-                <pre>
-                    {{print_r($event->tickets->toArray())}}
-                  _______________________________________________________________________________________________________________D
-                    {{print_r($event->room->seats->where("row", 3)->toArray())}}
-                </pre>
-                <div class="form-theatre">  
+                
+                {{-- <div class="form-theatre">  
                     @for($i=1; $i<= $event->room->seats->max("row"); $i++)
                             <p>{{$i}}</p>
                         
@@ -56,14 +52,14 @@
                                 $has = false;
                             @endphp
 
-                            @for ($j = 0; $j < $event->tickets->count(); $j++)
+                            @for ($j = 0; $j < $event->tickets->count(); $j++) --}}
                                 {{-- {{$event->tickets}} --}}
-                                @if ($event->tickets[$j]->seat->id == $seat->id)
+                                {{-- @if ($event->tickets[$j]->seat->id == $seat->id)
                                     @php
                                         $has = true;
-                                    @endphp
+                                    @endphp --}}
                                     {{-- <p class="text-center text-blue-600">{{$seat->id}}</p> --}}
-                                    @break;
+                                    {{-- @break;
                                 @endif
                             @endfor
 
@@ -76,8 +72,46 @@
                             @endif
                         @endforeach
             
+                    @endfor 
+                </div>--}}
+
+
+                {{-- ---------------------- --}}
+                
+                <div class="flex flex-col gap-[20px] max-w-[1000px] w-[100%] mx-auto my-[100px]">
+                    @for($i=1; $i<= $event->room->seats->max("row"); $i++)
+                        <div class="flex flex-nowrap gap-[20px] justify-evenly">
+                            {{-- <p>{{$i}}</p> --}}
+
+                            @foreach ($event->room->seats->where("row", $i) as $seat)
+                                @php
+                                    $has = false;
+                                @endphp
+
+                                @for ($j = 0; $j < $event->tickets->count(); $j++)
+
+                                    @if ($event->tickets[$j]->seat->id == $seat->id)
+                                        @php
+                                            $has = true;
+                                        @endphp
+                                        @break;
+                                    @endif
+                                @endfor
+
+                                @if ($has)
+                                    <label id="label-{{$seat->number}}" class="labelforcheckbox" for="seat-{{$seat->number}}"></label>
+                                    <input class="checkbox" type="checkbox" id="seat-{{$seat->number}}" name="seat_id[{{$seat->id}}]" disabled>
+                                @else
+                                    <label id="label-{{$seat->number}}" class="labelforcheckbox" for="seat-{{$seat->number}}"></label>
+                                    <input class="checkbox" type="checkbox" id="seat-{{$seat->number}}" name="seat_id[{{$seat->id}}]">
+                                @endif
+                            @endforeach
+                        </div>
                     @endfor
                 </div>
+                
+                {{-- ---------------------- --}}
+
 
                 <button type="submit" class="buy-button">Купить билет</button>
             </form>

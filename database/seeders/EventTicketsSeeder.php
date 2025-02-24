@@ -23,8 +23,8 @@ class EventTicketsSeeder extends Seeder
                 'price' => Events::first()->where('title', 'Илья Муромец и Соловей Разбойник')->value('price'),
                 'user_id' => User::first()->where('email', 'user@mail.ru')->value('id'), 
                 'event_id' => Events::first()->where('title', 'Илья Муромец и Соловей Разбойник')->value('id'), 
-                'room_id' => Rooms::first()->where('number', 102)->value('id'), 
-                'seat_id' => Seats::first()->where('room_id', Rooms::first()->where('number', 102)->value('id'))->where('number', 2)->value('id'),
+                'room_id' => Rooms::first()->where('number', 103)->value('id'), 
+                'seat_id' => Seats::first()->where('room_id', Rooms::first()->where('number', 103)->value('id'))->where('number', 2)->value('id'),
                 'ticket_status_id' => TicketStatus::first()->where('status', 'Не оплачено')->value('id'), 
             ]
         );
