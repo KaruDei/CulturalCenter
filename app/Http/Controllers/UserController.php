@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\UserRoles;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -86,19 +87,19 @@ class UserController extends Controller
     }
 
     // Проверить!
-    public function UserUpdate(Request $request, $id)
+    public function UserUpdate(Request $request)
     {
         // Validation
         $fields = $request->validate([
             'full_name' => 'required|min:3|max:255',
-            'email' => 'required|email|unique:users,email' . $id,
-            'password' => 'required|min:3|max:255|confirmed',
+            'email' => 'required|email|unique:users,email,' . $request['user_id'],
+            'password' => 'required|min:3|max:255',
             'picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
         
-        $fields['password'] = password_hash($fields['password']);
+        $fields['password'] = Hash::make($fields['password']);
 
-        $user = User::findOrFail($id);
+        $user = User::findOrFail($request['user_id']);
         
         if ($request->hasFile('picture'))
         {
@@ -118,16 +119,16 @@ class UserController extends Controller
         $user->update($fields);
 
         // Redirect
-        return redirect()->route('profile')->with('success', 'Данные успешно измененны');
+        return redirect()->back()->with('success', 'Данные успешно измененны');
     }
 
     // Проверить!
-    public function UserDelete($id)
+    public function UserDelete(Request $request)
     {
         // Delete user
-        User::first()->where('id', $id)->delete();
+        User::first()->where('id', $request['user_id'])->delete();
         
         // Redirect
-        return redirect()->route('home');
+        return redirect()->back()->with('success', 'Данные успешно удалены');
     }
 }

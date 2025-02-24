@@ -28,6 +28,8 @@ Route::post('/test', [PageController::class, 'TestPage'])->name('test');
 Route::get('/admin', [PageController::class, 'AdminDashboardPage'])->name('admin.dashboard');
 
 Route::get('/admin/users', [PageController::class, 'AdminUsersPage'])->name('admin.users');
+Route::patch('/admin/users', [UserController::class, 'UserUpdate'])->name('admin.users');
+Route::delete('/admin/users', [UserController::class, 'UserDelete'])->name('admin.users');
 
 Route::get('/admin/event-orders', [PageController::class, 'AdminEventOrdersPage'])->name('admin.event-orders');
 
