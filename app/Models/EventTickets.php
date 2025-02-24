@@ -32,7 +32,7 @@ class EventTickets extends Model
 
     public function seat()
     {
-        return $this->belongsTo(Seats::class, 'id');
+        return $this->belongsTo(Seats::class, 'seat_id');
     }
 
     public function user()

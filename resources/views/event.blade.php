@@ -42,8 +42,12 @@
                 <input type="hidden" name="user_id" value="{{Auth()->id()}}">
                 <input type="hidden" name="event_id" value="{{$event->id}}">
                 <input type="hidden" name="room_id" value="{{$event->room->id}}">
-
-                <div class="form-theatre">
+                <pre>
+                    {{print_r($event->tickets->toArray())}}
+                  _______________________________________________________________________________________________________________D
+                    {{print_r($event->room->seats->where("row", 3)->toArray())}}
+                </pre>
+                <div class="form-theatre">  
                     @for($i=1; $i<= $event->room->seats->max("row"); $i++)
                             <p>{{$i}}</p>
                         
@@ -58,7 +62,7 @@
                                     @php
                                         $has = true;
                                     @endphp
-                                    <p class="text-center text-blue-600">{{$seat->id}}</p>
+                                    {{-- <p class="text-center text-blue-600">{{$seat->id}}</p> --}}
                                     @break;
                                 @endif
                             @endfor

@@ -11,6 +11,7 @@ try{
         }
         if(seat.disabled === true){
             label.style.backgroundColor = "gray"
+            label.style.borderColor = "rgb(80,80, 80)"
         }
         const img = document.createElement('img');
         label.textContent = i
