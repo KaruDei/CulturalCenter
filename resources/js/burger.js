@@ -5,7 +5,7 @@ try{
 
     if (window.innerWidth < 1366) {       
         navList.style.display = "none"
-        burgerButton.style.display = "block"
+        burgerButton.style.display = "flex"
     } else {   
         navList.style.display = "flex"
         burgerButton.style.display = "none"

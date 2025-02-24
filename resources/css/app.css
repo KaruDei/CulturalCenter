@@ -14,13 +14,13 @@ body {
     margin-top: 130px;
     margin-bottom: 45px;
 } */
-.checkbox-theatre{
+.checkbox{
 
 display: none;
 }
 .form-theatre{
     display: grid;
-    grid-template-columns: repeat(11,  1fr);
+    grid-template-columns: repeat(4,  1fr);
     width: 200px;
     height: 100%;
     gap:10px;

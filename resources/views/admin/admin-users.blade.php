@@ -56,8 +56,8 @@
                             <td class="py-2 px-4 border-b">{{$user->userOrders->count()}}</td>
                             <td class="py-2 px-4 border-b">
                                 <div class="flex space-x-2">
-                                    <button id="button-edit-{{$i}}" class="bg-white hover:bg-gray-100 text-teal-700 font-semibold py-2 px-4 border border-teal-500 rounded transition duration-300">Редактировать</button>
-                                    <button id="button-delete-{{$i}}" class="bg-white hover:bg-gray-100 text-red-700 font-semibold py-2 px-4 border border-red-500 rounded transition duration-300">Удалить</button>
+                                    <button id="button-edit-{{$i}}" class="button bg-white hover:bg-gray-100 text-teal-700 font-semibold py-2 px-4 border border-teal-500 rounded transition duration-300">Редактировать</button>
+                                    <button id="button-delete-{{$i}}" class="button bg-white hover:bg-gray-100 text-red-700 font-semibold py-2 px-4 border border-red-500 rounded transition duration-300">Удалить</button>
                                 </div>
                             </td>
                         </tr>
