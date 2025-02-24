@@ -1,10 +1,10 @@
 <x-admin-layout>
-    <div class="flex flex-col items-center justify-center min-h-screen bg-linen">
+    <div class="flex flex-col items-center justify-center bg-linen">
 
         <h1 class="text-4xl font-bold text-teal-800 mb-12 border-b-4 border-amber-300 pb-4 text-center">Все мероприятия</h1>
 
         <div class="overflow-x-auto w-full max-w-5xl">
-            <table class="table-auto w-full bg-floral-white rounded-xl shadow-md border border-amber-100">
+            <table class="h-20 w-full bg-floral-white rounded-xl shadow-md border border-amber-100">
                 <thead class="bg-amber-100 text-teal-800">
                     <tr>
                         <th class="py-2 px-4 border-b text-left">Название</th>
@@ -23,10 +23,17 @@
                         <th class="py-2 px-4 border-b text-left">Действия</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td class="py-2 px-4 border-b">Бал</td>
-                        <td class="py-2 px-4 border-b">Танцевальный вечер</td>
+                <tbody class="h-20">
+                    @php 
+                        $i = 0; 
+                    @endphp
+                    @foreach ($events as $event)
+                    @php
+                        $i++; 
+                    @endphp
+                    <tr class="h-20">
+                        <td class="py-2 px-4 border-b">{{$event->title}}</td>
+                        <td class="py-2 px-4 border-b h-20 overflow-hidden">{{$event->description}}</td>
                         <td class="py-2 px-4 border-b">Танцы</td>
                         <td class="py-2 px-4 border-b">Зал 1</td>
                         <td class="py-2 px-4 border-b">2024-04-28</td>
@@ -45,27 +52,7 @@
                             </div>
                         </td>
                     </tr>
-                     <tr>
-                        <td class="py-2 px-4 border-b">Вечеринка</td>
-                        <td class="py-2 px-4 border-b">Проводы зимы</td>
-                        <td class="py-2 px-4 border-b">Танцы</td>
-                        <td class="py-2 px-4 border-b">Зал 2</td>
-                        <td class="py-2 px-4 border-b">2024-04-29</td>
-                        <td class="py-2 px-4 border-b">19:00</td>
-                        <td class="py-2 px-4 border-b">4 часа</td>
-                        <td class="py-2 px-4 border-b">600р</td>
-                        <td class="py-2 px-4 border-b">Премиум</td>
-                        <td class="py-2 px-4 border-b">Менеджер</td>
-                        <td class="py-2 px-4 border-b">Завершен</td>
-                        <td class="py-2 px-4 border-b">2024-05-20</td>
-                        <td class="py-2 px-4 border-b">2024-05-20</td>
-                        <td class="py-2 px-4 border-b">
-                            <div class="flex space-x-2">
-                                <button class="bg-white hover:bg-gray-100 text-teal-700 font-semibold py-2 px-4 border border-teal-500 rounded transition duration-300">Редактировать</button>
-                                <button class="bg-white hover:bg-gray-100 text-red-700 font-semibold py-2 px-4 border border-red-500 rounded transition duration-300">Удалить</button>
-                            </div>
-                        </td>
-                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
