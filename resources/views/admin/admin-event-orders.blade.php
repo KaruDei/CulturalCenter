@@ -1,5 +1,5 @@
 <x-admin-layout>
-    <div class="flex flex-col items-center justify-center min-h-screen bg-linen">
+    <div class="flex flex-col items-center justify-start min-h-screen bg-linen mt-14 mb-12 pt-20">
     <pre>
         {{print_r($orders->toArray())}}
     </pre>
@@ -27,7 +27,11 @@
                         
                     <tr>
                         <td class="py-2 px-4 border-b text-left">{{$order->title}}</td>
-                        <td class="py-2 px-4 border-b text-left">{{$order->description}} {{$order->description}} {{$order->description}} {{$order->description}} {{$order->description}} {{$order->description}} {{$order->description}} {{$order->description}} {{$order->description}} {{$order->description}}</td>
+                        <td class="py-2 px-4 border-b text-left">   
+                            <div class="w-60 h-40 overflow-y-auto">
+                                {{$order->description}} {{$order->description}} {{$order->description}} {{$order->description}} {{$order->description}} {{$order->description}} {{$order->description}} {{$order->description}} {{$order->description}} {{$order->description}}
+                            </div>
+                        </td>
                         <td class="py-2 px-4 border-b text-left">{{$order->eventType->type}}</td>
                         <td class="py-2 px-4 border-b text-left">{{$order->duration}} Минут</td>
                         <td class="py-2 px-4 border-b text-left">{{$order->price}}</td>

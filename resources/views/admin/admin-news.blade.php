@@ -1,5 +1,5 @@
 <x-admin-layout>
-    <div class="flex flex-col items-center justify-start min-h-screen bg-linen mt-6 pt-20">
+    <div class="flex flex-col items-center justify-start min-h-screen bg-linen mt-14 mb-12 pt-20">
             <h1 class="text-4xl font-bold text-teal-800 mb-12 border-b-4 border-amber-300 pb-4 text-center">Все заказы</h1>
     
             <div class="overflow-x-auto w-full max-w-5xl">

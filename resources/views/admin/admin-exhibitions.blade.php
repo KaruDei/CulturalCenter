@@ -1,5 +1,5 @@
 <x-admin-layout>
-    <div class="flex flex-col items-center justify-center min-h-screen bg-linen mt-6 pt-20"">
+    <div class="flex flex-col items-center justify-start min-h-screen bg-linen mt-14 mb-12 pt-20">
 
         <h1 class="text-4xl font-bold text-teal-800 mb-12 border-b-4 border-amber-300 pb-4 text-center">Все выставки</h1>
         <div class="overflow-x-auto w-full max-w-5xl">
@@ -26,7 +26,11 @@
                     @endphp
                     <tr>
                         <td class="py-2 px-4 border-b">{{$exhibition->title}}</td>
-                        <td class="py-2 px-4 border-b">{{$exhibition->description}}</td>
+                        <td class="py-2 px-4 border-b text-left">
+                            <div class="w-60 h-40 overflow-y-auto">
+                                {{$exhibition->description}}
+                            </div>
+                        </td>
                         <th class="py-2 px-4 border-b">
                             <img class="py-2 px-4 border-b" src="{{$exhibition->picture}}">
                         </th>
