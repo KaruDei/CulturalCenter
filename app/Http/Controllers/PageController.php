@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use App\Models\Events;
 class PageController extends Controller
 {
     protected $actorController;
@@ -143,7 +143,8 @@ class PageController extends Controller
         $events = $this->eventController->GetAllRecords();
         $users = $this->userController->GetAllRecords();
         $eventOrder = $this->eventOrderController->GetAllRecords();
-        return view('admin.admin-dashboard',['events' => $events, 'users' => $users, 'exhibitions' => $exhibitions, 'eventOrder' => $eventOrder]); 
+        $news = $this->newsController->GetAllRecords();
+        return view('admin.admin-dashboard',['events' => $events, 'users' => $users, 'exhibitions' => $exhibitions, 'eventOrder' => $eventOrder, 'news' => $news]); 
     }
 
     public function AdminActorsPage() {
@@ -155,7 +156,8 @@ class PageController extends Controller
     }
 
     public function AdminEventsPage() {
-        $events = $this->eventController->GetAllRecords();
+        // $events = $this->eventController->GetAllRecords();
+        $events = Events::all();
         return view('admin.admin-events' ,['events' => $events]);
     }
     
@@ -185,7 +187,8 @@ class PageController extends Controller
     }
 
     public function AdminNewsPage() {
-        return view('admin.admin-news');
+        $news = $this->newsController->GetAllRecords();
+        return view('admin.admin-news', ['news' => $news]);
     }
 
     public function AdminRoomsPage() {
@@ -210,6 +213,7 @@ class PageController extends Controller
     }
 
     public function AdminEventOrdersPage() {
-        return view('admin.admin-event-orders');
+        $orders = $this->eventOrderController->GetAllRecords();
+        return view('admin.admin-event-orders', ['orders' => $orders]);
     }
 }

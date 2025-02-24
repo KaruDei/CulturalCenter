@@ -102,7 +102,7 @@
                 </tbody>
             </table>
         </div>
-        <button class=" mt-10 bg-white hover:bg-gray-100 text-teal-700 font-semibold py-2 px-4 border border-teal-500 rounded transition duration-300"><a href="{{Route('admin-create-user')}}" class="nav-link">Добавить пользователя</a></button>
+       
     </div>
 
 </x-admin-layout>
