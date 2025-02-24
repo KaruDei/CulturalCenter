@@ -42,4 +42,8 @@ class Events extends Model
     public function exhibition() {
         return $this->belongsTo(Exhibitions::class, 'event_id');
     }
+
+    public function tickets() {
+        return $this->hasMany(EventTickets::class, 'event_id');
+    }
 }
