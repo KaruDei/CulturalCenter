@@ -77,8 +77,7 @@
                     </div>
                     <div class="text-teal-500">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
-                            <path d="M11.293 2.293a1 1 0 011.414 0l6.47 6.47a1 1 0 010 1.414l-6.47 6.47a1 1 0 01-1.414-1.414L16.586 10l-5.293-5.293a1 1 0 010-1.414z" />
-                            <path d="M4.293 2.293a1 1 0 011.414 0L11.586 10l-5.879 5.879a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" />
+                            <path d="M3 3h18v18H3V3zm2 2v14h14V5H5zm2 2h10v2H7V7zm0 3h10v2H7v-2zm0 3h10v2H7v-2zm0 3h10v2H7v-2z"/>
                         </svg>
                     </div>
                 </div>
