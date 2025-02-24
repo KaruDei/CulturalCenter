@@ -42,6 +42,57 @@
 /* Форма */
 
 
+.modalWindow-body {
+    background-color: white;
+    padding: 1.5rem; /* p-6 */
+    border-radius: 0.5rem; /* rounded-lg */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* shadow-lg */
+}
+
+.button-close {
+    color: #38b2ac; /* text-teal-500 */
+    cursor: pointer;
+    text-align: right; /* text-right */
+    margin-bottom: 1rem; /* mb-4 */
+}
+
+.form-label {
+    display: block;
+    color: #4a5568; /* text-gray-700 */
+    font-weight: 600; /* font-semibold */
+    margin-bottom: 0.25rem; /* mb-1 */
+}
+
+.form-input {
+    border: 1px solid #cbd5e0; /* border */
+    border-radius: 0.375rem; /* rounded-md */
+    padding: 0.5rem; /* p-2 */
+    width: 100%; /* w-full */
+    margin-bottom: 1rem; /* mb-4 */
+}
+
+.profile-image {
+    width: 3rem; /* w-12 */
+    height: 3rem; /* h-12 */
+    border-radius: 9999px; /* rounded-full */
+    object-fit: cover; /* object-cover */
+    margin-bottom: 0.5rem; /* mb-2 */
+}
+
+.submit-button {
+    margin-top: 0.25rem; /* mt-1 */
+    background-color: white; /* bg-white */
+    transition: background-color 0.3s; /* transition duration-300 */
+    color: #38b2ac; /* text-teal-700 */
+    font-weight: 600; /* font-semibold */
+    padding: 0.5rem 1rem; /* py-2 px-4 */
+    border: 1px solid #38b2ac; /* border border-teal-500 */
+    border-radius: 0.375rem; /* rounded */
+}
+
+.submit-button:hover {
+    background-color: #f7fafc; /* hover:bg-gray-100 */
+}
 
 
 
