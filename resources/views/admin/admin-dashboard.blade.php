@@ -9,7 +9,7 @@
                 <div class="flex items-center justify-between">
                     <div>
                         <h3 class="text-xl font-semibold text-teal-700 mb-2">Пользователи</h3>
-                        <p class="text-3xl font-bold text-gray-800">23</p>
+                        <p class="text-3xl font-bold text-gray-800">{{$users->count()}}</p>
                     </div>
                     <div class="text-teal-500">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
@@ -25,7 +25,7 @@
                 <div class="flex items-center justify-between">
                     <div>
                         <h3 class="text-xl font-semibold text-teal-700 mb-2">Мероприятия</h3>
-                        <p class="text-3xl font-bold text-gray-800">23</p>
+                        <p class="text-3xl font-bold text-gray-800">{{$events->count()}}</p>
                     </div>
                     <div class="text-teal-500">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
@@ -41,7 +41,7 @@
                 <div class="flex items-center justify-between">
                     <div>
                         <h3 class="text-xl font-semibold text-teal-700 mb-2">Выставки</h3>
-                        <p class="text-3xl font-bold text-gray-800">23</p>
+                        <p class="text-3xl font-bold text-gray-800">{{$exhibitions->count()}}</p>
                     </div>
                     <div class="text-teal-500">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
@@ -58,7 +58,7 @@
                 <div class="flex items-center justify-between">
                     <div>
                         <h3 class="text-xl font-semibold text-teal-700 mb-2">Заказы</h3>
-                        <p class="text-3xl font-bold text-gray-800">23</p>
+                        <p class="text-3xl font-bold text-gray-800">{{$eventOrder->count()}}</p>
                     </div>
                     <div class="text-teal-500">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">

@@ -139,7 +139,11 @@ class PageController extends Controller
     */
 
     public function AdminDashboardPage() {
-        return view('admin.admin-dashboard'); 
+        $exhibitions = $this->exhibitionController->GetAllRecords();
+        $events = $this->eventController->GetAllRecords();
+        $users = $this->userController->GetAllRecords();
+        $eventOrder = $this->eventOrderController->GetAllRecords();
+        return view('admin.admin-dashboard',['events' => $events, 'users' => $users, 'exhibitions' => $exhibitions, 'eventOrder' => $eventOrder]); 
     }
 
     public function AdminActorsPage() {
@@ -176,7 +180,8 @@ class PageController extends Controller
     }
 
     public function AdminExhibitionsPage() {
-        return view('admin.admin-exhibitions');
+        $exhibitions = $this->exhibitionController->GetAllRecords();
+        return view('admin.admin-exhibitions', ['exhibitions' => $exhibitions]);
     }
 
     public function AdminNewsPage() {
