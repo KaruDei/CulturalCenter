@@ -1,11 +1,11 @@
 <x-admin-layout>
-    <div class="flex flex-col items-center justify-center min-h-screen bg-linen">
+    <div class="flex flex-col items-center justify-start min-h-screen bg-linen mt-14 mb-12 pt-20">
 
         <h1 class="text-4xl font-bold text-teal-800 mb-12 border-b-4 border-amber-300 pb-4 text-center">Панель администратора</h1>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <!-- Пользователи -->
-            <div class="bg-floral-white rounded-2xl shadow-2xl p-8 border border-amber-100 hover:shadow-xl transition duration-300">
+            <div class="bg-floral-white rounded-2xl shadow-2xl p-8 border border-amber-100 hover:shadow-xl transition duration-300 ">
                 <div class="flex items-center justify-between">
                     <div>
                         <h3 class="text-xl font-semibold text-teal-700 mb-2">Пользователи</h3>
