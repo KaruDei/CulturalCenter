@@ -10,7 +10,6 @@
             
             
             <label for="title" class="form-label">Название</label>
-            <input type="hidden" name="event_id" id="eventID">
             <input type="text" name="title" id="inputTitle" class="form-input" placeholder="Введите Название мероприятия" required>
 
             <label for="desc" class="form-label">Описание</label>
@@ -53,7 +52,7 @@
 
                 </select>
             </section>
-
+            <input type="hidden" name="event_id" id="eventID" class="form_input">
             <input type="submit" value="Сохранить" class="submit-button">
             
         </form>
@@ -79,6 +78,7 @@
                         <th class="py-2 px-4 border-b text-left">Статус</th>
                         <th class="py-2 px-4 border-b text-left">Создано</th>
                         <th class="py-2 px-4 border-b text-left">Обновлено</th>
+                        <th class="py-2 px-4 border-b">ID</th>
                         <th class="py-2 px-4 border-b text-left">Действия</th>
                     </tr>
                 </thead>
@@ -116,6 +116,7 @@
                         <td class="py-2 px-4 border-b">{{$event->eventStatus->status}}</td>
                         <td class="py-2 px-4 border-b">{{$event->created_at}}</td>
                         <td class="py-2 px-4 border-b">{{$event->updated_at}}</td>
+                        <td class="py-2 px-4 border-b">{{$event->id}}</td>
                         <td class="py-2 px-4 border-b">
                             <div class="flex space-x-2">
                                 <button id="admin-event-button-edit-{{$i}}" class="bg-white hover:bg-gray-100 text-teal-700 font-semibold py-2 px-4 border border-teal-500 rounded transition duration-300">Редактировать</button>

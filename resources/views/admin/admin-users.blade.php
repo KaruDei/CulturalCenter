@@ -23,7 +23,7 @@
                 <img id="labelPicture" src="" alt="Изображение профиля" class="profile-image">
                 Загрузить изображение
             </label>
-            <input type="file" name="picture" id="inputPicture" class="form-input">
+            <input type="file" name="picture" id="inputPicture">
             
             <input type="submit" value="Сохранить" class="submit-button">
         </form>
