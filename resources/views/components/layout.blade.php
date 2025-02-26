@@ -44,24 +44,31 @@
                             <li><a href="{{Route('logout')}}" class="nav-link">Выход</a></li>
                         @endauth
                     </ul>
-                    <img src="/icons/armchair.png" class="burger-button">
-                    <ul class="burger-nav-list">
-                        <li><a href="{{Route('home')}}" class="nav-link">Главная</a></li>
-                        <li><a href="{{Route('events')}}" class="nav-link">Мероприятия</a></li>
-                        <li><a href="{{Route('exhibitions')}}" class="nav-link">Выставки</a></li>
-                        <li><a href="{{Route('aboutUs')}}" class="nav-link">О нас</a></li>
-                        <li><a href="{{Route('contacts')}}" class="nav-link">Контакты</a></li>
-    
-                        @guest
-                            <li><a href="{{Route('login')}}" class="nav-link">Авторизация</a></li>
-                            <li><a href="{{Route('registration')}}" class="nav-link">Регистрация</a></li>
-                        @endguest
-    
-                        @auth
-                            <li><a href="{{Route('profile')}}" class="nav-link">Профиль</a></li>
-                            <li><a href="{{Route('logout')}}" class="nav-link">Выход</a></li>
-                        @endauth
-                    </ul>
+
+                    <div class="burger-container relative inline-block">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 50 50" class="burger-button" onclick="toggleMenu()">
+                            <path d="M 5 8 A 2.0002 2.0002 0 1 0 5 12 L 45 12 A 2.0002 2.0002 0 1 0 45 8 L 5 8 z M 5 23 A 2.0002 2.0002 0 1 0 5 27 L 45 27 A 2.0002 2.0002 0 1 0 45 23 L 5 23 z M 5 38 A 2.0002 2.0002 0 1 0 5 42 L 45 42 A 2.0002 2.0002 0 1 0 45 38 L 5 38 z"></path>
+                        </svg>
+                        
+                        <ul class="burger-nav-list">
+                            <li><a href="{{Route('home')}}" class="nav-link">Главная</a></li>
+                            <li><a href="{{Route('events')}}" class="nav-link">Мероприятия</a></li>
+                            <li><a href="{{Route('exhibitions')}}" class="nav-link">Выставки</a></li>
+                            <li><a href="{{Route('aboutUs')}}" class="nav-link">О нас</a></li>
+                            <li><a href="{{Route('contacts')}}" class="nav-link">Контакты</a></li>
+                    
+                            @guest
+                                <li><a href="{{Route('login')}}" class="nav-link">Авторизация</a></li>
+                                <li><a href="{{Route('registration')}}" class="nav-link">Регистрация</a></li>
+                            @endguest
+                    
+                            @auth
+                                <li><a href="{{Route('profile')}}" class="nav-link">Профиль</a></li>
+                                <li><a href="{{Route('logout')}}" class="nav-link">Выход</a></li>
+                            @endauth
+                        </ul> 
+                    </div>
+                    
                 </nav>
             </div>
         </header>

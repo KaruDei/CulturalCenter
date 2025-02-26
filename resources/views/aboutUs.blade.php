@@ -27,13 +27,13 @@
             <section>
                 <h2>Наши покровители</h2>
                 <div class="logos">
-                    <img src="" alt="Логотип покровителя 1">
-                    <img src="" alt="Логотип покровителя 2">
-                    <img src="" alt="Логотип покровителя 3">
+                    <img src="{{ asset('icons/logo.jpg') }}" alt="Логотип покровителя 1" >
+                    <img src="{{ asset('icons/rus-fond-kul.jpg') }}" alt="Логотип покровителя 2">
+                    <img src="{{ asset('icons/cult.jpg') }}"  alt="Логотип покровителя 3">
                     <!-- Добавьте больше логотипов по мере необходимости -->
                 </div>
             </section>
-
+            
 
             <section class="testimonials">
                 <h2 class="testimonial-title">Восторженные отзывы</h2>

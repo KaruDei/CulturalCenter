@@ -1,5 +1,6 @@
 <x-layout>
-    <div  class="container mt-10 mb-10 mx-auto bg-floral-white rounded-xl w-full h-[800px] p-10 shadow-2xl border-2 border-amber-200">
+    <div  class="container mt-10 mb-10 mx-auto bg-floral-white rounded-xl w-full min-h-[600px] p-10 shadow-2xl border-2 border-amber-200">
+
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 h-full">
             <!-- Картинка -->
             <div class="h-[500px] md:h-full bg-gray-500 border border-amber-200 rounded-xl overflow-hidden">
@@ -21,7 +22,6 @@
             </h1>
         </div>
     </div>
-
 
     <div>
         <h1 class="text-center">Купить билеты </h1>
@@ -49,40 +49,6 @@
                 <input type="hidden" name="event_id" value="{{$event->id}}">
                 <input type="hidden" name="room_id" value="{{$event->room->id}}">
                 
-                {{-- <div class="form-theatre">  
-                    @for($i=1; $i<= $event->room->seats->max("row"); $i++)
-                            <p>{{$i}}</p>
-                        
-                        @foreach ($event->room->seats->where("row", $i) as $seat)
-                            @php
-                                $has = false;
-                            @endphp
-
-                            @for ($j = 0; $j < $event->tickets->count(); $j++) --}}
-                                {{-- {{$event->tickets}} --}}
-                                {{-- @if ($event->tickets[$j]->seat->id == $seat->id)
-                                    @php
-                                        $has = true;
-                                    @endphp --}}
-                                    {{-- <p class="text-center text-blue-600">{{$seat->id}}</p> --}}
-                                    {{-- @break;
-                                @endif
-                            @endfor
-
-                            @if ($has)
-                                <label id="label-{{$seat->number}}" class="labelforcheckbox" for="seat-{{$seat->number}}"></label>
-                                <input class="checkbox" type="checkbox" id="seat-{{$seat->number}}" name="seat_id[{{$seat->id}}]" disabled>
-                            @else
-                                <label id="label-{{$seat->number}}" class="labelforcheckbox" for="seat-{{$seat->number}}"></label>
-                                <input class="checkbox" type="checkbox" id="seat-{{$seat->number}}" name="seat_id[{{$seat->id}}]">
-                            @endif
-                        @endforeach
-            
-                    @endfor 
-                </div>--}}
-
-
-                {{-- ---------------------- --}}
                 
                 <div class="flex flex-col gap-[20px] max-w-[1000px] w-[100%] mx-auto my-[100px]">
                     @for($i=1; $i<= $event->room->seats->max("row"); $i++)
@@ -123,18 +89,20 @@
             </form>
         </div>
         @endauth
-        <h1 class="text-center">Актеры </h1> 
-        @foreach ($actors as $actor)
-            <div class="px-[200px]"> 
-                <div class="bg-floral-white rounded-xl shadow-2xl border border-amber-100 w-full h-[300px] flex flex-row overflow-hidden mt-10 mb-10">
-                    <img src="{{$actor['picture']}}"  class="w-1/3 h-full bg-gray-500">
-                    <div class="flex flex-col px-5 pt-5">
-                        <h2 class="text-teal-700">{{$actor['full_name']}}</h2>
-                        <p>Роль: {{$actor->actorRole->role}}</p>
-                    </div>
-                </div>
+        <h1 class="text-center text-3xl md:text-4xl font-bold mb-6">Актеры</h1> 
+
+@foreach ($actors as $actor)
+    <div class="px-4 md:px-10"> 
+        <div class="bg-floral-white rounded-xl shadow-2xl border border-amber-100 w-full h-[300px] flex flex-col md:flex-row overflow-hidden mt-10 mb-10">
+            <img src="{{$actor['picture']}}" class="w-full md:w-1/3 h-48 md:h-full object-cover bg-gray-500">
+            <div class="flex flex-col p-5">
+                <h2 class="text-teal-700 text-xl font-semibold">{{$actor['full_name']}}</h2>
+                <p class="text-gray-600">Роль: {{$actor->actorRole->role}}</p>
             </div>
-        @endforeach
+        </div>
+    </div>
+@endforeach
+
     </div>        
 
    
