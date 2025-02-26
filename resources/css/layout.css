@@ -46,29 +46,43 @@ body {
     list-style: none; /* Убираем стандартные маркеры списка */
     padding: 0;
     display: flex;
+    margin-top: 15px;
+
     gap: 1.5rem; /* Отступ между элементами списка */
 }
-.burger-nav-list{
-    left: 75.5%;
+
+.burger-container {
+    position: relative; /* Позволяет меню позиционироваться относительно контейнера */
+}
+
+.burger-nav-list {
+    left: 50%; /* Центрируем по горизонтали */
+    top: 100%; /* Устанавливаем меню под иконкой */
+    transform: translateX(-50%); /* Сдвигаем меню на половину его ширины для центрирования */
     text-align: center;
     width: 200px;
-    height: 250px;
+    height: auto; /* Автоматическая высота для адаптивности */
     list-style: none; /* Убираем стандартные маркеры списка */
     position: absolute;
-    display: none;
+    display: none; /* Скрываем меню по умолчанию */
     flex-direction: column;
     gap: 10px; 
     background-color: white;
-    border:3px solid #fbbf24;
+    border: 3px solid #fbbf24;
     border-radius: 10px;
     padding: 5px;
     z-index: 1;
 }
+
+.burger-nav-list.show {
+    display: flex; /* Показываем меню при добавлении класса 'show' */
+}
+
 .burger-button{
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     display: none;
-    margin-bottom: 10px;
+    margin-top: 10px;
     transform: rotate(0deg);
     transition: all 0.3s;
     cursor: pointer;
