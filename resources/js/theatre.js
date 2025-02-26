@@ -2,7 +2,8 @@ try{
     let labels = [] 
     let seats = []
     let i = 1
-    
+    let buy_button = document.querySelector('.buy-button')
+    let price = Number(document.getElementById('price').value) 
     while (true) {
         let seat = document.getElementById(`seat-${i}`);
         let label = document.getElementById(`label-${i}`)
@@ -38,17 +39,25 @@ try{
     //       }
     //     });
     //   });
+    let fullprice = 0
     seats.forEach(seat => {
         seat.addEventListener('change', function() {
             const label = document.querySelector(`label[for="${seat.id}"]`);
             label.style.backgroundColor = "green"
-
+            
             if (seat.checked) {
                 label.style.backgroundColor = "green"
+                fullprice = fullprice + price
+                buy_button.innerHTML = "К оплате " + fullprice + "р."
+                console.log(fullprice)
             } else {
                 label.style.backgroundColor = "red"
+                fullprice -= price
+                buy_button.innerHTML = "К оплате " + fullprice + "р."
             }
-
+            if(fullprice == 0){
+                buy_button.innerHTML = "Купить билеты"
+            }
           });
       });
 }catch(error){
