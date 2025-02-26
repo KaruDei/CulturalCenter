@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -36,6 +37,7 @@ Route::delete('/admin/users', [UserController::class, 'UserDelete'])->name('admi
 Route::get('/admin/event-orders', [PageController::class, 'AdminEventOrdersPage'])->name('admin.event-orders');
 
 Route::get('/admin/events', [PageController::class, 'AdminEventsPage'])->name('admin.events');
+Route::patch('/admin/events', [EventController::class, 'Update'])->name('admin.events');
 
 Route::get('/admin/exhibitions', [PageController::class, 'AdminExhibitionsPage'])->name('admin.exhibitions');
 

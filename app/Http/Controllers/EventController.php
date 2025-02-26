@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\EventStatus;
+use App\Models\EventTypes;
+use App\Models\Rooms;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Events;
 
@@ -33,7 +37,7 @@ class EventController extends Controller
             'price' => 'required|numeric|gte:0',
             'picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'bigpicture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'event_script_id' => 'required|numeric',
+            'script' => 'required|numeric',
             'user_id' => 'required|numeric',
             'event_status_id' => 'required|numeric'
         ]);
@@ -65,12 +69,12 @@ class EventController extends Controller
     }
 
     // Изменение записи
-    public function Update(Request $request, $id)
+    public function Update(Request $request)
     {
         $fields = $request->validate([
-            'title' => 'required|min:3|max:255|unique:events,title,' . $id,
+            'title' => 'required|min:3|max:255|unique:events,title,' . $request['event_id'],
             'description' => 'required|min:3',
-            'event_type_id' => 'required|numeric',
+            'event_type_id' => 'required',
             'room_id' => 'required|numeric',
             'date' => 'required',
             'time' => 'required',
@@ -78,17 +82,67 @@ class EventController extends Controller
             'price' => 'required|numeric|gte:0',
             'picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'bigpicture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'event_script_id' => 'required|numeric',
-            'user_id' => 'required|numeric',
-            'event_status_id' => 'required|numeric'
+            'script' => 'required',
+            'user_id' => 'required',
+            'event_status_id' => 'required'
         ]);
 
-        $record = Events::findOrFail($id);
+        
+        $record = Events::findOrFail($request['event_id']);
 
-        if (!$record)
-        {
-            return redirect()->back()->with('error', 'Запись не найдена!');
+        $user_id = null;
+        
+        if ($fields['user_id'] != 'Мы') {
+            $user_id = User::where('full_name', $fields['user_id'])->get()->value('id');
         }
+        
+        
+        $fields['user_id'] = $user_id;
+        
+        
+        $event_type_id = EventTypes::where('type', $fields['event_type_id'])->get()->value('id');
+        $event_status_id = EventStatus::where('status', $fields['event_status_id'])->get()->value('id');
+        $room_id = Rooms::where('number', $fields['room_id'])->get()->value('id');
+        
+        // dd($event_type_id);
+        
+
+        // if (!$user_id)
+        // {
+        //     return redirect()->back()->with('error', 'Запись пользователя не найдена!');
+        // }
+        // else
+        // {
+        //     $fields['user_id'] = $user_id;
+        // }
+
+        if (!$event_type_id)
+        {
+            return redirect()->back()->with('error', 'Запись типа мероприятия не найдена!');
+        }
+        else
+        {
+            $fields['event_type_id'] = $event_type_id;
+        }
+
+        if (!$event_status_id)
+        {
+            return redirect()->back()->with('error', 'Запись статуса не найдена!');
+        }
+        else
+        {
+            $fields['event_status_id'] = $event_status_id;
+        }
+
+        if (!$room_id)
+        {
+            return redirect()->back()->with('error', 'Запись комнаты не найдена!');
+        }
+        else
+        {
+            $fields['room_id'] = $room_id;
+        }
+
 
         if ($request->hasFile('picture'))
         {

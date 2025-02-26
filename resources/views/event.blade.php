@@ -9,7 +9,7 @@
 
             <!-- Информация о мероприятии -->
             <div class="h-full overflow-y-auto p-4">
-                <h1 class="text-4xl font-bold text-teal-800 mb-4">{{$event['title']}}</h1>
+                <h1 class="text-4xl font-bold mb-4">{{$event['title']}}</h1>
                 <p class="text-gray-700 leading-relaxed mb-8">
                     {{$event['description']}}
                 </p>
@@ -89,7 +89,7 @@
             </form>
         </div>
         @endauth
-        <h1 class="text-center text-3xl md:text-4xl font-bold mb-6">Актеры</h1> 
+        {{-- <h1 class="text-center text-3xl md:text-4xl font-bold mb-6">Актеры</h1> 
 
 @foreach ($actors as $actor)
     <div class="px-4 md:px-10"> 
@@ -101,7 +101,7 @@
             </div>
         </div>
     </div>
-@endforeach
+@endforeach --}}
 
     </div>        
 

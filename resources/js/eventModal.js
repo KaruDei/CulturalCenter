@@ -3,6 +3,7 @@ if(window.location.href == "http://127.0.0.1:8000/admin/events"){
     let i = 1;
     let eventID = document.getElementById('eventID')
     let inputs = document.querySelectorAll('.form-input')
+    console.log(inputs);
     let type_select = document.getElementById('type-select')
     let room_select = document.getElementById('room-select')
     let status_select = document.getElementById('status-select')
@@ -44,16 +45,16 @@ if(window.location.href == "http://127.0.0.1:8000/admin/events"){
     });
     buttons.forEach(button => {
             button.addEventListener('click', function() {
-                let j = 0
+                let j = 1
                 let parentDiv = button.parentElement.parentElement.parentElement;
-                console.log()
+                // console.log()
                 modal.style.display = "flex"
                 inputs.forEach(input => {
                     input.value = parentDiv.children[j].textContent
                     j++
                 });
-                eventID = parentDiv.children[13]
-                console.log(eventID)
+                eventID.value = parentDiv.children[0].textContent
+                // console.log(eventID)
             });
         });
 

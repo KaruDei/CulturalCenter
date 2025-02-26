@@ -30,7 +30,7 @@ class EventsSeeder extends Seeder
                 'price' => 120,
                 'picture' => '/images/events/knazVladimir.png',
                 'bigpicture' => '/images/events/knazVladimir-big.png',
-                'event_script_id' => EventScripts::first()->where('title', 'Сценарий для фильма Князь Владимир')->value('id'),
+                'script' => 'Сценарий для фильма Князь Владимир',
                 'user_id' => User::where('id', User::where('email', 'admin@mail.ru')->first()->value('id'))->first()->value('id'),
                 'event_status_id' => EventStatus::first()->where('status', 'Запланировано')->value('id')
             ]
@@ -48,7 +48,7 @@ class EventsSeeder extends Seeder
                 'price' => 250,
                 'picture' => '/images/events/alesha-popovich-i-tugarin-zmei.png',
                 'bigpicture' => '/images/events/alesha-popovich-i-tugarin-zmei-big.png',
-                'event_script_id' => EventScripts::first()->where('title', 'Какой то сценарий к какому то мероприятию')->value('id'),
+                'script' => 'Какой то сценарий к какому то мероприятию',
                 'user_id' => User::where('id', User::where('email', 'admin@mail.ru')->first()->value('id'))->first()->value('id'),
                 'event_status_id' => EventStatus::first()->where('status', 'Запланировано')->value('id')
             ]
@@ -66,7 +66,7 @@ class EventsSeeder extends Seeder
                 'price' => 250,
                 'picture' => '/images/events/dobrina-i-zmei.png',
                 'bigpicture' => '/images/events/dobrina-i-zmei-big.png',
-                'event_script_id' => EventScripts::first()->where('title', 'Какой то сценарий к какому то мероприятию')->value('id'),
+                'script' => 'Какой то сценарий к какому то мероприятию',
                 'event_status_id' => EventStatus::first()->where('status', 'Запланировано')->value('id')
             ]
         );
@@ -83,7 +83,7 @@ class EventsSeeder extends Seeder
                 'price' => 250,
                 'picture' => '/images/events/ilya-i-solovei.png',
                 'bigpicture' => '/images/events/ilya-i-solovei-big.png',
-                'event_script_id' => EventScripts::first()->where('title', 'Какой то сценарий к какому то мероприятию')->value('id'),
+                'script' => 'Какой то сценарий к какому то мероприятию',
                 'event_status_id' => EventStatus::first()->where('status', 'Запланировано')->value('id')
             ]
         );

@@ -18,7 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(RoomsSeeder::class);
         $this->call(SeatsSeeder::class);
         $this->call(EventStatusSeeder::class);
-        $this->call(EventScriptsSeeder::class);
         $this->call(EventsSeeder::class);
         $this->call(ActorRolesSeeder::class);
         $this->call(ActorsSeeder::class);

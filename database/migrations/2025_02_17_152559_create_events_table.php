@@ -23,7 +23,7 @@ return new class extends Migration
             $table->integer('price');
             $table->string('picture')->nullable();
             $table->string('bigpicture')->nullable();
-            $table->foreignId('event_script_id')->constrained('event_scripts')->onDelete('cascade');
+            $table->text('script');
             $table->foreignId('user_id')->nullable()->constrained('users')->onDelete('cascade');
             $table->foreignId('event_status_id')->constrained('event_statuses')->onDelete('cascade');
             $table->timestamps();

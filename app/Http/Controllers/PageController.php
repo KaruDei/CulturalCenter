@@ -12,7 +12,6 @@ class PageController extends Controller
     protected $eventActorController;
     protected $eventController;
     protected $eventOrderController;
-    protected $eventScriptController;
     protected $eventStatusController;
     protected $eventTicketController;
     protected $eventTypeController;
@@ -30,7 +29,6 @@ class PageController extends Controller
         EventActorController $eventActorController,
         EventController $eventController,
         EventOrderController $eventOrderController,
-        EventScriptController $eventScriptController,
         EventStatusController $eventStatusController,
         EventTicketController $eventTicketController,
         EventTypeController $eventTypeController,
@@ -48,7 +46,6 @@ class PageController extends Controller
         $this->eventActorController = $eventActorController;
         $this->eventController = $eventController;
         $this->eventOrderController = $eventOrderController;
-        $this->eventScriptController = $eventScriptController;
         $this->eventStatusController = $eventStatusController;
         $this->eventTicketController = $eventTicketController;
         $this->eventTypeController = $eventTypeController;
@@ -170,10 +167,6 @@ class PageController extends Controller
     
     public function AdminEventActorsPage() {
         return view('admin.admin-event-actors');
-    }
-
-    public function AdminEventScriptsPage() {
-        return view('admin.admin-event-scripts');
     }
 
     public function AdminEventStatusPage() {
