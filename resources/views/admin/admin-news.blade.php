@@ -1,5 +1,32 @@
 <x-admin-layout>
-    <div class="flex flex-col items-center justify-start min-h-screen bg-linen mt-14 mb-12 pt-20">
+    <div class="p-12 mt-[140px] mb-2 bg-floral-white rounded-xl shadow-2xl border-4 border-amber-100 max-w-md mx-auto">
+        <h1 class="text-4xl font-bold text-teal-800 mb-8 border-b-2 border-amber-200 pb-2 text-center">Добавить новость</h1>
+
+        <form class="space-y-6">
+            <div>
+                <label class="form-label">Название</label>
+                <input type="text" class="form-input"  placeholder="Введите Название новости" required>
+            </div>
+
+            <div>
+                <label class="form-label">Описание</label>
+                <input type="text" class="form-input" placeholder="Введите описание новости" required>
+            </div>
+
+            <div>
+                <label class="form-label">Картинка</label>
+                <input type="file" class="form-input" >
+            
+            </div>
+
+
+            <div>
+                <button type="submit" class="mt-1 bg-white transition duration-300 text-teal-700 font-semibold py-2 px-4 border border-teal-500 rounded w-full hover:bg-gray-100 focus:outline-none focus:shadow-outline">Добавить</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="flex flex-col items-center justify-start min-h-screen bg-linen mt-6 mb-12 pt-20">
             <h1 class="text-4xl font-bold text-teal-800 mb-12 border-b-4 border-amber-300 pb-4 text-center">Все новости</h1>
     
             <div class="overflow-x-auto w-full max-w-5xl">
