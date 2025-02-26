@@ -53,7 +53,6 @@ li button::before {
     font-size: 1.2em; /* Пример: немного больше размер */
 }
 .buy-button {
-    margin-left:88px ;
     margin-top: 20px;
     font-size: 2rem;
     color: #4f9c9c; 
