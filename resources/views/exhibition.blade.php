@@ -1,7 +1,7 @@
 <x-layout>
     <div id="con" class="hidden">
     </div>
-    <div  class="container mt-12 mb-4 mx-auto bg-floral-white rounded-xl w-full h-[600px] p-10 shadow-2xl border-2 border-amber-200">
+    <div  class="container mt-12 mb-4 mx-auto bg-floral-white rounded-xl w-full h-[800px] p-10 shadow-2xl border-2 border-amber-200">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 h-full">
             <!-- Картинка -->
             <div class="h-[500px] md:h-full bg-gray-500 border border-amber-200 rounded-xl overflow-hidden">
@@ -20,7 +20,7 @@
                 Начало - {{$exhibition->start_date}}
             </h1>
             <h1 class="leading-relaxed mb-8">
-                Конец - {{$exhibition->start_date}}
+                Конец - {{$exhibition->end_date}}
             </h1>
         </div>
     </div>
