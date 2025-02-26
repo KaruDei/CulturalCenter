@@ -4,7 +4,7 @@
         <div class="modalWindow-background">
             
         </div>
-        <form action="{{Route('admin.users')}}" method="POST" class="modalWindow-body">
+        <form action="{{Route('admin.users')}}" method="POST" class="modalWindow-body" enctype="multipart/form-data">
             @csrf
             @method("patch")
             <p class="button-close">Закрыть</p>

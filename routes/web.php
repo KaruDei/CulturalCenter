@@ -67,6 +67,7 @@ Route::get('/admin/user-roles', [PageController::class, 'AdminUserRolesPage'])->
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [PageController::class, 'ProfilePage'])->name('profile');
+    Route::patch('/profile', [UserController::class, 'UserUpdate'])->name('profile');
 
     Route::get('/logout', [UserController::class, 'UserLogout'])->name('logout');
 
