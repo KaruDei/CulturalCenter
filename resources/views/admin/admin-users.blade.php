@@ -93,7 +93,7 @@
                             <td class="py-2 px-4 border-b">{{$user->userOrders->count()}}</td>
                             <td class="py-2 px-4 border-b">
                                 <div class="flex space-x-2">
-                                    <button id="button-edit-{{$i}}" class="bg-white hover:bg-gray-100 text-teal-700 font-semibold py-2 px-4 border border-teal-500 rounded transition duration-300">Редактировать</button>
+                                    <button id="admin-user-button-edit-{{$i}}" class="bg-white hover:bg-gray-100 text-teal-700 font-semibold py-2 px-4 border border-teal-500 rounded transition duration-300">Редактировать</button>
                                     <form action="{{Route('admin.users')}}", method="POST">
                                         @csrf
                                         @method("DELETE")
