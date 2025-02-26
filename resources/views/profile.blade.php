@@ -4,17 +4,17 @@
         <div class="modalWindow-background">
             
         </div>
-        <form action="{{Route('admin.users')}}" method="POST" class="modalWindow-body">
+        <form action="{{Route('profile')}}" method="POST" class="modalWindow-body" enctype="multipart/form-data">
             @csrf
             @method("patch")
             <p class="button-close">Закрыть</p>
             
             <label for="fullname" class="form-label">ФИО</label>
-            <input type="hidden" name="user_id" id="labelID" class="input-modal">
-            <input type="text" name="full_name" id="inputFullname" class="form-input" placeholder="Введите ФИО" required>
+            <input type="hidden" name="user_id" id="labelID" class="input-modal" value="{{$user->id}}">
+            <input type="text" name="full_name" id="inputFullname" class="form-input" placeholder="Введите ФИО" value="{{$user->full_name}}" required>
             
             <label for="email" class="form-label">Почта</label>
-            <input type="email" name="email" id="inputEmail" class="form-input" placeholder="Введите почту" required>
+            <input type="email" name="email" id="inputEmail" class="form-input" placeholder="Введите почту" value="{{$user->email}}" required>
             
             <label for="password" class="form-label">Пароль</label>
             <input type="password" name="password" id="inputPassword" class="form-input" placeholder="Введите пароль" required>
@@ -50,6 +50,33 @@
                             <span class="detail-label">Email:</span> {{$user->email}}
                         </p>
                         <button id="button-edit-profile" class="edit-button">Редактировать профиль</button>
+                        @session('error')
+            {{$value}}
+        @endsession
+
+        @session('success')
+            {{$value}}
+        @endsession
+
+        @error('user_id')
+            <p>{{$message}}</p>
+        @enderror
+
+        @error('email')
+            <p>{{$message}}</p>
+        @enderror
+
+        @error('password')
+            <p>{{$message}}</p>
+        @enderror
+
+        @error('picture')
+            <p>{{$message}}</p>
+        @enderror
+
+        @error('full_name')
+            <p>{{$message}}</p>
+        @enderror
                     </div>
                 </div>
             </section>
