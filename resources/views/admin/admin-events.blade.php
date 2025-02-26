@@ -1,4 +1,65 @@
 <x-admin-layout>
+    <div class="modalWindow-container">
+        <div class="modalWindow-background">
+            
+        </div>
+        <form action="{{Route('admin.users')}}" method="POST" class="modalWindow-body">
+            @csrf
+            @method("patch")
+            <p class="button-close">Закрыть</p>
+            
+            
+            <label for="title" class="form-label">Название</label>
+            <input type="hidden" name="event_id" id="eventID">
+            <input type="text" name="title" id="inputTitle" class="form-input" placeholder="Введите Название мероприятия" required>
+
+            <label for="desc" class="form-label">Описание</label>
+            <input type="text" name="desc" id="inputDesc" class="form-input" placeholder="Введите описание мероприятия" required>
+
+            <label for="type" class="form-label">Тип Мероприятия</label>
+            <section>
+                <select id="type-select" class="form-input-options form-input">
+
+                </select>
+            </section>
+
+            <label for="room" class="form-label">Выберите Зал</label>
+            <section>
+                <select id="room-select" class="form-input-options form-input">
+
+                </select>
+            </section>
+
+            <label for="date" class="form-label">Дата Мероприятия</label>
+            <input type="date" name="date" id="inputDate" class="form-input" placeholder="Введите дату мероприятия" required>
+
+            <label for="time" class="form-label">Время Мероприятия</label>
+            <input type="time" name="time" id="inputTime" class="form-input" placeholder="Введите время мероприятия" required>
+
+            <label for="duration" class="form-label">Длительность Мероприятия(минут)</label>
+            <input type="number" name="duration" id="inputDuration" class="form-input" placeholder="Введите Длительность мероприятия" required>
+
+            <label for="price" class="form-label">Цена Мероприятия(рублей)</label>
+            <input type="number" name="price" id="inputPrice" class="form-input" placeholder="Введите цену мероприятия" required>
+
+            <label for="script" class="form-label">Сценарий Мероприятия</label>
+            <input type="text" name="script" id="inputScript" class="form-input" placeholder="Введите сценарий мероприятия" required>
+
+            <input type="hidden" name="autor" id="inputAutor" class="form-input" placeholder="Введите статус мероприятия" required disabled >
+
+            <label for="status-select" class="form-label">Статус Мероприятия</label>
+            <section>
+                <select id="status-select" class="form-input-options form-input">
+
+                </select>
+            </section>
+
+            <input type="submit" value="Сохранить" class="submit-button">
+            
+        </form>
+        
+        
+    </div>
     <div class="flex flex-col items-center justify-start min-h-screen bg-linen mt-14 mb-12 pt-20">
         <h1 class="text-4xl font-bold text-teal-800 mb-12 border-b-4 border-amber-300 pb-4 text-center">Все мероприятия</h1>
         <div class="overflow-x-auto w-full max-w-5xl">
@@ -40,7 +101,7 @@
                         <td class="py-2 px-4 border-b">{{$event->room->number}}</td>
                         <td class="py-2 px-4 border-b">{{$event->date}}</td>
                         <td class="py-2 px-4 border-b">{{$event->time}}</td>
-                        <td class="py-2 px-4 border-b">{{$event->duration}} Минут</td>
+                        <td class="py-2 px-4 border-b">{{$event->duration}}</td>
                         <td class="py-2 px-4 border-b">{{$event->price}}</td>
                         <td class="py-2 px-4 border-b">{{$event->eventScript->title}}</td>
                         <td class="py-2 px-4 border-b">
@@ -57,7 +118,7 @@
                         <td class="py-2 px-4 border-b">{{$event->updated_at}}</td>
                         <td class="py-2 px-4 border-b">
                             <div class="flex space-x-2">
-                                <button class="bg-white hover:bg-gray-100 text-teal-700 font-semibold py-2 px-4 border border-teal-500 rounded transition duration-300">Редактировать</button>
+                                <button id="admin-event-button-edit-{{$i}}" class="bg-white hover:bg-gray-100 text-teal-700 font-semibold py-2 px-4 border border-teal-500 rounded transition duration-300">Редактировать</button>
                                 <button class="bg-white hover:bg-gray-100 text-red-700 font-semibold py-2 px-4 border border-red-500 rounded transition duration-300">Удалить</button>
                             </div>
                         </td>
@@ -67,4 +128,10 @@
             </table>
         </div>
     </div>
+    <script>
+        window.events = {!! json_encode($events) !!};
+        window.eventStatuses = {!! $event_statuses_json !!};
+        window.eventTypes = {!! $event_types_json !!};
+        window.rooms = {!! $rooms_json !!};
+    </script>
 </x-admin-layout>
