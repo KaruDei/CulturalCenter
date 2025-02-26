@@ -28,7 +28,6 @@ display: none;
 }
 .labelforcheckbox{
     position: relative;
-    left: 38px;
     user-select: none;
     background-color: red;
     width: 50px;
@@ -54,6 +53,7 @@ li button::before {
 }
 .buy-button {
     margin-top: 20px;
+    margin-bottom: 40px;
     font-size: 2rem;
     color: #4f9c9c; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
