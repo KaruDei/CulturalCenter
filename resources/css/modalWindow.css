@@ -4,7 +4,7 @@
     z-index: 9999;
 }
 .modalWindow-container{
-    display: none;
+    display: flex;
     flex-direction: column;
     /* margin-top: -30px;  -80 был отступ */
 }
@@ -64,6 +64,13 @@
 }
 
 .form-input {
+    border: 1px solid #cbd5e0; /* border */
+    border-radius: 0.375rem; /* rounded-md */
+    padding: 0.5rem; /* p-2 */
+    width: 100%; /* w-full */
+    margin-bottom: 1rem; /* mb-4 */
+}
+.form-input-options {
     border: 1px solid #cbd5e0; /* border */
     border-radius: 0.375rem; /* rounded-md */
     padding: 0.5rem; /* p-2 */
