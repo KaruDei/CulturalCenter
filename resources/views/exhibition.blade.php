@@ -14,7 +14,14 @@
                 <p class="text-gray-700 leading-relaxed mb-8">
                     {{$exhibition['description']}}
                 </p>
+                
             </div>
+            <h1 class="leading-relaxed mb-8">
+                Начало - {{$exhibition->start_date}}
+            </h1>
+            <h1 class="leading-relaxed mb-8">
+                Конец - {{$exhibition->start_date}}
+            </h1>
         </div>
     </div>
 </x-layout>
