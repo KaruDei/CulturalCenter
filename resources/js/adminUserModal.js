@@ -27,6 +27,7 @@ try {
                 inputFullname.value = parentDiv.children[1].innerHTML 
                 inputEmail.value = parentDiv.children[2].innerHTML
                 labelPicture.src = parentDiv.children[3].children[0].src
+                console.log(labelID)
             });
         });
 
