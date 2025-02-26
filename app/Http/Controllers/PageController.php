@@ -156,9 +156,16 @@ class PageController extends Controller
     }
 
     public function AdminEventsPage() {
-        // $events = $this->eventController->GetAllRecords();
-        $events = Events::all();
-        return view('admin.admin-events' ,['events' => $events]);
+        $events = $this->eventController->GetAllRecords();
+        $event_statuses = $this->eventStatusController->GetAllRecords();
+        $event_types = $this->eventTypeController->GetAllRecords();
+        $rooms = $this->roomController->GetAllRecords();
+        return view('admin.admin-events' ,[
+            'events' => $events, 
+            'event_statuses_json' => $event_statuses->toJson(),
+            'event_types_json' => $event_types->toJson(),
+            'rooms_json' => $rooms->toJson(),
+        ]);
     }
     
     public function AdminEventActorsPage() {
