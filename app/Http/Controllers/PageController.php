@@ -159,6 +159,9 @@ class PageController extends Controller
         $rooms = $this->roomController->GetAllRecords();
         return view('admin.admin-events' ,[
             'events' => $events, 
+            'rooms' => $rooms,
+            'types' => $event_types,
+            'statuses' => $event_statuses,
             'event_statuses_json' => $event_statuses->toJson(),
             'event_types_json' => $event_types->toJson(),
             'rooms_json' => $rooms->toJson(),
