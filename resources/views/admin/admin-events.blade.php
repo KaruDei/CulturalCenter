@@ -3,7 +3,7 @@
         <div class="modalWindow-background">
             
         </div>
-        <form action="{{Route('admin.events')}}" method="POST" class="modalWindow-body" enctype="multipart/form-data">
+        <form action="{{Route('admin.events.update')}}" method="POST" class="modalWindow-body" enctype="multipart/form-data">
             @csrf
             @method("patch")
             <p class="button-close">Закрыть</p>
@@ -180,7 +180,11 @@
                         <td class="py-2 px-4 border-b">
                             <div class="flex space-x-2">
                                 <button id="admin-event-button-edit-{{$i}}" class="bg-white hover:bg-gray-100 text-teal-700 font-semibold py-2 px-4 border border-teal-500 rounded transition duration-300">Редактировать</button>
-                                <button class="bg-white hover:bg-gray-100 text-red-700 font-semibold py-2 px-4 border border-red-500 rounded transition duration-300">Удалить</button>
+                                <form action="{{Route('admin.events.delete', $event->id)}}", method="POST">
+                                    @csrf
+                                    @method("DELETE")
+                                    <button type="submit" class="bg-white hover:bg-gray-100 text-red-700 font-semibold py-2 px-4 border border-red-500 rounded transition duration-300">Удалить</button>
+                                </form>
                             </div>
                         </td>
                     </tr>

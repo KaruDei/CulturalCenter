@@ -123,10 +123,10 @@ class UserController extends Controller
     }
 
     // Проверить!
-    public function UserDelete(Request $request)
+    public function UserDelete($id)
     {
         // Delete user
-        User::first()->where('id', $request['user_id'])->delete();
+        User::first()->where('id', $id)->delete();
         
         // Redirect
         return redirect()->back()->with('success', 'Данные успешно удалены');

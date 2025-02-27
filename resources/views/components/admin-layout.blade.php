@@ -41,7 +41,7 @@
 
                         <li><a href="{{Route('admin.news')}}" class="nav-link">Новости</a></li>
 
-                        <li><a href="{{Route('logout')}}" class="nav-link">Выход</a></li>
+                        <li><a href="{{Route('home')}}" class="nav-link">Выход</a></li>
                     </ul>
                 </nav>
             </div>
