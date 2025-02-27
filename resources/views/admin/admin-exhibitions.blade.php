@@ -8,7 +8,7 @@
             @method("patch")
             <p class="button-close">Закрыть</p>
             
-            <input type="hidden" id="exhibitionID">
+            <input type="hidden" id="exhibitionID" class="form-input">
             
             <label for="title" class="form-label">Название</label>
             <input type="text" name="title" id="inputTitle" class="form-input" placeholder="Введите Название выставки" required>
@@ -19,6 +19,7 @@
 
              
             <label for="picture" class="form-label">Картинка</label>
+            <img id="exhibition_picture" class="object-contain" width="200px" src="" alt="">
             <input type="file" name="picture" id="inputPicture" class="form-input" placeholder="Картинка выставки" required>
 
              
@@ -43,6 +44,7 @@
             <table class="table-auto w-full bg-floral-white rounded-xl shadow-md border border-amber-100">
                 <thead class="bg-amber-100 text-teal-800">
                     <tr>
+                        <th class="py-2 px-4 border-b text-left">ID</th>
                         <th class="py-2 px-4 border-b text-left">Название</th>
                         <th class="py-2 px-4 border-b text-left">Описание</th>
                         <th class="py-2 px-4 border-b text-left">Картинка</th>
@@ -62,7 +64,7 @@
                         $i++; 
                     @endphp
                     <tr>
-                        
+                        <td class="py-2 px-4 border-b">{{$exhibition->id}}</td>
                         <td class="py-2 px-4 border-b">{{$exhibition->title}}</td>
                         <td class="py-2 px-4 border-b text-left">
                             <div class="w-60 h-40 overflow-y-auto">
