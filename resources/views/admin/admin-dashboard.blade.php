@@ -84,12 +84,28 @@
                 <a href="{{Route('admin.news')}}" class="text-amber-600 hover:text-amber-700 mt-4 block">Подробнее</a>
             </div>
         </div>
+        
         <h1 class="text-4xl font-bold text-teal-800 border-b-4 border-amber-300 pb-4 text-center mt-10 mb-10">Прибыль</h1>
-        <div class="bg-floral-white rounded-2xl shadow-2xl p-8 border border-amber-100">
-            @php
-                $sum = array_sum(array_column($ticket->toArray(), 'price'));
-            @endphp
-            <p class="text-3xl text-teal-700">{{$sum}} Рублей</p>
+
+        
+
+        <div class="bg-floral-white rounded-2xl shadow-2xl p-8 border border-amber-100 hover:shadow-xl transition duration-300">
+            <div class="flex items-center justify-between">
+                <div>
+                    @php
+                        $sum = array_sum(array_column($ticket->toArray(), 'price'));
+                    @endphp
+                    <h3 class="text-xl font-semibold text-teal-700 mb-2">Всего прибыли</h3>
+                    <p class="text-3xl font-bold text-gray-800">{{ number_format($sum, 0, ',', ' ') }} <span class="text-lg align-top">₽</span></p>
+                </div>
+                <div class="text-teal-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="mt-8 h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9a1 1 0 00.889 1.11h14a1 1 0 00.889-1.11l-1-9A1 1 0 0015 7h-1v-1a4 4 0 00-4-4zm2 5a1 1 0 11-2 0v2H7a1 1 0 110 2h2v2a1 1 0 112 0v-2h2a1 1 0 110-2h-2V7z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+            </div>
         </div>
+        
     </div>
 </x-admin-layout>
+
