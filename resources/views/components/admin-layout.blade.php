@@ -37,7 +37,7 @@
 
                         <li><a href="{{Route('admin.exhibitions')}}" class="nav-link">Выставки</a></li>
 
-                        <li><a href="{{Route('admin.event-orders')}}" class="nav-link">Заказы</a></li>
+                        {{-- <li><a href="{{Route('admin.event-orders')}}" class="nav-link">Заказы</a></li> --}}
 
                         <li><a href="{{Route('admin.news')}}" class="nav-link">Новости</a></li>
 
