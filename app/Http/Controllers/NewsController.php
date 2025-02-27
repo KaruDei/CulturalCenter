@@ -46,15 +46,15 @@ class NewsController extends Controller
     }
 
     // Изменение записи
-    public function Update(Request $request, $id)
+    public function Update(Request $request)
     {
         $fields = $request->validate([
-            'title' => 'required|min:3|max:255|unique:news,title,' . $id,
+            'title' => 'required|min:3|max:255|unique:news,title,' . $request['news_id'],
             'content' => 'required|min:3',
             'picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        $record = News::findOrFail($id);
+        $record = News::findOrFail($request['news_id']);
 
         if (!$record)
         {

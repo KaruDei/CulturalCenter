@@ -3,12 +3,12 @@
         <div class="modalWindow-background">
             
         </div>
-        <form action="{{Route('admin.users')}}" method="POST" class="modalWindow-body">
+        <form action="{{Route('admin.exhibitions.update')}}" method="POST" class="modalWindow-body" enctype="multipart/form-data">
             @csrf
             @method("patch")
             <p class="button-close">Закрыть</p>
             
-            <input type="hidden" id="exhibitionID" class="form-input">
+            <input type="hidden" name="exhibition_id" id="exhibitionID" class="form-input">
             
             <label for="title" class="form-label">Название</label>
             <input type="text" name="title" id="inputTitle" class="form-input" placeholder="Введите Название выставки" required>
@@ -20,7 +20,7 @@
              
             <label for="picture" class="form-label">Картинка</label>
             <img id="exhibition_picture" class="object-contain" width="200px" src="" alt="">
-            <input type="file" name="picture" id="inputPicture" class="form-input" placeholder="Картинка выставки" required>
+            <input type="file" name="picture" id="inputPicture" class="form-input" placeholder="Картинка выставки">
 
              
             <label for="start_date" class="form-label">Стартовая дата</label>
@@ -40,6 +40,40 @@
     <div class="flex flex-col items-center justify-start min-h-screen bg-linen mt-14 mb-12 pt-20">
 
         <h1 class="text-4xl font-bold text-teal-800 mb-12 border-b-4 border-amber-300 pb-4 text-center">Все выставки</h1>
+
+        @session('error')
+            {{$value}}
+        @endsession
+
+        @session('success')
+            {{$value}}
+        @endsession
+
+        @error('title')
+            <p>{{$message}}</p>
+        @enderror
+
+        @error('description')
+            <p>{{$message}}</p>
+        @enderror
+
+        @error('picture')
+            <p>{{$message}}</p>
+        @enderror
+
+        @error('start_date')
+            <p>{{$message}}</p>
+        @enderror
+
+        @error('end_date')
+            <p>{{$message}}</p>
+        @enderror
+
+        @error('event_id')
+            <p>{{$message}}</p>
+        @enderror
+    
+
         <div class="overflow-x-auto w-full max-w-5xl">
             <table class="table-auto w-full bg-floral-white rounded-xl shadow-md border border-amber-100">
                 <thead class="bg-amber-100 text-teal-800">
@@ -82,7 +116,11 @@
                         <td class="py-2 px-4 border-b">
                             <div class="flex space-x-2">
                                 <button id="admin-exhibition-button-edit-{{$i}}" class=" bg-white hover:bg-gray-100 text-teal-700 font-semibold py-2 px-4 border border-teal-500 rounded transition duration-300">Редактировать</button>
-                                <button class="bg-white hover:bg-gray-100 text-red-700 font-semibold py-2 px-4 border border-red-500 rounded transition duration-300">Удалить</button>
+                                <form action="{{Route('admin.exhibitions.delete', $exhibition->id)}}", method="POST">
+                                    @csrf
+                                    @method("DELETE")
+                                    <button type="submit" class="bg-white hover:bg-gray-100 text-red-700 font-semibold py-2 px-4 border border-red-500 rounded transition duration-300">Удалить</button>
+                                </form>
                             </div>
                         </td>
                     </tr>
