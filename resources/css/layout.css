@@ -63,8 +63,7 @@ body {
     width: 200px;
     height: auto; /* Автоматическая высота для адаптивности */
     list-style: none; /* Убираем стандартные маркеры списка */
-    position: absolute;
-    display: none; /* Скрываем меню по умолчанию */
+    position: absolute;/* Скрываем меню по умолчанию */
     flex-direction: column;
     gap: 10px; 
     background-color: white;
@@ -81,7 +80,6 @@ body {
 .burger-button{
     width: 40px;
     height: 40px;
-    display: none;
     margin-top: 10px;
     transform: rotate(0deg);
     transition: all 0.3s;

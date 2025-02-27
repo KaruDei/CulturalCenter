@@ -19,11 +19,18 @@ if(window.location.href == "http://127.0.0.1:8000/admin/exhibitions"){
             button.addEventListener('click', function() {
                 let j = 0
                 let parentDiv = button.parentElement.parentElement.parentElement;
-                console.log()
                 modal.style.display = "flex"
+                let pic = document.getElementById("exhibition_picture").src = parentDiv.children[3].children[0].src
+                console.log(pic)
                 inputs.forEach(input => {
-
+                    if(input.id == "inputPicture"){
+                        j++
+                    }else{
+                        input.value = parentDiv.children[j].textContent
+                        
                     j++
+                    }
+                    
                     console.log(input)
                 });
             });
