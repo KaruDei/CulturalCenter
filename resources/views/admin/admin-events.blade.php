@@ -14,6 +14,14 @@
             <label for="description" class="form-label">Описание</label>
             <input type="text" name="description" id="inputDesc" class="form-input" placeholder="Введите описание мероприятия" required>
 
+            <label for="bigpicture" class="form-label">Картинка</label>
+            <img id="Bigpicture" class="object-contain" width="200px" src="" alt="">
+            <input type="file" name="Bigpicture" id="inputBigPicture" class="form-input" placeholder="Картинка выставки">
+
+            <label for="picture" class="form-label">Картинка</label>
+            <img id="picture" class="object-contain" width="200px" src="" alt="">
+            <input type="file" name="picture" id="inputPicture" class="form-input" placeholder="Картинка выставки">
+
             <label for="event_type_id" class="form-label">Тип Мероприятия</label>
             <section>
                 <select id="type-select" name="event_type_id" class="form-input-options form-input">
@@ -29,7 +37,7 @@
             </section>
 
             <label for="date" class="form-label">Дата Мероприятия</label>
-            <input type="date" name="date" id="inputDate" class="form-input" placeholder="Введите дату мероприятия" required>
+            <input type="text" name="date" id="inputDate" class="form-input" placeholder="Введите дату мероприятия" required>
 
             <label for="time" class="form-label">Время Мероприятия</label>
             <input type="time" name="time" id="inputTime" class="form-input" placeholder="Введите время мероприятия" required>
@@ -120,7 +128,6 @@
         @error('user_id')
             <p>{{$message}}</p>
         @enderror
-        
         <div class="overflow-x-auto w-full max-w-5xl">
             <table class="h-20 w-full bg-floral-white rounded-xl shadow-md border border-amber-100">
                 <thead class="bg-amber-100 text-teal-800">
@@ -128,6 +135,8 @@
                         <th class="py-2 px-4 border-b">ID</th>
                         <th class="py-2 px-4 border-b text-left">Название</th>
                         <th class="py-2 px-4 border-b text-left">Описание</th>
+                        <th class="py-2 px-4 border-b text-left">Большая картинка</th>
+                        <th class="py-2 px-4 border-b text-left">Маленькая картинка</th>
                         <th class="py-2 px-4 border-b text-left">Тип мероприятия</th>
                         <th class="py-2 px-4 border-b text-left">Комната</th>
                         <th class="py-2 px-4 border-b text-left">Дата</th>
@@ -152,11 +161,17 @@
                     @endphp
                     <tr class="h-20">
                         <td class="py-2 px-4 border-b">{{$event->id}}</td>
-                        <td class="py-2 px-4 border-b">{{$event->title}}</td>
+                        <td class="py-2 px-4 border-b">{{$event->title}}</td>                 
                         <td class="py-2 px-4 border-b">
                             <div class="w-60 h-40 overflow-y-auto">
                                 {{$event->description}}
                             </div>
+                        </td>
+                        <td class="py-2 px-4 border-b">
+                            <img src="{{$event->bigpicture}}" alt="">
+                        </td>
+                        <td class="py-2 px-4 border-b">
+                            <img src="{{$event->picture}}" alt="">
                         </td>
                         <td class="py-2 px-4 border-b">{{$event->eventType->type}}</td>
                         <td class="py-2 px-4 border-b">{{$event->room->number}}</td>

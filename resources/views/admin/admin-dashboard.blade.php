@@ -54,7 +54,7 @@
             </div>
 
             <!-- Заказы -->
-            <div class="bg-floral-white rounded-2xl shadow-2xl p-8 border border-amber-100 hover:shadow-xl transition duration-300">
+            {{-- <div class="bg-floral-white rounded-2xl shadow-2xl p-8 border border-amber-100 hover:shadow-xl transition duration-300">
                 <div class="flex items-center justify-between">
                     <div>
                         <h3 class="text-xl font-semibold text-teal-700 mb-2">Заказы</h3>
@@ -67,7 +67,7 @@
                     </div>
                 </div>
                 <a href="{{Route('admin.event-orders')}}" class="text-amber-600 hover:text-amber-700 mt-4 block">Подробнее</a>
-            </div>
+            </div> --}}
 
             <div class="bg-floral-white rounded-2xl shadow-2xl p-8 border border-amber-100 hover:shadow-xl transition duration-300">
                 <div class="flex items-center justify-between">

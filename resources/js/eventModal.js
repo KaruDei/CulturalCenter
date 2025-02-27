@@ -47,17 +47,44 @@ if(window.location.href == "http://127.0.0.1:8000/admin/events"){
             button.addEventListener('click', function() {
                 let j = 1
                 let parentDiv = button.parentElement.parentElement.parentElement;
-                // console.log()
                 modal.style.display = "flex"
+                document.getElementById("Bigpicture").src = parentDiv.children[3].children[0].src
+                document.getElementById("picture").src = parentDiv.children[4].children[0].src
+                
+                // document.getElementById("picture").src = parentDiv.children[4].children[0].src
                 inputs.forEach(input => {
-                    input.value = parentDiv.children[j].textContent
-                    j++
+                    if(input.id == "Bigpicture" || input.id == "picture" || input.type == "file"){
+                        j++
+                    }else{
+                        input.value = parentDiv.children[j].textContent
+                        j++
+                        console.log(input.value)
+                    }
                 });
                 eventID.value = parentDiv.children[0].textContent
-                // console.log(eventID)
+
             });
         });
-
+        // buttons.forEach(button => {
+        //     button.addEventListener('click', function() {
+        //         let j = 0
+        //         let parentDiv = button.parentElement.parentElement.parentElement;
+        //         modal.style.display = "flex"
+        //         let pic = document.getElementById("exhibition_picture").src = parentDiv.children[3].children[0].src
+        //         console.log(pic)
+        //         inputs.forEach(input => {
+        //             if(input.id == "inputPicture"){
+        //                 j++
+        //             }else{
+        //                 input.value = parentDiv.children[j].textContent
+                        
+        //             j++
+        //             }
+                    
+        //             console.log(input)
+        //         });
+        //     });
+        // });
 
     closeButton.addEventListener('click', function(){
         modal.style.display = "none"
