@@ -1,21 +1,52 @@
 <x-admin-layout>
+
+    <div class="modalWindow-container">
+        <div class="modalWindow-background">
+            
+        </div>
+        <form action="{{Route('admin.users')}}" method="POST" class="modalWindow-body">
+            @csrf
+            @method("patch")
+            <p class="button-close">Закрыть</p>
+            
+            <input type="hidden" id="exhibitionID" class="form-input">
+            
+            <label for="title" class="form-label">Название</label>
+            <input type="text" name="title" id="inputTitle" class="form-input" placeholder="Введите Название выставки" required>
+
+             
+            <label for="description" class="form-label">Описание</label>
+            <input type="text" name="description" id="inputDescription" class="form-input" placeholder="Введите описание выставки" required>
+
+             
+            <label for="picture" class="form-label">Картинка</label>
+            <img id="exhibition_picture" class="object-contain" width="200px" src="" alt="">
+            <input type="file" name="picture" id="inputPicture" class="form-input" placeholder="Картинка выставки" required>
+            
+            <input type="submit" value="Сохранить" class="submit-button">
+            
+        </form>
+        
+        
+    </div>
+
     <div class="p-12 mt-[140px] mb-2 bg-floral-white rounded-xl shadow-2xl border-4 border-amber-100 max-w-md mx-auto">
         <h1 class="text-4xl font-bold text-teal-800 mb-8 border-b-2 border-amber-200 pb-2 text-center">Добавить новость</h1>
 
-        <form class="space-y-6">
+        <form class="space-y-6" action="">
             <div>
                 <label class="form-label">Название</label>
-                <input type="text" class="form-input"  placeholder="Введите Название новости" required>
+                <input type="text" class=""  placeholder="Введите Название новости" required>
             </div>
 
             <div>
                 <label class="form-label">Описание</label>
-                <input type="text" class="form-input" placeholder="Введите описание новости" required>
+                <input type="text" class="" placeholder="Введите описание новости" required>
             </div>
 
             <div>
                 <label class="form-label">Картинка</label>
-                <input type="file" class="form-input" >
+                <input type="file" class="" >
             
             </div>
 
@@ -33,6 +64,7 @@
                 <table class="table-auto w-full bg-floral-white rounded-xl shadow-md border border-amber-100">
                     <thead class="bg-amber-100 text-teal-800">
                         <tr>
+                            <th class="py-2 px-4 border-b text-left">id новости</th>
                             <th class="py-2 px-4 border-b text-left">Название новости</th>
                             <th class="py-2 px-4 border-b text-left">Тело новости</th>
                             <th class="py-2 px-4 border-b text-left">Картинка</th>
@@ -40,9 +72,15 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @php 
+                        $i = 0; 
+                        @endphp
                         @foreach ($news as $news_item)
-                            
+                        @php
+                        $i++; 
+                    @endphp
                         <tr>
+                            <td class="py-2 px-4 border-b text-left">{{$news_item->id}}</td>
                             <td class="py-2 px-4 border-b text-left">{{$news_item->title}}</td>
                             <td class="py-2 px-4 border-b text-left">
                                 <div class="w-60 h-40 overflow-y-auto">{{$news_item->content}} {{$news_item->content}} {{$news_item->content}} {{$news_item->content}} {{$news_item->content}} {{$news_item->content}} {{$news_item->content}} {{$news_item->description}} {{$news_item->content}} {{$news_item->content}}
@@ -51,7 +89,7 @@
                             <td class="py-2 px-4 border-b text-left"><img class="w-60 h-60 overflow-y-auto" src="{{$news_item->picture}}" alt=""></td>
                             <td class="py-2 px-4 border-b">
                                 <div class="flex space-x-2">
-                                    <button class="bg-white hover:bg-gray-100 text-teal-700 font-semibold py-2 px-4 border border-teal-500 rounded transition duration-300">Редактировать</button>
+                                    <button id="admin-news-button-edit-{{$i}}"  class="bg-white hover:bg-gray-100 text-teal-700 font-semibold py-2 px-4 border border-teal-500 rounded transition duration-300">Редактировать</button>
                                     <button class="bg-white hover:bg-gray-100 text-red-700 font-semibold py-2 px-4 border border-red-500 rounded transition duration-300">Удалить</button>
                                 </div>
                             </td>

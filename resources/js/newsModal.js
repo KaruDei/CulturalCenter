@@ -1,4 +1,4 @@
-if(window.location.href == "http://127.0.0.1:8000/admin/exhibitions"){
+if(window.location.href == "http://127.0.0.1:8000/admin/news" || window.location.href == "http://127.0.0.1:8000/admin/news?"){
     let buttons = []
     let i = 1;
     let inputs = document.querySelectorAll('.form-input')
@@ -6,31 +6,31 @@ if(window.location.href == "http://127.0.0.1:8000/admin/exhibitions"){
     const modal = document.querySelector(".modalWindow-container")
 
     while(true){
-        let button = document.getElementById(`admin-exhibition-button-edit-${i}`);
+        let button = document.getElementById(`admin-news-button-edit-${i}`);
         if (button === null) {
             break;
         }
         buttons.push(button);
         i++
-        console.log(button)
-    }console.log(buttons)
+        
+    }
     buttons.forEach(button => {
             button.addEventListener('click', function() {
                 let j = 0
                 let parentDiv = button.parentElement.parentElement.parentElement;
                 modal.style.display = "flex"
-                let pic = document.getElementById("exhibition_picture").src = parentDiv.children[3].children[0].src
-                console.log(pic)
+                document.getElementById("exhibition_picture").src = parentDiv.children[3].children[0].src
+
                 inputs.forEach(input => {
-                    if(input.id == "inputPicture"){
+                    if(input.id == "inputPicture" || input.className == "asd"){
                         j++
+                        console.log(input)
                     }else{
+                        console.log(parentDiv.children[j].textContent)
                         input.value = parentDiv.children[j].textContent
                         
                     j++
                     }
-                    
-                    console.log(input)
                 });
             });
         });
