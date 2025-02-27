@@ -16,7 +16,7 @@
 
             <label for="bigpicture" class="form-label">Картинка</label>
             <img id="Bigpicture" class="object-contain" width="200px" src="" alt="">
-            <input type="file" name="Bigpicture" id="inputBigPicture" class="form-input" placeholder="Картинка выставки">
+            <input type="file" name="bigpicture" id="inputBigPicture" class="form-input" placeholder="Картинка выставки">
 
             <label for="picture" class="form-label">Картинка</label>
             <img id="picture" class="object-contain" width="200px" src="" alt="">
@@ -37,7 +37,7 @@
             </section>
 
             <label for="date" class="form-label">Дата Мероприятия</label>
-            <input type="text" name="date" id="inputDate" class="form-input" placeholder="Введите дату мероприятия" required>
+            <input type="date" name="date" id="inputDate" class="form-input" placeholder="Введите дату мероприятия" required>
 
             <label for="time" class="form-label">Время Мероприятия</label>
             <input type="time" name="time" id="inputTime" class="form-input" placeholder="Введите время мероприятия" required>
