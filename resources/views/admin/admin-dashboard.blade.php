@@ -84,5 +84,12 @@
                 <a href="{{Route('admin.news')}}" class="text-amber-600 hover:text-amber-700 mt-4 block">Подробнее</a>
             </div>
         </div>
+        <h1 class="text-4xl font-bold text-teal-800 border-b-4 border-amber-300 pb-4 text-center mt-10 mb-10">Прибыль</h1>
+        <div class="bg-floral-white rounded-2xl shadow-2xl p-8 border border-amber-100">
+            @php
+                $sum = array_sum(array_column($ticket->toArray(), 'price'));
+            @endphp
+            <p class="text-3xl text-teal-700">{{$sum}} Рублей</p>
+        </div>
     </div>
 </x-admin-layout>
