@@ -38,17 +38,17 @@
             
             <div>
                 <label class="form-label">Название</label>
-                <input type="text" class=""  placeholder="Введите Название новости" required>
+                <input type="text" class="add-input"  placeholder="Введите Название новости" required>
             </div>
 
             <div>
                 <label class="form-label">Описание</label>
-                <input type="text" class="" placeholder="Введите описание новости" required>
+                <input type="text" class="add-input" placeholder="Введите описание новости" required>
             </div>
 
             <div>
                 <label class="form-label">Картинка</label>
-                <input type="file" class="" >
+                <input type="file" class="add-input" >
             
             </div>
 

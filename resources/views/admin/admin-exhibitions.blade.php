@@ -43,29 +43,29 @@
         <form class="space-y-6">
             <div>
                 <label class="form-label">Название</label>
-                <input type="text" class="form-input"  placeholder="Введите Название выставки" required>
+                <input type="text" class="add-input"  placeholder="Введите Название выставки" required>
             </div>
 
             <div>
                 <label class="form-label">Описание</label>
-                <input type="text" class="form-input" placeholder="Введите описание выставки" required>
+                <input type="text" class="add-input" placeholder="Введите описание выставки" required>
             </div>
 
             <div>
                 <label class="form-label">Картинка</label>
-                <input type="file" class="form-input" >
+                <input type="file" class="add-input" >
             
             </div>
 
             <div>
                 <label class="form-label">Стартовая дата</label>
-                <input type="date" class="form-input" placeholder="Введите дату начала выставки">
+                <input type="date" class="add-input" placeholder="Введите дату начала выставки">
 
             </div>
 
             <div>
                 <label class="form-label">Конечная дата</label>
-                <input type="date" class="form-input" placeholder="Введите дату конца выставки">
+                <input type="date" class="add-input" placeholder="Введите дату конца выставки">
 
             </div>
 
