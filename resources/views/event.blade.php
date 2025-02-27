@@ -27,11 +27,11 @@
         <h1 class="text-center">Купить билеты </h1>
         
         @session('success')
-            <p class="text-green-700 text-center">{{$value}}</p>
+            <p class="text-green-700 text-center text-xl mb-5">{{$value}}</p>
         @endsession
         
         @session('error')
-            <p class="text-red-700 text-center">{{$value}}</p>
+            <p class="text-red-700 text-center text-xl mb-5">{{$value}}</p>
         @endsession
 
         @guest

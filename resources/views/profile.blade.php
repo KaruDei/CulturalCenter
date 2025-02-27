@@ -50,32 +50,32 @@
                             <span class="detail-label">Email:</span> {{$user->email}}
                         </p>
                         <button id="button-edit-profile" class="edit-button">Редактировать профиль</button>
-                        @session('error')
-            {{$value}}
+        @session('error')
+            <p class="mb-5 text-red-700 text-xl">{{$value}}</p>
         @endsession
 
         @session('success')
-            {{$value}}
+            <p class="mb-5 text-red-700 text-xl">{{$value}}</p>
         @endsession
 
         @error('user_id')
-            <p>{{$message}}</p>
+            <p class="mb-5 text-red-700 text-xl">{{$message}}</p>
         @enderror
 
         @error('email')
-            <p>{{$message}}</p>
+            <p class="mb-5 text-red-700 text-xl">{{$message}}</p>
         @enderror
 
         @error('password')
-            <p>{{$message}}</p>
+            <p class="mb-5 text-red-700 text-xl">{{$message}}</p>
         @enderror
 
         @error('picture')
-            <p>{{$message}}</p>
+            <p class="mb-5 text-red-700 text-xl">{{$message}}</p>
         @enderror
 
         @error('full_name')
-            <p>{{$message}}</p>
+            <p class="mb-5 text-red-700 text-xl">{{$message}}</p>
         @enderror
                     </div>
                 </div>

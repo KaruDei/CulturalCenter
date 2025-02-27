@@ -36,31 +36,31 @@
         <h1 class="text-4xl font-bold text-teal-800 mb-12 border-b-4 border-amber-300 pb-4 text-center">Все пользователи</h1>
 
         @session('error')
-            {{$value}}
+            <p class="mb-5 text-red-700 text-xl">{{$value}}</p>
         @endsession
 
         @session('success')
-            {{$value}}
+            <p class="mb-5 text-red-700 text-xl">{{$value}}</p>
         @endsession
 
         @error('user_id')
-            <p>{{$message}}</p>
+            <p class="mb-5 text-red-700 text-xl">{{$message}}</p>
         @enderror
 
         @error('email')
-            <p>{{$message}}</p>
+            <p class="mb-5 text-red-700 text-xl">{{$message}}</p>
         @enderror
 
         @error('password')
-            <p>{{$message}}</p>
+            <p class="mb-5 text-red-700 text-xl">{{$message}}</p>
         @enderror
 
         @error('picture')
-            <p>{{$message}}</p>
+            <p class="mb-5 text-red-700 text-xl">{{$message}}</p>
         @enderror
 
         @error('full_name')
-            <p>{{$message}}</p>
+            <p class="mb-5 text-red-700 text-xl">{{$message}}</p>
         @enderror
 
         <div class="overflow-x-auto w-full max-w-5xl">

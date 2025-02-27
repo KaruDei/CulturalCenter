@@ -40,32 +40,33 @@
     <div class="p-12 mt-[140px] mb-2 bg-floral-white rounded-xl shadow-2xl border-4 border-amber-100 max-w-md mx-auto">
         <h1 class="text-4xl font-bold text-teal-800 mb-8 border-b-2 border-amber-200 pb-2 text-center">Добавить выставку</h1>
 
-        <form class="space-y-6">
+        <form class="space-y-6" action="{{Route('admin.exhibitions.create')}}" method="post" enctype="multipart/form-data">
+            @csrf
             <div>
                 <label class="form-label">Название</label>
-                <input type="text" class="add-input"  placeholder="Введите Название выставки" required>
+                <input type="text" name="title" class="add-input"  placeholder="Введите Название выставки" required>
             </div>
 
             <div>
                 <label class="form-label">Описание</label>
-                <input type="text" class="add-input" placeholder="Введите описание выставки" required>
+                <input type="text" name="description" class="add-input" placeholder="Введите описание выставки" required>
             </div>
 
             <div>
                 <label class="form-label">Картинка</label>
-                <input type="file" class="add-input" >
+                <input type="file" name="picture" class="add-input" >
             
             </div>
 
             <div>
                 <label class="form-label">Стартовая дата</label>
-                <input type="date" class="add-input" placeholder="Введите дату начала выставки">
+                <input type="date" name="start_date" class="add-input" placeholder="Введите дату начала выставки">
 
             </div>
 
             <div>
                 <label class="form-label">Конечная дата</label>
-                <input type="date" class="add-input" placeholder="Введите дату конца выставки">
+                <input type="date" name="end_date" class="add-input" placeholder="Введите дату конца выставки">
 
             </div>
 
@@ -80,35 +81,35 @@
         <h1 class="text-4xl font-bold text-teal-800 mb-12 border-b-4 border-amber-300 pb-4 text-center">Все выставки</h1>
 
         @session('error')
-            {{$value}}
+            <p class="mb-5 text-red-700 text-xl">{{$value}}</p>
         @endsession
 
         @session('success')
-            {{$value}}
+            <p class="mb-5 text-red-700 text-xl">{{$value}}</p>
         @endsession
 
         @error('title')
-            <p>{{$message}}</p>
+            <p class="mb-5 text-red-700 text-xl">{{$message}}</p>
         @enderror
 
         @error('description')
-            <p>{{$message}}</p>
+            <p class="mb-5 text-red-700 text-xl">{{$message}}</p>
         @enderror
 
         @error('picture')
-            <p>{{$message}}</p>
+            <p class="mb-5 text-red-700 text-xl">{{$message}}</p>
         @enderror
 
         @error('start_date')
-            <p>{{$message}}</p>
+            <p class="mb-5 text-red-700 text-xl">{{$message}}</p>
         @enderror
 
         @error('end_date')
-            <p>{{$message}}</p>
+            <p class="mb-5 text-red-700 text-xl">{{$message}}</p>
         @enderror
 
         @error('event_id')
-            <p>{{$message}}</p>
+            <p class="mb-5 text-red-700 text-xl">{{$message}}</p>
         @enderror
     
 

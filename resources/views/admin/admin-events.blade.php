@@ -14,7 +14,7 @@
             <label for="description" class="form-label">Описание</label>
             <input type="text" name="description" id="inputDesc" class="form-input" placeholder="Введите описание мероприятия" required>
 
-            <label for="bigpicture" class="form-label">Картинка</label>
+            <label for="bigpicture" class="form-label">Широкая картинка</label>
             <img id="Bigpicture" class="object-contain" width="200px" src="" alt="">
             <input type="file" name="bigpicture" id="inputBigPicture" class="form-input" placeholder="Картинка выставки">
 
@@ -69,21 +69,22 @@
     <div class="p-12 mt-[140px] mb-2 bg-floral-white rounded-xl shadow-2xl border-4 border-amber-100 max-w-md mx-auto">
         <h1 class="text-4xl font-bold text-teal-800 mb-8 border-b-2 border-amber-200 pb-2 text-center">Добавить мероприятие</h1>
 
-        <form class="space-y-6">
+        <form class="space-y-6" action="{{Route('admin.events.create')}}" method="post" enctype="multipart/form-data">
+            @csrf
             <div>
                 <label class="form-label">Название</label>
-                <input type="text" class="add-input"  placeholder="Введите Название мероприятия" required>
+                <input type="text" name="title" class="add-input"  placeholder="Введите Название мероприятия" required>
             </div>
 
             <div>
                 <label class="form-label">Описание</label>
-                <input type="text" class="add-input" placeholder="Введите описание мероприятия" required>
+                <input type="text" name="description" class="add-input" placeholder="Введите описание мероприятия" required>
             </div>
 
             <div>
                 <label class="form-label">Тип Мероприятия</label>
             <section>
-                <select class="form-input-options form-input">
+                <select class="form-input-options form-input" name="event_type_id">
                     @foreach ($types as $type)
                         <option value="{{$type->id}}">{{$type->type}}</option>
                     @endforeach
@@ -95,7 +96,7 @@
             <div>
                 <label class="form-label">Выберите Зал</label>
                 <section>
-                    <select class="form-input-options form-input">
+                    <select class="form-input-options form-input" name="room_id">
                         @foreach ($rooms as $room)
                             <option value="{{$room->id}}">{{$room->number}}</option>
                         @endforeach
@@ -103,39 +104,51 @@
                 </section>
             
                 <label class="form-label">Дата Мероприятия</label>
-                <input type="date" class="add-input" placeholder="Введите дату мероприятия">
+                <input type="date" name="date" class="add-input" placeholder="Введите дату мероприятия">
 
             </div>
 
             <div>
                 <label class="form-label">Время Мероприятия</label>
-                <input type="time" class="add-input" placeholder="Введите время мероприятия" >
+                <input type="time" name="time" class="add-input" placeholder="Введите время мероприятия" >
             
             </div>
 
             <div>
                 <label class="form-label">Длительность Мероприятия(минут)</label>
-                <input type="number" class="add-input" placeholder="Введите Длительность мероприятия" >
+                <input type="number" name="duration" class="add-input" placeholder="Введите Длительность мероприятия" >
             </div>
 
             <div>
                 <label class="form-label">Цена Мероприятия(рублей)</label>
-                <input type="number" class="add-input" placeholder="Введите цену мероприятия" >
+                <input type="number" name="price" class="add-input" placeholder="Введите цену мероприятия" >
+            </div>
+
+            <div>
+                <label class="form-label">Широкая картинка</label>
+                <input type="file" name="bigpicture" class="add-input" >
+            
+            </div>
+
+            <div>
+                <label class="form-label">Картинка</label>
+                <input type="file" name="picture" class="add-input" >
+            
             </div>
 
             <div>
                 <label class="form-label">Сценарий Мероприятия</label>
-                <input type="text" class="add-input" placeholder="Введите сценарий мероприятия" >
+                <input type="text" name="script" class="add-input" placeholder="Введите сценарий мероприятия" >
             </div>
 
             <div>
-                <input type="hidden" name="autor" id="inputAutor" class="add-input" placeholder="Введите статус мероприятия" required disabled >
+                <input type="hidden" name="user_id" id="inputAutor" class="add-input" required disabled >
             </div>
 
             <div>
                 <label class="form-label">Статус Мероприятия</label>
                 <section>
-                    <select class="form-input-options form-input">
+                    <select class="form-input-options form-input" name="event_status_id">
                         @foreach ($statuses as $status)
                             <option value="{{$status->id}}">{{$status->status}}</option>
                         @endforeach
@@ -152,63 +165,63 @@
         <h1 class="text-4xl font-bold text-teal-800 mb-12 border-b-4 border-amber-300 pb-4 text-center">Все мероприятия</h1>
         
         @session('error')
-            {{$value}}
+            <p class="mb-5 text-red-700 text-xl">{{$value}}</p>
         @endsession
 
         @session('success')
-            {{$value}}
+            <p class="mb-5 text-red-700 text-xl">{{$value}}</p>
         @endsession
 
         @error('title')
-            <p>{{$message}}</p>
+            <p class="mb-5 text-red-700 text-xl">{{$message}}</p>
         @enderror
 
         @error('description')
-            <p>{{$message}}</p>
+            <p class="mb-5 text-red-700 text-xl">{{$message}}</p>
         @enderror
 
         @error('event_type_id')
-            <p>{{$message}}</p>
+            <p class="mb-5 text-red-700 text-xl">{{$message}}</p>
         @enderror
 
         @error('room_id')
-            <p>{{$message}}</p>
+            <p class="mb-5 text-red-700 text-xl">{{$message}}</p>
         @enderror
 
         @error('date')
-            <p>{{$message}}</p>
+            <p class="mb-5 text-red-700 text-xl">{{$message}}</p>
         @enderror
 
         @error('time')
-            <p>{{$message}}</p>
+            <p class="mb-5 text-red-700 text-xl">{{$message}}</p>
         @enderror
         
         @error('duration')
-            <p>{{$message}}</p>
+            <p class="mb-5 text-red-700 text-xl">{{$message}}</p>
         @enderror
         
         @error('price')
-            <p>{{$message}}</p>
+            <p class="mb-5 text-red-700 text-xl">{{$message}}</p>
         @enderror
         
         @error('script')
-            <p>{{$message}}</p>
+            <p class="mb-5 text-red-700 text-xl">{{$message}}</p>
         @enderror
 
         @error('event_status_id')
-            <p>{{$message}}</p>
+            <p class="mb-5 text-red-700 text-xl">{{$message}}</p>
         @enderror
 
         @error('picture')
-            <p>{{$message}}</p>
+            <p class="mb-5 text-red-700 text-xl">{{$message}}</p>
         @enderror
 
         @error('bigpicture')
-            <p>{{$message}}</p>
+            <p class="mb-5 text-red-700 text-xl">{{$message}}</p>
         @enderror
 
         @error('user_id')
-            <p>{{$message}}</p>
+            <p class="mb-5 text-red-700 text-xl">{{$message}}</p>
         @enderror
         <div class="overflow-x-auto w-full max-w-5xl">
             <table class="h-20 w-full bg-floral-white rounded-xl shadow-md border border-amber-100">

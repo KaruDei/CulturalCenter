@@ -38,7 +38,7 @@ class EventController extends Controller
             'picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'bigpicture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'script' => 'required|numeric',
-            'user_id' => 'required|numeric',
+            'user_id' => 'numeric|nullable',
             'event_status_id' => 'required|numeric'
         ]);
 

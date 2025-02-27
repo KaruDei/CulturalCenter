@@ -38,17 +38,17 @@
             
             <div>
                 <label class="form-label">Название</label>
-                <input type="text" class="add-input"  placeholder="Введите Название новости" required>
+                <input type="text" name="title" class="add-input"  placeholder="Введите Название новости" required>
             </div>
 
             <div>
                 <label class="form-label">Описание</label>
-                <input type="text" class="add-input" placeholder="Введите описание новости" required>
+                <input type="text" name="content" class="add-input" placeholder="Введите описание новости" required>
             </div>
 
             <div>
                 <label class="form-label">Картинка</label>
-                <input type="file" class="add-input" >
+                <input type="file" name="picture" class="add-input" >
             
             </div>
 
@@ -63,23 +63,23 @@
             <h1 class="text-4xl font-bold text-teal-800 mb-12 border-b-4 border-amber-300 pb-4 text-center">Все новости</h1>
     
             @session('error')
-                {{$value}}
+                <p class="mb-5 text-red-700 text-xl">{{$value}}</p>
             @endsession
 
             @session('success')
-                {{$value}}
+                <p class="mb-5 text-red-700 text-xl">{{$value}}</p>
             @endsession
 
             @error('title')
-                <p>{{$message}}</p>
+                <p class="mb-5 text-red-700 text-xl">{{$message}}</p>
             @enderror
 
             @error('content')
-                <p>{{$message}}</p>
+                <p class="mb-5 text-red-700 text-xl">{{$message}}</p>
             @enderror
 
             @error('picture')
-                <p>{{$message}}</p>
+                <p class="mb-5 text-red-700 text-xl">{{$message}}</p>
             @enderror
 
             <div class="overflow-x-auto w-full max-w-5xl">
