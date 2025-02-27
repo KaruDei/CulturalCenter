@@ -81,27 +81,19 @@
                 </div>
             </section>
             
-            <section class="visit-history">
-                <h2 class="user-title">История ваших посещений</h2>
-                <ul class="visit-list">
-                    <li>
-                        <a href="#" class="visit-button">Заказ #12345 - 15.03.2024</a>
-                    </li>
-                    <li>
-                        <a href="#" class="visit-button">Заказ #67890 - 28.02.2024</a>
-                    </li>
-                </ul>
-            </section>
             
             <section class="visit-history">
                 <h2 class="user-title">Предстоящие мероприятия</h2>
                 <ul class="visit-list">
-                    <li>
-                        <button class="visit-button">Премьера балета "Лебединое озеро" - 22.04.2024 (Статус: Подтвержден)</button>
-                    </li>
-                    <li>
-                        <button class="visit-button">Выставка "Импрессионизм" - 10.05.2024 (Статус: Ожидает оплаты)</button>
-                    </li>
+                   @foreach ($user->userTickets as $ticket)
+                        <li class="border-b-2 border-b-amber-200">
+                            Мероприятие - {{$ticket->event->title}} </br>
+                            Дата и время - {{$ticket->event->date}},  {{$ticket->event->time}}, </br>
+                            Ряд - {{$ticket->seat->row}}</br>
+                            Место - {{$ticket->seat->number}}
+
+                        </li>
+                   @endforeach
                 </ul>
             </section>
             

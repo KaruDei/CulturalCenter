@@ -22,7 +22,7 @@ class EventTickets extends Model
 
     public function event()
     {
-        return $this->belongsTo(Events::class, 'id');
+        return $this->belongsTo(Events::class, 'event_id');
     }
 
     public function room()

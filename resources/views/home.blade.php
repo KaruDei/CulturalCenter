@@ -28,7 +28,7 @@
         <div class="container-avtor">
             <div class="content">
                 <h1 class="title">Станьте автором мероприятия</h1>
-                <button class="create-button">Создать</button>
+                <button class="create-button"><a href="{{Route('contacts')}}" class="nav-link">Контакты</a></button>
             </div>
             <img src="{{ asset('icons/chel.png') }}" class="image hidden">
         </div>
