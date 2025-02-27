@@ -50,23 +50,20 @@ class ExhibitionController extends Controller
     }
 
     // Изменение записи
-    public function Update(Request $request, $id)
+    public function Update(Request $request)
     {
         $fields = $request->validate([
-            'title' => 'required|min:3|max:255|unique:exhibitions,title,' . $id,
+            'title' => 'required|min:3|max:255|unique:exhibitions,title,' . $request['exhibition_id'],
             'description' => 'required|min:3',
             'picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'start_date' => 'required',
             'end_date' => 'required',
-            'event_id' => 'numeric',
+            // 'event_id' => 'numeric|nullable',
         ]);
 
-        $record = Exhibitions::findOrFail($id);
+        $record = Exhibitions::findOrFail($request['exhibition_id']);
 
-        if (!$record)
-        {
-            return redirect()->back()->with('error', 'Запись не найдена!');
-        }
+
 
         if ($request->hasFile('picture'))
         {

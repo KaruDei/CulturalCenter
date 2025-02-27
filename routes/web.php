@@ -64,6 +64,7 @@ Route::get('/admin/event-tickets', [PageController::class, 'AdminEventTicketsPag
 Route::get('/admin/event-types', [PageController::class, 'AdminEventTypesPage'])->name('admin.event-types');
 
 Route::get('/admin/news', [PageController::class, 'AdminNewsPage'])->name('admin.news');
+Route::post('/admin/news', [NewsController::class, 'Create'])->name('admin.news.create');
 Route::patch('/admin/news', [NewsController::class, 'Update'])->name('admin.news.update');
 Route::delete('/admin/news/{id}', [NewsController::class, 'Delete'])->name('admin.news.delete');
 
