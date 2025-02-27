@@ -136,12 +136,13 @@ class PageController extends Controller
     */
 
     public function AdminDashboardPage() {
+        $ticket = $this->eventTicketController->GetAllRecords();
         $exhibitions = $this->exhibitionController->GetAllRecords();
         $events = $this->eventController->GetAllRecords();
         $users = $this->userController->GetAllRecords();
         $eventOrder = $this->eventOrderController->GetAllRecords();
         $news = $this->newsController->GetAllRecords();
-        return view('admin.admin-dashboard',['events' => $events, 'users' => $users, 'exhibitions' => $exhibitions, 'eventOrder' => $eventOrder, 'news' => $news]); 
+        return view('admin.admin-dashboard',['events' => $events, 'users' => $users, 'exhibitions' => $exhibitions, 'eventOrder' => $eventOrder, 'news' => $news, 'ticket' => $ticket]); 
     }
 
     public function AdminActorsPage() {
