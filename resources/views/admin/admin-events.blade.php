@@ -72,12 +72,12 @@
         <form class="space-y-6">
             <div>
                 <label class="form-label">Название</label>
-                <input type="text" class="form-input"  placeholder="Введите Название мероприятия" required>
+                <input type="text" class="add-input"  placeholder="Введите Название мероприятия" required>
             </div>
 
             <div>
                 <label class="form-label">Описание</label>
-                <input type="text" class="form-input" placeholder="Введите описание мероприятия" required>
+                <input type="text" class="add-input" placeholder="Введите описание мероприятия" required>
             </div>
 
             <div>
@@ -103,33 +103,33 @@
                 </section>
             
                 <label class="form-label">Дата Мероприятия</label>
-                <input type="date" class="form-input" placeholder="Введите дату мероприятия">
+                <input type="date" class="add-input" placeholder="Введите дату мероприятия">
 
             </div>
 
             <div>
                 <label class="form-label">Время Мероприятия</label>
-                <input type="time" class="form-input" placeholder="Введите время мероприятия" >
+                <input type="time" class="add-input" placeholder="Введите время мероприятия" >
             
             </div>
 
             <div>
                 <label class="form-label">Длительность Мероприятия(минут)</label>
-                <input type="number" class="form-input" placeholder="Введите Длительность мероприятия" >
+                <input type="number" class="add-input" placeholder="Введите Длительность мероприятия" >
             </div>
 
             <div>
                 <label class="form-label">Цена Мероприятия(рублей)</label>
-                <input type="number" class="form-input" placeholder="Введите цену мероприятия" >
+                <input type="number" class="add-input" placeholder="Введите цену мероприятия" >
             </div>
 
             <div>
                 <label class="form-label">Сценарий Мероприятия</label>
-                <input type="text" class="form-input" placeholder="Введите сценарий мероприятия" >
+                <input type="text" class="add-input" placeholder="Введите сценарий мероприятия" >
             </div>
 
             <div>
-                <input type="hidden" name="autor" id="inputAutor" class="form-input" placeholder="Введите статус мероприятия" required disabled >
+                <input type="hidden" name="autor" id="inputAutor" class="add-input" placeholder="Введите статус мероприятия" required disabled >
             </div>
 
             <div>

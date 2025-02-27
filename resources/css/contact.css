@@ -17,8 +17,9 @@
     margin-bottom: 0.5rem; /* Отступ снизу */
 }
 
-.form-input,
+.add-input,
 .form-textarea {
+    width: 100%;
     border: 1px solid #ccc; /* Цвет границы */
     border-radius: 0.375rem; /* Закругление углов */
     padding: 0.75rem; /* Отступ внутри */
@@ -28,7 +29,7 @@
     /* background-color: #f5f5dc; Цвет фона (старое кружево) */
 }
 
-.form-input:focus,
+.add-input:focus,
 .form-textarea:focus {
     border-color: #ffcc00; /* Цвет границы при фокусе */
     outline: none; /* Убираем стандартный контур */
